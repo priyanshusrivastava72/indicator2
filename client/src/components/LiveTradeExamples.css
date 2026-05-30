@@ -1,0 +1,83 @@
+.trade-title {
+  margin-bottom: 16px;
+}
+
+.trade-subtext {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 48px;
+}
+
+.trade-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.trade-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.trade-chart-card {
+  background-color: var(--bg-primary);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.trade-details-card {
+  background-color: var(--bg-primary);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.detail-value {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.detail-lesson {
+  grid-column: 1 / -1;
+  border-top: 0.5px solid var(--border);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.lesson-text {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .trade-details-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

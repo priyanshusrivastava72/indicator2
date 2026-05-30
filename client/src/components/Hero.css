@@ -1,0 +1,223 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Offset for nav */
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+.hero-glow-left {
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.06;
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  width: 55%;
+  padding-right: 40px;
+}
+
+.hero-title {
+  margin-bottom: 24px;
+}
+
+.hero-subtext {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.hero-trust-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--border);
+}
+
+.hero-trust-bar .separator {
+  color: var(--border);
+}
+
+.hero-visual {
+  width: 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.floating-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.chart-card-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+}
+
+.chart-card {
+  background-color: var(--bg-elevated);
+  border-radius: 6px;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+}
+
+.chart-header {
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+.mac-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mac-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mac-dots .red { background-color: #ED6A5E; }
+.mac-dots .yellow { background-color: #F4BF4F; }
+.mac-dots .green { background-color: #61C554; }
+
+.chart-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.chart-body {
+  height: 300px;
+  padding: 20px 0;
+}
+
+.stat-pill {
+  position: absolute;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0.5px solid var(--border);
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat-pill-green {
+  top: 40px;
+  right: -20px;
+  color: var(--accent-green);
+  background: rgba(22, 168, 105, 0.1);
+  border-color: rgba(22, 168, 105, 0.2);
+}
+
+.stat-pill-accent {
+  bottom: 80px;
+  left: -20px;
+  color: var(--accent-primary);
+  background: rgba(201, 146, 42, 0.1);
+  border-color: rgba(201, 146, 42, 0.2);
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-trust-bar {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  .stat-pill-green { right: 0; }
+  .stat-pill-accent { left: 0; }
+}

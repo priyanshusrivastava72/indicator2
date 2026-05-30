@@ -1,0 +1,86 @@
+.edu-strip-section {
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.edu-strip-title {
+  margin-bottom: 80px;
+}
+
+.edu-flow-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.edu-flow-line {
+  position: absolute;
+  top: 24px; /* Center with the Roman Numeral */
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  border-top: 1px dashed var(--accent-primary);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.edu-flow-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-step {
+  flex: 1;
+  padding: 0 16px;
+  background-color: var(--bg-secondary); /* Match background to cover the dashed line behind */
+  border-radius: 8px; /* Optional, just for the bg overlap */
+  box-shadow: 0 0 10px var(--bg-secondary);
+}
+
+.edu-step-num {
+  font-family: var(--font-display);
+  color: var(--accent-primary);
+  font-size: 24px;
+  margin-bottom: 16px;
+  background-color: var(--bg-secondary);
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.edu-step-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.edu-step-desc {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .edu-flow-steps {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .edu-flow-line {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 1px;
+    height: 100%;
+    border-top: none;
+    border-left: 1px dashed var(--accent-primary);
+  }
+
+  .edu-step-num {
+    margin-bottom: 8px;
+  }
+}

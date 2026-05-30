@@ -1,0 +1,46 @@
+.skill-reframe-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 48px;
+}
+
+.skill-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.skill-pill {
+  border: 1px solid var(--accent-primary);
+  background: transparent;
+  border-radius: 40px; /* Pill shape */
+  padding: 8px 20px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.skill-reframe-desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .skill-pills {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skill-pill {
+    width: 200px;
+  }
+}

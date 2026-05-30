@@ -1,0 +1,119 @@
+.curriculum-title {
+  margin-bottom: 64px;
+}
+
+.accordion-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border-bottom: 0.5px solid var(--border);
+}
+
+.accordion-item:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover .module-title {
+  color: var(--accent-primary);
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.module-num {
+  font-family: var(--font-mono);
+  color: var(--accent-primary);
+  font-size: 16px;
+}
+
+.module-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.accordion-header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.lesson-badge {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.expand-icon {
+  font-size: 24px;
+  color: var(--text-secondary);
+  width: 24px;
+  text-align: center;
+  line-height: 1;
+}
+
+.accordion-body {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-content {
+  padding: 0 0 32px 56px; /* 56px aligns with title (16px width + 24px gap + padding) */
+}
+
+.lesson-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lesson-list li {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 15px;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.lesson-list .bullet {
+  color: var(--accent-primary);
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .accordion-header-right {
+    gap: 12px;
+  }
+  
+  .lesson-badge {
+    display: none; /* Hide badge on mobile to save space */
+  }
+  
+  .module-title {
+    font-size: 16px;
+  }
+  
+  .accordion-content {
+    padding-left: 0;
+  }
+}

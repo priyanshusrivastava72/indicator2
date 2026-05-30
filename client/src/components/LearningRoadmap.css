@@ -1,0 +1,102 @@
+.roadmap-title {
+  margin-bottom: 80px;
+}
+
+.roadmap-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.roadmap-line {
+  position: absolute;
+  top: 24px; /* Center of the 48px circle */
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  border-top: 1px dashed var(--accent-primary);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.roadmap-phases {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-node {
+  flex: 1;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bg-primary); /* Masks the dashed line */
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 0 10px var(--bg-primary); /* Extra masking */
+}
+
+.roadmap-node-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.roadmap-node-desc {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .roadmap-phases {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .roadmap-line {
+    top: 0;
+    bottom: 0;
+    left: 36px; /* Offset to align with center of circle (12px padding + 24px half-circle) */
+    right: auto;
+    width: 1px;
+    height: 100%;
+    border-top: none;
+    border-left: 1px dashed var(--accent-primary);
+  }
+
+  .roadmap-node {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .roadmap-circle {
+    margin-bottom: 0;
+    margin-right: 24px;
+    flex-shrink: 0;
+  }
+
+  .roadmap-node-title {
+    margin-top: 4px; /* Align text vertically with the circle */
+  }
+}

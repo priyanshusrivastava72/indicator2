@@ -1,0 +1,88 @@
+.comparison-title {
+  margin-bottom: 64px;
+}
+
+.comparison-table-wrapper {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  text-align: left;
+}
+
+.comparison-header {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.comp-head-left, .comp-head-right {
+  flex: 1;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 40px; /* Pill shape */
+}
+
+.comp-head-left {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  margin-right: 12px;
+}
+
+.comp-head-right {
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  background-color: transparent;
+  margin-left: 12px;
+}
+
+.comparison-body {
+  border-top: 0.5px solid var(--border);
+}
+
+.comparison-row {
+  display: flex;
+  border-bottom: 0.5px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.comparison-row:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.comp-cell-left, .comp-cell-right {
+  flex: 1;
+  padding: 20px 24px;
+  font-size: 15px;
+}
+
+.comp-cell-left {
+  color: var(--text-secondary);
+}
+
+.comp-cell-right {
+  color: var(--text-primary);
+  border-left: 2px solid rgba(201, 146, 42, 0.4);
+}
+
+.comparison-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--accent-primary);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .comp-head-left, .comp-head-right {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .comp-cell-left, .comp-cell-right {
+    padding: 16px 12px;
+    font-size: 14px;
+  }
+}
