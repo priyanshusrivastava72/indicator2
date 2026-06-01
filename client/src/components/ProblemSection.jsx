@@ -144,7 +144,7 @@ export default function ProblemSection() {
                   {/* Number */}
                   <div
                     className="font-display font-bold text-5xl md:text-6xl select-none leading-none shrink-0 transition-colors duration-300 w-20 text-center md:text-left"
-                    style={{ color: isHovered ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.06)' }}
+                    style={{ color: isHovered ? 'var(--color-problem-num-active, rgba(239,68,68,0.5))' : 'var(--color-problem-num-inactive, rgba(255,255,255,0.06))' }}
                   >
                     {p.num}
                   </div>
@@ -153,9 +153,9 @@ export default function ProblemSection() {
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
                     style={{
-                      background: isHovered ? 'rgba(239,68,68,0.15)' : 'rgba(255,255,255,0.04)',
+                      background: isHovered ? 'rgba(239,68,68,0.15)' : 'var(--color-problem-icon-bg, rgba(255,255,255,0.04))',
                       color: isHovered ? '#ef4444' : '#6b7280',
-                      border: isHovered ? '1px solid rgba(239,68,68,0.3)' : '1px solid rgba(255,255,255,0.07)',
+                      border: isHovered ? '1px solid rgba(239,68,68,0.3)' : 'var(--color-problem-icon-border, 1px solid rgba(255,255,255,0.07))',
                     }}
                   >
                     <Icon size={22} />
@@ -168,7 +168,7 @@ export default function ProblemSection() {
                     </h3>
                     <p
                       className="text-sm leading-relaxed transition-colors duration-300"
-                      style={{ color: isHovered ? '#d1d5db' : '#6b7280' }}
+                      style={{ color: isHovered ? 'var(--color-problem-desc-active, #d1d5db)' : 'var(--color-problem-desc-inactive, #6b7280)' }}
                     >
                       {isHovered ? p.fullDesc : p.shortDesc}
                     </p>
@@ -187,7 +187,7 @@ export default function ProblemSection() {
                     </div>
                     <div
                       className="text-xs font-mono leading-tight mt-1 max-w-[130px] ml-auto"
-                      style={{ color: isHovered ? '#9ca3af' : '#374151' }}
+                      style={{ color: isHovered ? 'var(--color-problem-stat-active, #9ca3af)' : 'var(--color-problem-stat-inactive, #374151)' }}
                     >
                       {p.statLabel}
                     </div>

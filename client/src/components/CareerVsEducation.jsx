@@ -39,8 +39,7 @@ export default function CareerVsEducation() {
   return (
     <section
       id="career-vs-education"
-      className="py-28 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#07080a' }}
+      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient glow */}
       <div
@@ -61,8 +60,7 @@ export default function CareerVsEducation() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-4"
-            style={{ color: '#10b981' }}
+            className="font-mono text-sm tracking-widest uppercase mb-4 text-emerald-500"
           >
             Why Financial Skills Matter
           </motion.p>
@@ -74,7 +72,7 @@ export default function CareerVsEducation() {
             className="text-4xl md:text-6xl font-display font-bold text-white leading-tight"
           >
             Career Only vs.{' '}
-            <span style={{ color: '#10b981' }}>Career + Financial Education</span>
+            <span className="text-emerald-500">Career + Financial Education</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -94,104 +92,82 @@ export default function CareerVsEducation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto rounded-3xl overflow-hidden"
-          style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+          className="overflow-x-auto pb-4 scrollbar-thin"
         >
-          {/* Table Header */}
-          <div
-            className="grid grid-cols-3 text-sm font-mono uppercase tracking-widest"
-            style={{ background: 'rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            <div className="px-6 py-4 text-gray-600">Area</div>
-            <div
-              className="px-6 py-4 text-center"
-              style={{
-                color: '#ef4444',
-                borderLeft: '1px solid rgba(255,255,255,0.07)',
-                background: 'rgba(239,68,68,0.04)',
-              }}
-            >
-              Career Only
+          <div className="comp-table-wrapper max-w-5xl mx-auto rounded-3xl overflow-hidden min-w-[700px] lg:min-w-0">
+            {/* Table Header */}
+            <div className="grid grid-cols-3 comp-table-header">
+              <div className="comp-header-cell comp-header-cell-topic">
+                <span>Comparison Area</span>
+              </div>
+              <div className="comp-header-cell comp-header-cell-traditional">
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-red-500/10 text-red-400 border border-red-500/20 light:bg-red-500/10 light:text-red-700 light:border-red-500/15 mb-2">
+                  Traditional Path
+                </span>
+                <span className="flex items-center gap-1.5 font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+                  Career Only
+                </span>
+              </div>
+              <div className="comp-header-cell comp-header-cell-growth">
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 light:bg-emerald-500/10 light:text-emerald-700 light:border-emerald-500/15 mb-2">
+                  Accelerated Growth
+                </span>
+                <span className="flex items-center gap-1.5 font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                  Career + Finance
+                </span>
+              </div>
             </div>
-            <div
-              className="px-6 py-4 text-center"
-              style={{
-                color: '#10b981',
-                borderLeft: '1px solid rgba(255,255,255,0.07)',
-                background: 'rgba(16,185,129,0.05)',
-              }}
-            >
-              Career + Finance
-            </div>
+
+            {/* Rows */}
+            {rows.map((row, i) => (
+              <motion.div
+                key={row.topic}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="grid grid-cols-3 comp-row group"
+              >
+                {/* Topic */}
+                <div className="comp-cell-topic">
+                  <span className="comp-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-sm font-semibold tracking-wide">{row.topic}</span>
+                </div>
+
+                {/* Traditional */}
+                <div className="comp-cell-traditional">
+                  <div className="comp-icon-box comp-icon-box-red">
+                    <X size={13} strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm leading-relaxed">{row.traditional}</span>
+                </div>
+
+                {/* Growth */}
+                <div className="comp-cell-growth">
+                  <div className="comp-icon-box comp-icon-box-green">
+                    <Check size={13} strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm leading-relaxed">{row.growth}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
-
-          {/* Rows */}
-          {rows.map((row, i) => (
-            <motion.div
-              key={row.topic}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="grid grid-cols-3 group"
-              style={{
-                borderBottom:
-                  i < rows.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-              }}
-            >
-              {/* Topic */}
-              <div
-                className="px-6 py-5 flex items-center"
-                style={{ borderRight: '1px solid rgba(255,255,255,0.05)' }}
-              >
-                <span className="text-sm font-semibold text-gray-300">{row.topic}</span>
-              </div>
-
-              {/* Traditional */}
-              <div
-                className="px-6 py-5 flex items-start gap-3 group-hover:bg-red-500/5 transition-colors duration-200"
-                style={{
-                  borderRight: '1px solid rgba(255,255,255,0.05)',
-                  background: 'rgba(239,68,68,0.02)',
-                }}
-              >
-                <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}
-                >
-                  <X size={12} />
-                </div>
-                <span className="text-sm text-gray-500 leading-relaxed">{row.traditional}</span>
-              </div>
-
-              {/* Growth */}
-              <div
-                className="px-6 py-5 flex items-start gap-3 group-hover:bg-emerald-500/5 transition-colors duration-200"
-                style={{ background: 'rgba(16,185,129,0.02)' }}
-              >
-                <div
-                  className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: 'rgba(16,185,129,0.15)', color: '#10b981' }}
-                >
-                  <Check size={12} />
-                </div>
-                <span className="text-sm text-gray-300 leading-relaxed">{row.growth}</span>
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
 
-        {/* Bottom callout */}
-        <motion.p
+        {/* Bottom tagline callout */}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-gray-500 text-sm mt-10 max-w-2xl mx-auto italic"
+          className="mt-12 text-center max-w-2xl mx-auto"
         >
-          "A strong career remains important. Financial education helps you make better
-          decisions alongside it — not instead of it."
-        </motion.p>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/5 text-gray-400 light:bg-black/5 light:border-black/5 light:text-gray-600">
+            💡 A strong career remains essential. Financial education helps you make better decisions alongside it.
+          </span>
+        </motion.div>
 
       </div>
     </section>

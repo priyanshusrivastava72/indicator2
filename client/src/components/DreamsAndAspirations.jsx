@@ -73,27 +73,54 @@ const timezones = [
   { name: 'TYO', time: '17:00' },
 ];
 
-function VectorDecor({ type }) {
+function VectorDecor({ type, isHovered }) {
   if (type === 'speedometer') {
     return (
-      <svg className="absolute right-0 bottom-0 w-40 h-40 opacity-[0.03] text-emerald-500 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
+      <svg
+        className={`absolute right-0 bottom-0 w-36 h-36 pointer-events-none transition-all duration-500 ${
+          isHovered
+            ? 'opacity-[0.16] scale-105 text-emerald-400'
+            : 'opacity-[0.03] text-emerald-500 light:opacity-[0.02]'
+        }`}
+        viewBox="0 0 100 100"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+      >
         <path d="M10,80 A40,40 0 1,1 90,80" />
-        <path d="M10,80 L20,75 M90,80 L80,75 M50,10 L50,22 M20,30 L30,37 M80,30 L70,37" />
-        <line x1="50" y1="80" x2="65" y2="45" strokeWidth="2" stroke="currentColor" />
-        <circle cx="50" cy="80" r="4" fill="currentColor" />
+        <path d="M10,80 L18,74 M90,80 L82,74 M50,10 L50,20 M20,30 L28,36 M80,30 L72,36" strokeDasharray="1,1" />
+        <line
+          x1="50"
+          y1="80"
+          x2="65"
+          y2="45"
+          strokeWidth="2"
+          stroke="currentColor"
+          style={{
+            transform: isHovered ? 'rotate(35deg)' : 'rotate(0deg)',
+            transformOrigin: '50px 80px',
+            transition: 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+          }}
+        />
+        <circle cx="50" cy="80" r="3.5" fill="currentColor" />
       </svg>
     );
   }
 
   if (type === 'blueprint') {
     return (
-      <div className="absolute right-0 bottom-0 w-64 h-32 opacity-[0.04] text-emerald-500 pointer-events-none overflow-hidden select-none">
+      <div
+        className={`absolute right-0 bottom-0 w-64 h-32 pointer-events-none overflow-hidden select-none transition-all duration-500 ${
+          isHovered
+            ? 'opacity-[0.18] scale-102 text-emerald-400'
+            : 'opacity-[0.04] text-emerald-500 light:opacity-[0.02]'
+        }`}
+      >
         <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-          <grid width="10" height="10" patternUnits="userSpaceOnUse" />
           <path d="M10,90 L10,10 L120,10 L120,90 Z" />
           <path d="M30,10 L30,90 M70,10 L70,90 M100,10 L100,90" />
           <path d="M10,40 L120,40 M10,70 L120,70" />
-          <circle cx="150" cy="50" r="25" />
+          <circle cx="150" cy="50" r="22" className={isHovered ? 'animate-pulse' : ''} />
           <path d="M125,50 L175,50 M150,25 L150,75" strokeDasharray="2,2" />
         </svg>
       </div>
@@ -102,11 +129,24 @@ function VectorDecor({ type }) {
 
   if (type === 'timezones') {
     return (
-      <div className="absolute right-6 bottom-4 flex gap-3 opacity-[0.15] text-emerald-500 pointer-events-none select-none font-mono text-[10px]">
+      <div
+        className={`absolute right-6 bottom-4 flex gap-2 pointer-events-none select-none font-mono text-[9px] transition-all duration-500 ${
+          isHovered
+            ? 'opacity-100 translate-y-[-2px]'
+            : 'opacity-[0.2] light:opacity-[0.15] text-emerald-500'
+        }`}
+      >
         {timezones.map((tz) => (
-          <div key={tz.name} className="flex flex-col items-center bg-dark-300/80 px-2 py-1.5 rounded-lg border border-white/5">
-            <span className="text-gray-500">{tz.name}</span>
-            <span className="font-bold text-emerald-400 mt-0.5">{tz.time}</span>
+          <div
+            key={tz.name}
+            className={`flex flex-col items-center px-2 py-1.5 rounded-lg border transition-colors duration-300 ${
+              isHovered
+                ? 'bg-emerald-500/10 border-emerald-500/25 text-emerald-400 light:bg-emerald-500/5 light:border-emerald-500/15 light:text-emerald-700'
+                : 'bg-dark-300/80 border-white/5 light:bg-black/5 light:border-black/5 text-gray-400'
+            }`}
+          >
+            <span className="text-[8px] opacity-75">{tz.name}</span>
+            <span className="font-bold mt-0.5">{tz.time}</span>
           </div>
         ))}
       </div>
@@ -115,31 +155,68 @@ function VectorDecor({ type }) {
 
   if (type === 'shield-rings') {
     return (
-      <svg className="absolute right-4 bottom-4 w-28 h-28 opacity-[0.03] text-emerald-500 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
+      <svg
+        className={`absolute right-4 bottom-4 w-28 h-28 pointer-events-none transition-all duration-500 ${
+          isHovered
+            ? 'opacity-[0.16] scale-105 text-emerald-400'
+            : 'opacity-[0.03] text-emerald-500 light:opacity-[0.02]'
+        }`}
+        viewBox="0 0 100 100"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+      >
         <circle cx="50" cy="50" r="40" />
-        <circle cx="50" cy="50" r="30" strokeDasharray="3,3" />
+        <circle
+          cx="50"
+          cy="50"
+          r="30"
+          strokeDasharray="4,3"
+          className={isHovered ? 'animate-[spin_12s_linear_infinite]' : ''}
+          style={{ transformOrigin: 'center' }}
+        />
         <circle cx="50" cy="50" r="20" />
-        <path d="M50,10 L50,90 M10,50 L90,50" strokeWidth="0.5" strokeDasharray="4,4" />
+        <path d="M50,10 L50,90 M10,50 L90,50" strokeWidth="0.5" strokeDasharray="3,3" />
       </svg>
     );
   }
 
   if (type === 'sparkles') {
     return (
-      <svg className="absolute right-6 bottom-6 w-24 h-24 opacity-[0.03] text-emerald-500 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
+      <svg
+        className={`absolute right-6 bottom-6 w-24 h-24 pointer-events-none transition-all duration-500 ${
+          isHovered
+            ? 'opacity-[0.16] scale-110 rotate-[15deg] text-emerald-400'
+            : 'opacity-[0.03] text-emerald-500 light:opacity-[0.02]'
+        }`}
+        viewBox="0 0 100 100"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+      >
         <path d="M20,50 Q50,50 50,20 Q50,50 80,50 Q50,50 50,80 Q50,50 20,50 Z" />
-        <path d="M75,25 Q85,25 85,15 Q85,25 95,25 Q85,25 85,35 Q85,25 75,25 Z" />
+        <path d="M75,25 Q85,25 85,15 Q85,25 95,25 Q85,25 85,35 Q85,25 75,25 Z" strokeWidth="0.8" />
       </svg>
     );
   }
 
   if (type === 'mini-chart') {
     return (
-      <svg className="absolute right-4 bottom-2 w-48 h-20 opacity-[0.06] text-emerald-500 pointer-events-none" viewBox="0 0 150 50" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <svg
+        className={`absolute right-4 bottom-2 w-48 h-20 pointer-events-none transition-all duration-500 ${
+          isHovered
+            ? 'opacity-[0.25] translate-y-[-2px] text-emerald-400'
+            : 'opacity-[0.06] text-emerald-500 light:opacity-[0.03]'
+        }`}
+        viewBox="0 0 150 50"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      >
         <path d="M 0 45 Q 25 35 40 40 T 80 15 T 120 25 T 150 5" fill="none" />
-        <path d="M 0 45 Q 25 35 40 40 T 80 15 T 120 25 T 150 5 L 150 50 L 0 50 Z" fill="url(#emerald-gradient)" stroke="none" opacity="0.2" />
+        <path d="M 0 45 Q 25 35 40 40 T 80 15 T 120 25 T 150 5 L 150 50 L 0 50 Z" fill="url(#dreams-emerald-gradient)" stroke="none" opacity="0.2" />
         <defs>
-          <linearGradient id="emerald-gradient" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="dreams-emerald-gradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#10b981" />
             <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
           </linearGradient>
@@ -253,16 +330,7 @@ export default function DreamsAndAspirations() {
                 onMouseLeave={() => setHoveredId(null)}
                 className={`relative group cursor-pointer ${dream.span}`}
               >
-                <div
-                  className="rounded-3xl border transition-all duration-500 h-full relative overflow-hidden"
-                  style={{
-                    backgroundColor: 'rgba(10,10,10,0.6)',
-                    borderColor: isHovered ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.05)',
-                    boxShadow: isHovered
-                      ? '0 20px 40px -15px rgba(16,185,129,0.15), inset 0 1px 0 rgba(255,255,255,0.05)'
-                      : '0 4px 30px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.02)',
-                  }}
-                >
+                <div className="dream-card">
                   {/* Subtle inner radial glow (always emerald) */}
                   <div
                     className="absolute -top-16 -left-16 w-36 h-36 rounded-full pointer-events-none transition-opacity duration-500"
@@ -273,43 +341,38 @@ export default function DreamsAndAspirations() {
                   />
 
                   {/* Vector decorations */}
-                  <VectorDecor type={dream.decor} />
+                  <VectorDecor type={dream.decor} isHovered={isHovered} />
 
                   <div className="p-7 md:p-8 flex flex-col h-full justify-between relative z-10">
                     <div>
                       {/* Top Row: Icon & Tech Badge */}
                       <div className="flex items-center justify-between mb-8">
-                        <div
-                          className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300"
-                          style={{
-                            backgroundColor: isHovered ? 'rgba(16,185,129,0.12)' : 'rgba(255,255,255,0.02)',
-                            borderColor: isHovered ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.08)',
-                            color: isHovered ? '#10b981' : '#888',
-                          }}
-                        >
+                        <div className="dream-icon-wrapper">
                           <Icon size={20} strokeWidth={isHovered ? 2.2 : 1.8} />
                         </div>
 
                         {/* Monospace Tech Badge */}
-                        <span className="font-mono text-[9px] tracking-widest text-gray-600 bg-white/2 px-2 py-1 rounded border border-white/5">
+                        <span className="dream-badge">
                           {dream.badge}
                         </span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-display font-bold text-white text-xl mb-2 flex items-center gap-1.5 group-hover:text-emerald-400 transition-colors duration-300">
+                      <h3 className="font-display font-bold text-white text-xl mb-2.5 flex items-center gap-1.5 group-hover:text-emerald-500 light:group-hover:text-emerald-700 transition-colors duration-300">
                         {dream.title}
-                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-emerald-400" />
+                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-emerald-500 light:text-emerald-700" />
                       </h3>
 
                       {/* Primary Description */}
-                      <p className="text-gray-300 text-sm font-medium leading-relaxed mb-3">
+                      <p className="text-gray-300 light:text-gray-700 text-sm font-semibold leading-relaxed mb-3">
                         {dream.desc}
                       </p>
                     </div>
 
+                    <div className="dream-card-divider" />
+
                     {/* Secondary detailed text */}
-                    <p className="text-gray-500 text-xs leading-relaxed mt-2 lg:max-w-[90%]">
+                    <p className="text-gray-500 light:text-gray-500 text-xs leading-relaxed lg:max-w-[95%]">
                       {dream.longDesc}
                     </p>
                   </div>

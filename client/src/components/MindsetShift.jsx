@@ -281,12 +281,12 @@ export default function MindsetShift() {
               <div
                 className="mt-4 p-5 rounded-xl text-sm leading-relaxed"
                 style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  color: '#9ca3af',
+                  background: 'var(--color-callout-bg, rgba(255,255,255,0.03))',
+                  border: '1px solid var(--color-callout-border, rgba(255,255,255,0.06))',
+                  color: 'var(--color-callout-text, #9ca3af)',
                 }}
               >
-                <span className="text-white font-semibold">The honest truth:</span> Consistent profitability
+                <span className="font-semibold" style={{ color: 'var(--color-callout-header, #ffffff)' }}>The honest truth:</span> Consistent profitability
                 takes 3–6 months of focused practice. Anyone promising overnight results is lying.
               </div>
             </div>

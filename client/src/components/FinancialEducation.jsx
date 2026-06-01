@@ -45,8 +45,7 @@ export default function FinancialEducation() {
   return (
     <section
       id="financial-education"
-      className="py-28 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#08090a' }}
+      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient top glow */}
       <div
@@ -108,14 +107,14 @@ export default function FinancialEducation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="relative rounded-2xl p-8 group overflow-hidden"
+                className={`relative rounded-2xl p-8 group overflow-hidden ${highlighted ? 'highlighted-education-card' : ''}`}
                 style={{
                   background: highlighted
                     ? 'rgba(16,185,129,0.06)'
-                    : 'rgba(255,255,255,0.02)',
+                    : 'var(--color-card-bg, rgba(255,255,255,0.02))',
                   border: highlighted
                     ? '1px solid rgba(16,185,129,0.25)'
-                    : '1px solid rgba(255,255,255,0.06)',
+                    : '1px solid var(--color-card-border, rgba(255,255,255,0.06))',
                 }}
               >
                 {/* Glow on highlighted cards */}
@@ -132,7 +131,7 @@ export default function FinancialEducation() {
                 <div
                   className="absolute top-6 right-6 font-display font-bold text-7xl select-none pointer-events-none leading-none"
                   style={{
-                    color: highlighted ? 'rgba(16,185,129,0.08)' : 'rgba(255,255,255,0.03)',
+                    color: highlighted ? 'var(--color-watermark-active, rgba(16,185,129,0.08))' : 'var(--color-watermark-inactive, rgba(255,255,255,0.03))',
                   }}
                 >
                   0{i + 1}
@@ -146,11 +145,11 @@ export default function FinancialEducation() {
                       style={{
                         background: highlighted
                           ? 'rgba(16,185,129,0.15)'
-                          : 'rgba(255,255,255,0.05)',
-                        color: highlighted ? '#10b981' : '#6b7280',
+                          : 'var(--color-icon-bg, rgba(255,255,255,0.05))',
+                        color: highlighted ? 'var(--color-accent-green, #10b981)' : '#6b7280',
                         border: highlighted
                           ? '1px solid rgba(16,185,129,0.3)'
-                          : '1px solid rgba(255,255,255,0.08)',
+                          : 'var(--color-icon-border, 1px solid rgba(255,255,255,0.08))',
                       }}
                     >
                       <Icon size={22} />
@@ -158,7 +157,7 @@ export default function FinancialEducation() {
                     <div>
                       <p
                         className="text-xs font-mono uppercase tracking-widest mb-1"
-                        style={{ color: highlighted ? '#10b981' : '#4b5563' }}
+                        style={{ color: highlighted ? 'var(--color-accent-green, #10b981)' : 'var(--color-text-inactive-desc, #4b5563)' }}
                       >
                         {step.subtitle}
                       </p>
@@ -179,15 +178,15 @@ export default function FinancialEducation() {
                     style={{
                       background: highlighted
                         ? 'rgba(16,185,129,0.1)'
-                        : 'rgba(255,255,255,0.03)',
+                        : 'var(--color-stat-bg, rgba(255,255,255,0.03))',
                       border: highlighted
                         ? '1px solid rgba(16,185,129,0.2)'
-                        : '1px solid rgba(255,255,255,0.05)',
+                        : 'var(--color-stat-border, 1px solid rgba(255,255,255,0.05))',
                     }}
                   >
                     <p
                       className="font-display font-bold text-xl"
-                      style={{ color: highlighted ? '#10b981' : '#9ca3af' }}
+                      style={{ color: highlighted ? 'var(--color-accent-green, #10b981)' : 'var(--color-stat-text-inactive, #9ca3af)' }}
                     >
                       {step.stat}
                     </p>
@@ -219,7 +218,7 @@ export default function FinancialEducation() {
         >
           <p className="text-gray-500 text-base">
             Most people stop at Stage 2.{' '}
-            <span style={{ color: '#10b981' }} className="font-semibold">
+            <span style={{ color: 'var(--color-accent-green, #10b981)' }} className="font-semibold">
               TradeCraft helps you reach Stage 3 and 4.
             </span>
           </p>
