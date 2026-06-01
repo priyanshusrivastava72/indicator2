@@ -96,7 +96,7 @@ function TabButton({ aud, isActive, onClick, index }) {
         style={{
           borderLeft: `2.5px solid ${isActive ? '#10b981' : 'rgba(255,255,255,0.05)'}`,
         }}
-        className="relative flex items-center gap-4 px-5 py-4 rounded-r-2xl border-y border-r transition-all duration-300 overflow-hidden"
+        className={`relative flex items-center gap-4 px-5 py-4 rounded-r-2xl border-y border-r transition-all duration-300 overflow-hidden ${isActive ? 'active-tab-div' : ''}`}
       >
         {/* Active background layout transition */}
         {isActive && (
@@ -138,7 +138,7 @@ function TabButton({ aud, isActive, onClick, index }) {
           </div>
           <p
             className="font-display font-bold text-sm truncate transition-colors duration-300"
-            style={{ color: isActive ? '#fff' : '#666' }}
+            style={{ color: isActive ? 'var(--color-tab-text-active, #fff)' : 'var(--color-tab-text-inactive, #666)' }}
           >
             {aud.title}
           </p>
@@ -175,7 +175,7 @@ function DetailPanel({ aud }) {
       <div
         className="relative h-full rounded-3xl overflow-hidden"
         style={{
-          background: 'linear-gradient(160deg, rgba(14,14,14,0.95), rgba(8,8,8,0.98))',
+          background: 'var(--color-detail-panel-bg, linear-gradient(160deg, rgba(14,14,14,0.95), rgba(8,8,8,0.98)))',
           border: '1px solid rgba(16,185,129,0.15)',
           boxShadow: '0 30px 80px -25px rgba(16,185,129,0.1), inset 0 1px 0 rgba(255,255,255,0.03)',
         }}
@@ -318,8 +318,7 @@ export default function TargetAudience() {
   return (
     <section
       id="target-audience"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#050505' }}
+      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background soft ambient radial glow */}
       <div

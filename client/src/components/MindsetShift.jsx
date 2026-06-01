@@ -51,8 +51,7 @@ export default function MindsetShift() {
   return (
     <section
       id="mindset-shift"
-      className="py-28 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#050505' }}
+      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Subtle center glow */}
       <div
@@ -162,7 +161,7 @@ export default function MindsetShift() {
                       <div className="flex items-center justify-between gap-4">
                         <h3
                           className="text-lg font-bold transition-colors duration-300"
-                          style={{ color: isActive || isHighlight ? skill.color : '#e5e7eb' }}
+                          style={{ color: isActive || isHighlight ? skill.color : 'var(--color-text-inactive, #e5e7eb)' }}
                         >
                           {skill.name}
                           {isHighlight && (
@@ -180,14 +179,14 @@ export default function MindsetShift() {
                         </h3>
                         <span
                           className="text-xs font-mono shrink-0 transition-colors duration-300"
-                          style={{ color: isActive ? skill.color : '#4b5563' }}
+                          style={{ color: isActive ? skill.color : 'var(--color-text-inactive-desc, #4b5563)' }}
                         >
                           {skill.time}
                         </span>
                       </div>
                       <p
                         className="text-sm mt-1 leading-relaxed transition-colors duration-300"
-                        style={{ color: isActive ? '#9ca3af' : '#4b5563' }}
+                        style={{ color: isActive ? 'var(--color-text-active-desc, #9ca3af)' : 'var(--color-text-inactive-desc, #4b5563)' }}
                       >
                         {skill.what}
                       </p>

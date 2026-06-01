@@ -192,8 +192,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#050505' }}
+      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background soft ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -249,7 +248,7 @@ export default function HowItWorks() {
             <div
               className="w-full h-full rounded-2xl border overflow-hidden relative flex flex-col justify-between"
               style={{
-                backgroundColor: '#0a0a0a',
+                backgroundColor: 'var(--color-terminal-bg, #0a0a0a)',
                 borderColor: 'rgba(255,255,255,0.05)',
                 boxShadow: '0 25px 60px -30px rgba(16,185,129,0.12), inset 0 1px 0 rgba(255,255,255,0.03)',
               }}
@@ -282,7 +281,7 @@ export default function HowItWorks() {
                 <div
                   key={step.id}
                   onClick={() => setActiveStep(step.id)}
-                  className="group cursor-pointer rounded-2xl border transition-all duration-300 relative overflow-hidden"
+                  className={`group cursor-pointer rounded-2xl border transition-all duration-300 relative overflow-hidden ${isActive ? 'active-step-card' : ''}`}
                   style={{
                     backgroundColor: isActive ? 'rgba(16,185,129,0.04)' : 'rgba(10,10,10,0.3)',
                     borderColor: isActive ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.04)',

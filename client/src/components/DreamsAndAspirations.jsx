@@ -157,8 +157,7 @@ export default function DreamsAndAspirations() {
   return (
     <section
       id="dreams-section"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#050505' }}
+      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background radial orbs ( strictly emerald ) */}
       <div className="absolute inset-0 pointer-events-none">

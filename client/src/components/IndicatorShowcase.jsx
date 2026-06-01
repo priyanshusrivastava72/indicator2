@@ -15,8 +15,7 @@ export default function IndicatorShowcase() {
   return (
     <section
       id="indicator"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5"
-      style={{ backgroundColor: '#050505' }}
+      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -86,7 +85,7 @@ export default function IndicatorShowcase() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className="w-full relative flex items-center justify-between p-4 rounded-xl border transition-all duration-300 text-left"
+                    className={`w-full relative flex items-center justify-between p-4 rounded-xl border transition-all duration-300 text-left ${activeTab === tab.id ? 'active-showcase-btn' : ''}`}
                     style={{
                       backgroundColor: activeTab === tab.id ? 'rgba(16,185,129,0.06)' : 'rgba(10,10,10,0.4)',
                       borderColor: activeTab === tab.id ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.04)',
@@ -101,7 +100,7 @@ export default function IndicatorShowcase() {
                       </div>
                       <span
                         className="text-xs font-bold transition-colors duration-300"
-                        style={{ color: activeTab === tab.id ? '#fff' : '#666' }}
+                        style={{ color: activeTab === tab.id ? 'var(--color-tab-text-active, #fff)' : 'var(--color-tab-text-inactive, #666)' }}
                       >
                         {tab.label}
                       </span>
@@ -132,7 +131,7 @@ export default function IndicatorShowcase() {
             <div
               className="rounded-3xl border overflow-hidden h-full flex flex-col justify-between"
               style={{
-                backgroundColor: 'rgba(8,8,8,0.95)',
+                backgroundColor: 'var(--color-terminal-bg, rgba(8,8,8,0.95))',
                 borderColor: 'rgba(255,255,255,0.05)',
                 boxShadow: '0 30px 70px -30px rgba(16,185,129,0.1)',
               }}

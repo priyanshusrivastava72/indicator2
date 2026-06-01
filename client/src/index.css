@@ -20,7 +20,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
@@ -63,31 +63,45 @@ html {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   GLOBAL LIGHT THEME OVERRIDES
+   GLOBAL LIGHT THEME OVERRIDES (STRIPE/APPLE STYLE HIGH-END AESTHETICS)
    ────────────────────────────────────────────────────────────────────────── */
 .light {
-  --color-dark: #f9fafb;
+  --color-dark: #f4f7f6;
   --color-dark-100: #ffffff;
-  --color-dark-200: #f3f4f6;
-  --color-dark-300: #e5e7eb;
-  --color-dark-400: #d1d5db;
+  --color-dark-200: #ebf1ee;
+  --color-dark-300: #dbe5e0;
+  --color-dark-400: #cbd7d2;
+  
+  /* Additional Light Mode Helpers */
+  --color-terminal-bg: #f8fafc;
+  --color-detail-panel-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(243, 244, 246, 0.98));
+  --color-text-inactive: #4b5563;
+  --color-text-inactive-desc: #6b7280;
+  --color-text-active-desc: #1f2937;
+  --color-tab-text-active: #047857;
+  --color-tab-text-inactive: #4b5563;
 }
 
 .light body {
-  background-color: #f9fafb !important;
+  background-color: #f4f7f6 !important;
   color: #1f2937 !important;
+  /* Beautiful premium multi-colored fixed background orbs */
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(59, 130, 246, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 10% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(20, 184, 166, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.04) 0%, transparent 50%) !important;
+  background-attachment: fixed !important;
 }
 
-/* ── Section Background Overrides ── */
+/* Transparent sections so the beautiful fixed background shines through */
 .light section {
-  background-color: #f9fafb !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-}
-.light section:nth-of-type(even) {
-  background-color: #f3f4f6 !important;
+  background-color: transparent !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 
-/* ── Typography Overrides ── */
+/* Typography Overrides */
 .light h1, 
 .light h2, 
 .light h3, 
@@ -106,34 +120,61 @@ html {
 .light p,
 .light .text-gray-300,
 .light .text-gray-400 {
-  color: #4b5563 !important;
+  color: #374151 !important;
 }
 
 .light .text-gray-500 {
-  color: #6b7280 !important;
+  color: #4b5563 !important;
 }
 
 .light .text-gray-600 {
-  color: #9ca3af !important;
+  color: #6b7280 !important;
 }
 
-/* ── Glassmorphism and Panels ── */
+.light .text-gray-200,
+.light .text-gray-100 {
+  color: #1f2937 !important;
+}
+
+/* Accent Color Overrides for High Contrast */
+.light .text-emerald-400,
+.light .text-emerald-500 {
+  color: #047857 !important;
+}
+.light .text-red-400,
+.light .text-red-500 {
+  color: #dc2626 !important;
+}
+
+/* Premium Layered Glassmorphic Card Overrides */
 .light .glass-card {
-  background-color: rgba(255, 255, 255, 0.75) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(25px) !important;
+  box-shadow: 
+    0 1px 2px rgba(16, 185, 129, 0.01),
+    0 12px 24px -10px rgba(0, 0, 0, 0.03),
+    0 40px 80px -20px rgba(16, 185, 129, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 .light .glass-panel {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(30px) !important;
+  box-shadow: 
+    0 1px 3px rgba(16, 185, 129, 0.01),
+    0 20px 40px -15px rgba(0, 0, 0, 0.04),
+    0 60px 100px -25px rgba(16, 185, 129, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
 }
 
-/* ── Header / Navigation ── */
+/* Navigation Overrides */
 .light header {
-  background-color: rgba(250, 250, 250, 0.8) !important;
-  border-color: rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
 }
 
 .light header a {
@@ -144,53 +185,69 @@ html {
   color: #111827 !important;
 }
 
-/* ── Border overrides ── */
+/* Border overrides */
 .light .border-white\/5,
 .light .border-white\/10 {
   border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-/* ── Outline & Ghost Button Overrides in Light Mode ── */
+/* Outline & Ghost Button Overrides */
 .light button.border-white\/10,
 .light button.border-white\/5,
 .light a.border-white\/10,
 .light a.border-white\/5 {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
   color: #111827 !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 .light button.border-white\/10:hover,
 .light button.border-white\/5:hover,
 .light a.border-white\/10:hover,
 .light a.border-white\/5:hover {
   background-color: rgba(0, 0, 0, 0.04) !important;
-}
-
-.light .bg-dark,
-.light .bg-dark-100,
-.light .bg-dark-200,
-.light .bg-dark-300,
-.light .bg-dark-400 {
-  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .light .bg-dark-150 {
-  background-color: #f3f4f6 !important;
+  background-color: #f1f5f9 !important;
 }
 
-/* ── Custom scrollbar ── */
+/* Scrollbars */
 .light ::-webkit-scrollbar-track {
-  background: #f9fafb;
+  background: #f4f7f6;
 }
 .light ::-webkit-scrollbar-thumb {
-  background: #e5e7eb;
+  background: #e2e8f0;
 }
 .light ::-webkit-scrollbar-thumb:hover {
   background: #10b981;
 }
 
-/* ── Simulated Grid Line Colors ── */
-.light svg line {
-  stroke: rgba(0, 0, 0, 0.06) !important;
+/* Dynamic grid lines and labels in light mode */
+.light svg line,
+.light svg path[stroke*="rgba(255,255,255"] {
+  stroke: rgba(0, 0, 0, 0.08) !important;
+}
+.light #indicator svg text {
+  fill: #4b5563 !important;
+}
+.light #indicator svg text[fill="#ffffff"] {
+  fill: #ffffff !important;
+}
+
+/* Technical Monospace Badges & Pills */
+.light span.font-mono:not(button *, .bg-emerald-500 *, .text-emerald-400),
+.light .font-mono:not(button *, .bg-emerald-500 *, .text-emerald-400) {
+  background-color: rgba(16, 185, 129, 0.06) !important;
+  color: #047857 !important;
+  border-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Clean grid line replacement globally for light mode */
+.light div[style*="linear-gradient(rgba(255,255,255"] {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px) !important;
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -198,200 +255,247 @@ html {
    ────────────────────────────────────────────────────────────────────────── */
 
 /* 1. Dreams and Aspirations */
-.light #dreams-section .grid > div > div {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+.light #dreams-section .rounded-3xl {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+.light #dreams-section .group:hover > div {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(16, 185, 129, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #dreams-section span.font-mono {
-  background-color: rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
   color: #4b5563 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 2. Ecosystem Pillars */
 .light #ecosystem .grid > div > div {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+.light #ecosystem .grid > div > div:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(16, 185, 129, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #ecosystem span.font-mono {
-  background-color: rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
   color: #4b5563 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 .light #ecosystem div.font-mono {
-  background-color: rgba(0, 0, 0, 0.03) !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 3. Learning Roadmap */
 .light #roadmap-section .w-14 {
   background-color: #ffffff !important;
-  border-color: rgba(16, 185, 129, 0.4) !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08) !important;
 }
 .light #roadmap-section .rounded-2xl.w-full {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+.light #roadmap-section .group:hover .rounded-2xl.w-full {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(16, 185, 129, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 /* 4. Indicator Showcase */
 .light #indicator button {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
-.light #indicator button:has(.text-emerald-500) {
-  background-color: rgba(16, 185, 129, 0.06) !important;
-  border-color: rgba(16, 185, 129, 0.25) !important;
+.light #indicator button.active-showcase-btn {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.03) !important;
 }
 .light #indicator .lg\:col-span-8 > div {
-  background-color: #ffffff !important;
+  background-color: var(--color-terminal-bg) !important;
   border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #indicator div.bg-dark {
-  background-color: #f9fafb !important;
+  background-color: transparent !important;
 }
 .light #indicator .bg-dark-300 {
   background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
 }
 
 /* 5. How It Works */
 .light #how-it-works .lg\:col-span-5 > div {
-  background-color: #ffffff !important;
+  background-color: var(--color-terminal-bg) !important;
   border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #how-it-works .lg\:col-span-7 > div {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: none !important;
 }
-.light #how-it-works .lg\:col-span-7 > div:has(.text-emerald-500) {
-  background-color: rgba(16, 185, 129, 0.05) !important;
-  border-color: rgba(16, 185, 129, 0.25) !important;
+.light #how-it-works .lg\:col-span-7 > div.active-step-card {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 8px 24px rgba(16, 185, 129, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #how-it-works .bg-white\/5 {
-  background-color: #f3f4f6 !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 
 /* 6. Target Audience */
 .light #target-audience button > div {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: none !important;
 }
-.light #target-audience button:has(.text-emerald-500) > div {
-  background-color: rgba(16, 185, 129, 0.05) !important;
-  border-color: rgba(16, 185, 129, 0.25) !important;
+.light #target-audience button > div.active-tab-div {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 4px 12px rgba(16, 185, 129, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #target-audience .lg\:col-span-8 .rounded-3xl {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+  background: var(--color-detail-panel-bg) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 /* 7. Problem Section */
 .light #problem-section .space-y-4 > div {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 .light #problem-section .space-y-4 > div:hover {
   background: rgba(239, 68, 68, 0.04) !important;
-  border-color: rgba(239, 68, 68, 0.25) !important;
+  border-color: rgba(239, 68, 68, 0.2) !important;
 }
 
 /* 8. Mindset Shift */
 .light #mindset-shift .space-y-3 > div {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 .light #mindset-shift .space-y-3 > div:hover {
   background: rgba(16, 185, 129, 0.05) !important;
   border-color: rgba(16, 185, 129, 0.25) !important;
 }
 .light #mindset-shift .lg\:grid > div:nth-child(2) {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #mindset-shift .bg-white\/3 {
-  background-color: #f3f4f6 !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
 }
 
 /* 9. Career vs Education */
 .light #career-vs-education .max-w-5xl {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.03) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 15px 30px -10px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #career-vs-education .grid {
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 .light #career-vs-education .grid > div {
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 .light #career-vs-education .grid:first-child {
   background-color: rgba(0, 0, 0, 0.01) !important;
 }
-.light #career-vs-education .grid:first-child > div:nth-child(2) {
-  background-color: rgba(239, 68, 68, 0.02) !important;
-}
-.light #career-vs-education .grid:first-child > div:nth-child(3) {
-  background-color: rgba(16, 185, 129, 0.03) !important;
-}
 
 /* 10. Financial Education */
 .light #financial-education .max-w-5xl > div {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #financial-education .max-w-5xl > div:has(.text-emerald-500) {
   background-color: rgba(16, 185, 129, 0.03) !important;
-  border-color: rgba(16, 185, 129, 0.25) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
 }
 .light #financial-education .max-w-5xl > div .rounded-xl {
-  background-color: #f9fafb !important;
-  border-color: rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  border-color: rgba(0, 0, 0, 0.03) !important;
 }
 .light #financial-education .max-w-5xl > div:has(.text-emerald-500) .rounded-xl {
-  background-color: rgba(16, 185, 129, 0.05) !important;
-  border-color: rgba(16, 185, 129, 0.15) !important;
+  background-color: rgba(16, 185, 129, 0.04) !important;
+  border-color: rgba(16, 185, 129, 0.1) !important;
 }
 
 /* 11. Live Trades Ledger */
 .light #live-trades .bg-dark-100 {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.01),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #live-trades .bg-dark-100\/40 {
-  background-color: rgba(255, 255, 255, 0.4) !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 .light #live-trades .bg-white\/5 {
-  background-color: #ffffff !important;
-  border-color: rgba(16, 185, 129, 0.35) !important;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 
+    0 8px 24px rgba(16, 185, 129, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
 }
 .light #live-trades .shadow-xl {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
 .light #live-trades .bg-white\/\[0\.01\] {
-  background-color: #f9fafb !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(0, 0, 0, 0.01) !important;
+  border-color: rgba(0, 0, 0, 0.03) !important;
 }
 .light #live-trades span.bg-white\/5 {
-  background-color: #f3f4f6 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
   color: #4b5563 !important;
-}
-.light #live-trades .border-white\/5 {
-  border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 /* 12. FAQ Accordion */
@@ -402,31 +506,30 @@ html {
   color: #10b981 !important;
 }
 .light #faq-section .border-b {
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 13. Social Proof & Testimonials */
 .light #social-proof .glass-card {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #social-proof .w-full.h-40 {
-  background-color: #f3f4f6 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 .light #social-proof .w-10.h-10 {
-  background-color: #f3f4f6 !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
   color: #111827 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 .light #social-proof .flex.-space-x-4 > div {
   border-color: #ffffff !important;
   background-color: #e5e7eb !important;
   color: #4b5563 !important;
-}
-.light #social-proof .flex.-space-x-4 > div.bg-emerald-500 {
-  background-color: #10b981 !important;
-  color: #ffffff !important;
 }
 
 /* 14. Curriculum Accordion */
@@ -437,45 +540,46 @@ html {
   color: #10b981 !important;
 }
 .light #curriculum-section button div.border {
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
 }
 .light #curriculum-section button div.border.bg-emerald-500\/10 {
-  background-color: rgba(16, 185, 129, 0.1) !important;
-  border-color: rgba(16, 185, 129, 0.25) !important;
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
 }
 .light #curriculum-section .border-b {
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* 15. Pricing Cards */
 .light #pricing .grid > div {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 .light #pricing .grid > div.border-emerald-500\/50 {
-  background-color: rgba(16, 185, 129, 0.02) !important;
-  border-color: rgba(16, 185, 129, 0.4) !important;
-  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(16, 185, 129, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
 }
 .light #pricing h3.text-emerald-400 {
   color: #059669 !important;
-}
-.light #pricing svg.text-emerald-500 {
-  color: #10b981 !important;
 }
 
 /* 16. Footer Overrides */
 .light footer {
   background-color: #f3f4f6 !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
 .light footer .mb-16.p-6 {
-  background-color: rgba(239, 68, 68, 0.03) !important;
-  border-color: rgba(239, 68, 68, 0.12) !important;
+  background-color: rgba(239, 68, 68, 0.02) !important;
+  border-color: rgba(239, 68, 68, 0.08) !important;
 }
 .light footer a.w-10 {
-  background-color: rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
   color: #4b5563 !important;
 }
 .light footer a.w-10:hover {
@@ -483,11 +587,5 @@ html {
   color: #ffffff !important;
 }
 .light footer .border-t {
-  border-color: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.04) !important;
 }
-.light footer .text-white {
-  color: #111827 !important;
-}
-
-
-

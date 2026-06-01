@@ -126,7 +126,6 @@ export default function EcosystemPillars() {
     <section
       id="ecosystem"
       className="py-24 md:py-32 bg-dark relative border-t border-white/5 overflow-hidden"
-      style={{ backgroundColor: '#050505' }}
     >
       {/* Background glow effects */}
       <div className="absolute inset-0 pointer-events-none">
