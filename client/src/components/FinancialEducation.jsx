@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, PiggyBank, TrendingUp, Gem, ArrowDown } from 'lucide-react';
+import { Briefcase, PiggyBank, TrendingUp, Gem, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
@@ -64,8 +64,7 @@ export default function FinancialEducation() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-5"
-            style={{ color: '#10b981' }}
+            className="font-mono text-sm tracking-widest uppercase mb-5 text-emerald-500 font-bold"
           >
             Why Financial Education Matters
           </motion.p>
@@ -78,7 +77,7 @@ export default function FinancialEducation() {
           >
             Most people learn how to earn.
             <br />
-            <span style={{ color: '#10b981' }}>
+            <span className="text-emerald-500">
               Few learn how money works.
             </span>
           </motion.h2>
@@ -94,116 +93,132 @@ export default function FinancialEducation() {
           </motion.p>
         </div>
 
-        {/* Steps — Vertical Timeline Style */}
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+        {/* Steps — Linked Stage Progression Timeline */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
           {steps.map((step, i) => {
             const Icon = step.icon;
             const highlighted = step.isHighlighted;
 
             return (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className={`relative rounded-2xl p-8 group overflow-hidden ${highlighted ? 'highlighted-education-card' : ''}`}
-                style={{
-                  background: highlighted
-                    ? 'rgba(16,185,129,0.06)'
-                    : 'var(--color-card-bg, rgba(255,255,255,0.02))',
-                  border: highlighted
-                    ? '1px solid rgba(16,185,129,0.25)'
-                    : '1px solid var(--color-card-border, rgba(255,255,255,0.06))',
-                }}
-              >
-                {/* Glow on highlighted cards */}
-                {highlighted && (
-                  <div
-                    className="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
-                    style={{
-                      background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)',
-                    }}
-                  />
-                )}
-
-                {/* Step number */}
-                <div
-                  className="absolute top-6 right-6 font-display font-bold text-7xl select-none pointer-events-none leading-none"
+              <div key={step.title} className="relative h-full flex flex-col">
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className={`relative rounded-[2rem] p-6 md:p-7 group overflow-hidden flex-1 flex flex-col justify-between ${
+                    highlighted ? 'highlighted-education-card' : ''
+                  }`}
                   style={{
-                    color: highlighted ? 'var(--color-watermark-active, rgba(16,185,129,0.08))' : 'var(--color-watermark-inactive, rgba(255,255,255,0.03))',
+                    background: highlighted
+                      ? 'rgba(16,185,129,0.06)'
+                      : 'var(--color-card-bg, rgba(255,255,255,0.02))',
+                    border: highlighted
+                      ? '1px solid rgba(16,185,129,0.25)'
+                      : '1px solid var(--color-card-border, rgba(255,255,255,0.06))',
                   }}
                 >
-                  0{i + 1}
-                </div>
-
-                <div className="relative z-10">
-                  {/* Icon + Tag */}
-                  <div className="flex items-start gap-4 mb-6">
+                  {/* Glow on highlighted cards */}
+                  {highlighted && (
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      className="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
                       style={{
-                        background: highlighted
-                          ? 'rgba(16,185,129,0.15)'
-                          : 'var(--color-icon-bg, rgba(255,255,255,0.05))',
-                        color: highlighted ? 'var(--color-accent-green, #10b981)' : '#6b7280',
-                        border: highlighted
-                          ? '1px solid rgba(16,185,129,0.3)'
-                          : 'var(--color-icon-border, 1px solid rgba(255,255,255,0.08))',
+                        background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)',
                       }}
-                    >
-                      <Icon size={22} />
-                    </div>
-                    <div>
-                      <p
-                        className="text-xs font-mono uppercase tracking-widest mb-1"
-                        style={{ color: highlighted ? 'var(--color-accent-green, #10b981)' : 'var(--color-text-inactive-desc, #4b5563)' }}
-                      >
-                        {step.subtitle}
-                      </p>
-                      <h3 className="text-2xl font-display font-bold text-white">
-                        {step.title}
-                      </h3>
-                    </div>
-                  </div>
+                    />
+                  )}
 
-                  {/* Description */}
-                  <p className="text-gray-400 leading-relaxed text-sm mb-6">
-                    {step.desc}
-                  </p>
-
-                  {/* Stat */}
+                  {/* Step number watermark */}
                   <div
-                    className="flex items-center justify-between rounded-xl px-5 py-3"
+                    className="absolute top-6 right-6 font-display font-black text-6xl select-none pointer-events-none leading-none z-0"
                     style={{
-                      background: highlighted
-                        ? 'rgba(16,185,129,0.1)'
-                        : 'var(--color-stat-bg, rgba(255,255,255,0.03))',
-                      border: highlighted
-                        ? '1px solid rgba(16,185,129,0.2)'
-                        : 'var(--color-stat-border, 1px solid rgba(255,255,255,0.05))',
+                      color: highlighted
+                        ? 'var(--color-watermark-active, rgba(16,185,129,0.08))'
+                        : 'var(--color-watermark-inactive, rgba(255,255,255,0.03))',
                     }}
                   >
-                    <p
-                      className="font-display font-bold text-xl"
-                      style={{ color: highlighted ? 'var(--color-accent-green, #10b981)' : 'var(--color-stat-text-inactive, #9ca3af)' }}
-                    >
-                      {step.stat}
-                    </p>
-                    <p className="text-xs text-gray-600 font-mono">{step.statLabel}</p>
+                    0{i + 1}
                   </div>
-                </div>
 
-                {/* Pulsing dot for highlighted */}
-                {highlighted && (
-                  <motion.div
-                    className="absolute bottom-6 left-6 w-2 h-2 rounded-full"
-                    style={{ backgroundColor: '#10b981' }}
-                    animate={{ scale: [1, 1.8, 1], opacity: [0.8, 0.2, 0.8] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                  />
-                )}
-              </motion.div>
+                  <div className="relative z-10 flex-1 flex flex-col justify-between">
+                    {/* Icon + Tag */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 z-10"
+                        style={{
+                          background: highlighted
+                            ? 'rgba(16,185,129,0.15)'
+                            : 'var(--color-icon-bg, rgba(255,255,255,0.05))',
+                          color: highlighted ? 'var(--color-accent-green, #10b981)' : '#6b7280',
+                          border: highlighted
+                            ? '1px solid rgba(16,185,129,0.3)'
+                            : 'var(--color-icon-border, 1px solid rgba(255,255,255,0.08))',
+                        }}
+                      >
+                        <Icon size={20} />
+                      </div>
+                      <div>
+                        <p
+                          className="text-[10px] font-mono uppercase tracking-widest mb-0.5"
+                          style={{
+                            color: highlighted
+                              ? 'var(--color-accent-green, #10b981)'
+                              : 'var(--color-text-inactive-desc, #8a99ad)',
+                          }}
+                        >
+                          {step.subtitle}
+                        </p>
+                        <h3 className="text-xl font-display font-bold text-white">
+                          {step.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                      {step.desc}
+                    </p>
+
+                    {/* Stat box at bottom of card */}
+                    <div
+                      className="flex items-center justify-between rounded-2xl px-4 py-2.5 mt-auto"
+                      style={{
+                        background: highlighted
+                          ? 'rgba(16,185,129,0.1)'
+                          : 'var(--color-stat-bg, rgba(255,255,255,0.03))',
+                        border: highlighted
+                          ? '1px solid rgba(16,185,129,0.2)'
+                          : 'var(--color-stat-border, 1px solid rgba(255,255,255,0.05))',
+                      }}
+                    >
+                      <p
+                        className="font-display font-bold text-sm md:text-base"
+                        style={{
+                          color: highlighted
+                            ? 'var(--color-accent-green, #10b981)'
+                            : 'var(--color-stat-text-inactive, #d1d5db)',
+                        }}
+                      >
+                        {step.stat}
+                      </p>
+                      <p className="text-[10px] text-gray-400 font-mono tracking-wide uppercase">
+                        {step.statLabel}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Pulsing dot for active/highlighted steps */}
+                  {highlighted && (
+                    <motion.div
+                      className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: '#10b981' }}
+                      animate={{ scale: [1, 1.8, 1], opacity: [0.8, 0.2, 0.8] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                    />
+                  )}
+                </motion.div>
+              </div>
             );
           })}
         </div>
@@ -216,7 +231,7 @@ export default function FinancialEducation() {
           transition={{ delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-gray-500 text-base">
+          <p className="text-gray-500 text-sm md:text-base">
             Most people stop at Stage 2.{' '}
             <span style={{ color: 'var(--color-accent-green, #10b981)' }} className="font-semibold">
               TradeCraft helps you reach Stage 3 and 4.

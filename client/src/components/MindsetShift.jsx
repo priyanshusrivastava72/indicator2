@@ -7,33 +7,37 @@ const skills = [
     icon: Car,
     name: 'Learning to Drive',
     time: '2–3 months of daily practice',
+    percent: 25,
     what: 'Nobody drives perfectly on day 1. You stalled the engine, hit curbs, panicked in traffic — and eventually it became second nature.',
     color: '#60a5fa',
-    glow: 'rgba(96,165,250,0.1)',
+    glow: 'rgba(96,165,250,0.06)',
   },
   {
     icon: GraduationCap,
     name: 'Clearing a Competitive Exam',
     time: '1–3 years of preparation',
+    percent: 100,
     what: 'JEE, UPSC, CA, MBA — everyone who cleared it had a study plan, a routine, and months of consistent effort. Nobody cracked it overnight.',
     color: '#f472b6',
-    glow: 'rgba(244,114,182,0.1)',
+    glow: 'rgba(244,114,182,0.06)',
   },
   {
     icon: Dumbbell,
     name: 'Getting Fit at the Gym',
     time: '3–6 months to see real results',
+    percent: 45,
     what: 'You showed up even when you didn\'t feel like it. Progress was slow at first, then it compounded. Skipping days set you back. Consistency was everything.',
     color: '#fb923c',
-    glow: 'rgba(251,146,60,0.1)',
+    glow: 'rgba(251,146,60,0.06)',
   },
   {
     icon: TrendingUp,
     name: 'Trading',
     time: '3–6 months to consistency',
+    percent: 45,
     what: 'You master risk management, market structure, and disciplined execution — exactly like any other skill worth having.',
     color: '#10b981',
-    glow: 'rgba(16,185,129,0.1)',
+    glow: 'rgba(16,185,129,0.06)',
     highlight: true,
   },
 ];
@@ -65,13 +69,12 @@ export default function MindsetShift() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-20 text-left">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-4"
-            style={{ color: '#10b981' }}
+            className="font-mono text-sm tracking-widest uppercase mb-4 text-emerald-500 font-bold"
           >
             The Mindset Shift
           </motion.p>
@@ -79,19 +82,19 @@ export default function MindsetShift() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.08 }}
             className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6"
           >
             Trading is a skill.
             <br />
-            <span style={{ color: '#6b7280' }}>Not a shortcut.</span>
+            <span className="text-gray-500">Not a shortcut.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg leading-relaxed max-w-xl"
+            transition={{ delay: 0.16 }}
+            className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl"
           >
             Nobody expects to code a startup after a weekend tutorial. Trading demands
             the same professional respect — structured learning, deliberate practice,
@@ -102,7 +105,7 @@ export default function MindsetShift() {
         {/* Two-column layout */}
         <div className="grid lg:grid-cols-2 gap-8 items-start">
 
-          {/* Left: Skill Cards */}
+          {/* Left: Skill Cards with commitment progress bars */}
           <div className="space-y-3">
             {skills.map((skill, i) => {
               const Icon = skill.icon;
@@ -118,7 +121,7 @@ export default function MindsetShift() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   onMouseEnter={() => setActive(i)}
                   onMouseLeave={() => setActive(null)}
-                  className="relative overflow-hidden rounded-2xl cursor-default"
+                  className="relative overflow-hidden rounded-2xl cursor-default text-left"
                   style={{
                     background: isActive
                       ? skill.glow
@@ -126,12 +129,12 @@ export default function MindsetShift() {
                       ? 'rgba(16,185,129,0.04)'
                       : 'rgba(255,255,255,0.02)',
                     border: isActive
-                      ? `1px solid ${skill.color}40`
+                      ? `1px solid ${skill.color}35`
                       : isHighlight
                       ? '1px solid rgba(16,185,129,0.2)'
                       : '1px solid rgba(255,255,255,0.05)',
                     transition: 'all 0.3s ease',
-                    padding: '24px 28px',
+                    padding: '22px 26px',
                   }}
                 >
                   {/* Left color bar */}
@@ -143,9 +146,9 @@ export default function MindsetShift() {
                     }}
                   />
 
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-start gap-5">
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 mt-1"
                       style={{
                         background: isActive || isHighlight
                           ? `${skill.color}20`
@@ -157,39 +160,44 @@ export default function MindsetShift() {
                       <Icon size={20} />
                     </div>
 
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                         <h3
-                          className="text-lg font-bold transition-colors duration-300"
+                          className="text-base font-bold transition-colors duration-300 flex items-center gap-2"
                           style={{ color: isActive || isHighlight ? skill.color : 'var(--color-text-inactive, #e5e7eb)' }}
                         >
                           {skill.name}
                           {isHighlight && (
                             <span
-                              className="ml-3 text-xs font-mono font-normal px-2 py-0.5 rounded-full"
-                              style={{
-                                background: 'rgba(16,185,129,0.15)',
-                                color: '#10b981',
-                                border: '1px solid rgba(16,185,129,0.3)',
-                              }}
+                              className="text-[9px] font-mono font-normal px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 light:bg-emerald-500/5 light:text-emerald-700 shrink-0"
                             >
                               You're here
                             </span>
                           )}
                         </h3>
                         <span
-                          className="text-xs font-mono shrink-0 transition-colors duration-300"
-                          style={{ color: isActive ? skill.color : 'var(--color-text-inactive-desc, #4b5563)' }}
+                          className="text-[10px] font-mono shrink-0 transition-colors duration-300 text-gray-500"
                         >
                           {skill.time}
                         </span>
                       </div>
+
                       <p
-                        className="text-sm mt-1 leading-relaxed transition-colors duration-300"
-                        style={{ color: isActive ? 'var(--color-text-active-desc, #9ca3af)' : 'var(--color-text-inactive-desc, #4b5563)' }}
+                        className="text-sm leading-relaxed transition-colors duration-300 text-gray-300"
                       >
                         {skill.what}
                       </p>
+
+                      {/* Visual Time-commitment Progress Bar */}
+                      <div className="skill-duration-bar">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: isActive || isHighlight ? `${skill.percent}%` : '8%' }}
+                          transition={{ duration: 0.5, ease: 'easeOut' }}
+                          style={{ backgroundColor: skill.color }}
+                          className="h-full rounded-full"
+                        />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -203,7 +211,7 @@ export default function MindsetShift() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-3xl p-10 relative overflow-hidden"
+            className="rounded-3xl p-8 md:p-10 relative overflow-hidden text-left"
             style={{
               background: 'rgba(16,185,129,0.04)',
               border: '1px solid rgba(16,185,129,0.15)',
@@ -219,8 +227,7 @@ export default function MindsetShift() {
 
             <div className="relative z-10">
               <p
-                className="font-mono text-xs tracking-widest uppercase mb-8"
-                style={{ color: '#10b981' }}
+                className="font-mono text-xs tracking-widest uppercase mb-8 text-emerald-500 font-bold"
               >
                 Your Learning Path
               </p>
@@ -267,8 +274,7 @@ export default function MindsetShift() {
                       <div className="pb-6">
                         <h4 className="text-white font-bold text-base mb-0.5">{item.label}</h4>
                         <p
-                          className="text-xs font-mono"
-                          style={{ color: '#10b981', opacity: 0.7 }}
+                          className="text-xs font-mono text-emerald-400 opacity-80"
                         >
                           {item.sub}
                         </p>
@@ -286,7 +292,7 @@ export default function MindsetShift() {
                   color: 'var(--color-callout-text, #9ca3af)',
                 }}
               >
-                <span className="font-semibold" style={{ color: 'var(--color-callout-header, #ffffff)' }}>The honest truth:</span> Consistent profitability
+                <span className="font-semibold text-white light:text-gray-900">The honest truth:</span> Consistent profitability
                 takes 3–6 months of focused practice. Anyone promising overnight results is lying.
               </div>
             </div>

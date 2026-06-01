@@ -361,6 +361,187 @@ html {
   background: linear-gradient(90deg, rgba(16, 185, 129, 0.2), transparent);
 }
 
+/* Base Graphics and Widget Component Styles */
+.prog-timeline-container {
+  position: relative;
+}
+
+.prog-step-connector {
+  position: absolute;
+  top: 2.25rem;
+  left: calc(50% + 2rem);
+  width: calc(100% - 4rem);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.2), rgba(255, 255, 255, 0.05));
+  z-index: 1;
+}
+
+.light .prog-step-connector {
+  background: linear-gradient(90deg, rgba(4, 120, 87, 0.25), rgba(0, 0, 0, 0.05)) !important;
+}
+
+/* Curriculum Portal Preview HUD */
+.curriculum-portal-hud {
+  background: var(--color-detail-panel-bg, linear-gradient(160deg, rgba(14, 14, 14, 0.95), rgba(8, 8, 8, 0.98)));
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 
+    0 25px 70px -30px rgba(16, 185, 129, 0.08), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.light .curriculum-portal-hud {
+  background: var(--color-detail-panel-bg) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+.video-mockup-frame {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 1rem;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+}
+
+.light .video-mockup-frame {
+  background: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Diagnostic system widgets */
+.system-warning-hud {
+  border: 1px solid rgba(239, 68, 68, 0.15) !important;
+  background: rgba(239, 68, 68, 0.015) !important;
+}
+
+.light .system-warning-hud {
+  border-color: rgba(220, 38, 38, 0.12) !important;
+  background-color: rgba(220, 38, 38, 0.01) !important;
+}
+
+.danger-gauge-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.light .danger-gauge-bar {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.skill-duration-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  margin-top: 0.625rem;
+  width: 100%;
+}
+.light .skill-duration-bar {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.pricing-value-gauge {
+  height: 5px;
+  border-radius: 2.5px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.light .pricing-value-gauge {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.floating-cta-hud {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 0.875rem 1.25rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.light .floating-cta-hud {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+}
+
+.hero-hud-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.hero-hud-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.light .hero-hud-card {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+}
+
+.light .hero-hud-card:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: inline-block;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.light .pulse-dot {
+  background-color: #047857 !important;
+  box-shadow: 0 0 6px #047857 !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    box-shadow: 0 0 12px #10b981;
+  }
+}
+
 /* ──────────────────────────────────────────────────────────────────────────
    GLOBAL LIGHT THEME OVERRIDES (STRIPE/APPLE STYLE HIGH-END AESTHETICS)
    ────────────────────────────────────────────────────────────────────────── */
@@ -898,25 +1079,27 @@ html {
 
 
 /* 10. Financial Education */
-.light #financial-education .max-w-5xl > div {
+.light #financial-education .max-w-7xl > div {
   background-color: rgba(255, 255, 255, 0.45) !important;
   border-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 2rem !important;
   box-shadow: 
     0 10px 30px -10px rgba(0, 0, 0, 0.03),
     inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
-.light #financial-education .max-w-5xl > div.highlighted-education-card {
+.light #financial-education .max-w-7xl > div.highlighted-education-card {
   background-color: rgba(16, 185, 129, 0.08) !important;
   border-color: rgba(16, 185, 129, 0.3) !important;
+  border-radius: 2rem !important;
   box-shadow: 
     0 10px 30px -10px rgba(16, 185, 129, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
-.light #financial-education .max-w-5xl > div div[style*="background"] {
-  background-color: var(--color-stat-bg) !important;
-  border-color: var(--color-stat-border) !important;
+.light #financial-education .max-w-7xl > div div[style*="background"] {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
 }
-.light #financial-education .max-w-5xl > div.highlighted-education-card div[style*="background"] {
+.light #financial-education .max-w-7xl > div.highlighted-education-card div[style*="background"] {
   background-color: rgba(16, 185, 129, 0.1) !important;
   border-color: rgba(16, 185, 129, 0.2) !important;
 }

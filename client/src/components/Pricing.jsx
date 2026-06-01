@@ -13,28 +13,45 @@ const Pricing = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {/* Basic Tier */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-8 rounded-3xl h-full flex flex-col"
+            className="glass-card p-8 rounded-3xl h-full flex flex-col justify-between text-left"
           >
-            <h3 className="text-2xl font-bold text-white mb-2">Course Only</h3>
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-4xl font-bold text-white">₹4,999</span>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">Course Only</h3>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-4xl font-bold text-white">₹4,999</span>
+              </div>
+              <p className="text-gray-400 text-xs mb-6">Perfect for those who just want to learn the framework.</p>
+              
+              {/* Graphical Inclusion Meter */}
+              <div className="pricing-value-gauge">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '35%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="h-full bg-gray-500 rounded-full"
+                />
+              </div>
+              <div className="flex justify-between text-[9px] font-mono text-gray-500 mb-6 uppercase tracking-wide">
+                <span>System Inclusions</span>
+                <span>35% Score</span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Full 6-Phase Course</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Risk Management Framework</li>
+                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Indicator Access</li>
+                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Private Community</li>
+              </ul>
             </div>
-            <p className="text-gray-400 text-sm mb-8">Perfect for those who just want to learn the framework.</p>
             
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> Full 6-Phase Course</li>
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> Risk Management Framework</li>
-              <li className="flex items-center gap-3 text-gray-500 text-sm"><X size={16} /> No Indicator Access</li>
-              <li className="flex items-center gap-3 text-gray-500 text-sm"><X size={16} /> No Private Community</li>
-            </ul>
-            
-            <button className="w-full h-12 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-colors">
+            <button className="w-full h-12 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-colors cursor-pointer mt-auto">
               Get Started
             </button>
           </motion.div>
@@ -45,29 +62,46 @@ const Pricing = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="glass-card p-8 rounded-3xl relative border-emerald-500/50 bg-gradient-to-b from-emerald-500/10 to-transparent shadow-[0_0_50px_rgba(16,185,129,0.1)] h-[105%] flex flex-col z-10"
+            className="glass-card p-8 rounded-3xl relative border-emerald-500/50 bg-gradient-to-b from-emerald-500/10 to-transparent shadow-[0_0_50px_rgba(16,185,129,0.1)] h-full flex flex-col justify-between z-10 text-left"
           >
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-emerald-500/30">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[9px] font-mono font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-emerald-500/30">
               Most Popular
             </div>
             
-            <h3 className="text-2xl font-bold text-emerald-400 mb-2">The Complete System</h3>
-            <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-gray-500 line-through text-lg">₹19,999</span>
+            <div>
+              <h3 className="text-2xl font-bold text-emerald-400 mb-2 mt-2">The Complete System</h3>
+              <div className="flex items-baseline gap-2 mb-0.5">
+                <span className="text-gray-500 line-through text-base">₹19,999</span>
+              </div>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-5xl font-bold text-white">₹9,999</span>
+              </div>
+              <p className="text-gray-400 text-xs mb-6">Everything you need to execute consistently.</p>
+
+              {/* Graphical Inclusion Meter */}
+              <div className="pricing-value-gauge">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="h-full bg-emerald-500 rounded-full"
+                />
+              </div>
+              <div className="flex justify-between text-[9px] font-mono text-emerald-400 mb-6 uppercase tracking-wide">
+                <span>System Inclusions</span>
+                <span className="font-bold">100% Score</span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3 text-gray-200 text-xs font-semibold"><Check size={18} className="text-emerald-500 shrink-0" /> Everything in Basic</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Smart Trading Indicator</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Private Community Access</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Lifetime Content Updates</li>
+              </ul>
             </div>
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-bold text-white">₹9,999</span>
-            </div>
-            <p className="text-gray-400 text-sm mb-8">Everything you need to execute consistently.</p>
             
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-gray-200 text-sm font-medium"><Check size={18} className="text-emerald-500" /> Everything in Basic</li>
-              <li className="flex items-center gap-3 text-white text-sm font-bold"><Check size={18} className="text-emerald-500" /> Smart Trading Indicator</li>
-              <li className="flex items-center gap-3 text-white text-sm font-bold"><Check size={18} className="text-emerald-500" /> Private Community Access</li>
-              <li className="flex items-center gap-3 text-white text-sm font-bold"><Check size={18} className="text-emerald-500" /> Lifetime Content Updates</li>
-            </ul>
-            
-            <button className="w-full h-14 rounded-lg bg-emerald-500 text-white font-bold text-lg hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
+            <button className="w-full h-14 rounded-lg bg-emerald-500 text-white font-bold text-base hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20 cursor-pointer mt-auto">
               Enroll Now
             </button>
           </motion.div>
@@ -78,22 +112,39 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="glass-card p-8 rounded-3xl h-full flex flex-col"
+            className="glass-card p-8 rounded-3xl h-full flex flex-col justify-between text-left"
           >
-            <h3 className="text-2xl font-bold text-white mb-2">1-on-1 Mentorship</h3>
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-4xl font-bold text-white">₹24,999</span>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">1-on-1 Mentorship</h3>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-4xl font-bold text-white">₹24,999</span>
+              </div>
+              <p className="text-gray-400 text-xs mb-6">Personalized guidance to accelerate your journey.</p>
+
+              {/* Graphical Inclusion Meter */}
+              <div className="pricing-value-gauge">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="h-full bg-emerald-500 rounded-full"
+                />
+              </div>
+              <div className="flex justify-between text-[9px] font-mono text-emerald-400 mb-6 uppercase tracking-wide">
+                <span>System Inclusions</span>
+                <span className="font-bold">100% + VIP</span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Everything in Pro</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> 4x 1-on-1 Mentorship Calls</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Personal Trade Reviews</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Direct WhatsApp Access</li>
+              </ul>
             </div>
-            <p className="text-gray-400 text-sm mb-8">Personalized guidance to accelerate your journey.</p>
             
-            <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> Everything in Pro</li>
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> 4x 1-on-1 Mentorship Calls</li>
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> Personal Trade Reviews</li>
-              <li className="flex items-center gap-3 text-gray-300 text-sm"><Check size={16} className="text-emerald-500" /> Direct WhatsApp Access</li>
-            </ul>
-            
-            <button className="w-full h-12 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-colors">
+            <button className="w-full h-12 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-colors cursor-pointer mt-auto">
               Apply Now
             </button>
           </motion.div>

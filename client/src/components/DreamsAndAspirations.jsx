@@ -12,6 +12,7 @@ const dreams = [
     badge: 'CAPEX_UPGRADE',
     span: 'lg:col-span-1',
     decor: 'speedometer',
+    image: '/assets/dream_car.png'
   },
   {
     id: 'home',
@@ -22,6 +23,7 @@ const dreams = [
     badge: 'ASSET_ACQUISITION',
     span: 'lg:col-span-2',
     decor: 'blueprint',
+    image: '/assets/luxury_villa.png'
   },
   {
     id: 'travel',
@@ -32,6 +34,7 @@ const dreams = [
     badge: 'LOCATION_INDEPENDENCE',
     span: 'lg:col-span-2',
     decor: 'timezones',
+    image: '/assets/travel_freedom.png'
   },
   {
     id: 'security',
@@ -62,6 +65,7 @@ const dreams = [
     badge: 'PSYCHOLOGICAL_EDGE',
     span: 'lg:col-span-2',
     decor: 'mini-chart',
+    image: '/assets/trading_station.png'
   },
 ];
 
@@ -341,40 +345,58 @@ export default function DreamsAndAspirations() {
                   />
 
                   {/* Vector decorations */}
-                  <VectorDecor type={dream.decor} isHovered={isHovered} />
+                  {!dream.image && <VectorDecor type={dream.decor} isHovered={isHovered} />}
 
                   <div className="p-7 md:p-8 flex flex-col h-full justify-between relative z-10">
                     <div>
-                      {/* Top Row: Icon & Tech Badge */}
-                      <div className="flex items-center justify-between mb-8">
-                        <div className="dream-icon-wrapper">
-                          <Icon size={20} strokeWidth={isHovered ? 2.2 : 1.8} />
+                      <div className={dream.image && dream.span === 'lg:col-span-2' ? 'grid grid-cols-1 sm:grid-cols-12 gap-6 items-center' : ''}>
+                        <div className={dream.image && dream.span === 'lg:col-span-2' ? 'sm:col-span-7 text-left' : 'text-left'}>
+                          {/* Top Row: Icon & Tech Badge */}
+                          <div className="flex items-center justify-between mb-6">
+                            <div className="dream-icon-wrapper">
+                              <Icon size={20} strokeWidth={isHovered ? 2.2 : 1.8} />
+                            </div>
+
+                            {/* Monospace Tech Badge */}
+                            <span className="dream-badge">
+                              {dream.badge}
+                            </span>
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="font-display font-bold text-white text-xl mb-2 flex items-center gap-1.5 group-hover:text-emerald-500 light:group-hover:text-emerald-700 transition-colors duration-300">
+                            {dream.title}
+                            <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-emerald-500 light:text-emerald-700" />
+                          </h3>
+
+                          {/* Primary Description */}
+                          <p className="text-emerald-400 light:text-emerald-700 text-sm md:text-base font-semibold leading-relaxed mb-3">
+                            {dream.desc}
+                          </p>
+
+                          {/* Divider */}
+                          <div className="dream-card-divider my-3.5" />
+
+                          {/* Secondary detailed text */}
+                          <p className="text-gray-300 light:text-gray-600 text-[13px] md:text-sm leading-relaxed">
+                            {dream.longDesc}
+                          </p>
                         </div>
 
-                        {/* Monospace Tech Badge */}
-                        <span className="dream-badge">
-                          {dream.badge}
-                        </span>
+                        {dream.image && dream.span === 'lg:col-span-2' && (
+                          <div className="sm:col-span-5 h-40 rounded-2xl border border-white/10 overflow-hidden relative shadow-lg">
+                            <img src={dream.image} alt={dream.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                          </div>
+                        )}
                       </div>
 
-                      {/* Title */}
-                      <h3 className="font-display font-bold text-white text-xl mb-2.5 flex items-center gap-1.5 group-hover:text-emerald-500 light:group-hover:text-emerald-700 transition-colors duration-300">
-                        {dream.title}
-                        <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-emerald-500 light:text-emerald-700" />
-                      </h3>
-
-                      {/* Primary Description */}
-                      <p className="text-gray-300 light:text-gray-700 text-sm font-semibold leading-relaxed mb-3">
-                        {dream.desc}
-                      </p>
+                      {/* Image layout for 1-column card (e.g. Dream Car) */}
+                      {dream.image && dream.span === 'lg:col-span-1' && (
+                        <div className="w-full h-28 rounded-xl border border-white/10 overflow-hidden relative mt-4 shadow-lg">
+                          <img src={dream.image} alt={dream.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        </div>
+                      )}
                     </div>
-
-                    <div className="dream-card-divider" />
-
-                    {/* Secondary detailed text */}
-                    <p className="text-gray-500 light:text-gray-500 text-xs leading-relaxed lg:max-w-[95%]">
-                      {dream.longDesc}
-                    </p>
                   </div>
                 </div>
               </motion.div>

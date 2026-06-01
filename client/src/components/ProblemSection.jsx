@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Target, Brain, Dices, ShieldAlert, X } from 'lucide-react';
+import { Target, Brain, Dices, ShieldAlert, AlertTriangle } from 'lucide-react';
 
 const problems = [
   {
@@ -45,6 +45,45 @@ const problems = [
   },
 ];
 
+/* ─── Diagnostic danger gauge widget ─── */
+function DangerGauge({ num, isHovered }) {
+  let percentage = '0%';
+  let statusText = 'STABLE';
+
+  if (num === '01') {
+    percentage = '90%';
+    statusText = 'NO SYSTEM';
+  } else if (num === '02') {
+    percentage = '75%';
+    statusText = 'EMOTION BIAS';
+  } else if (num === '03') {
+    percentage = '100%';
+    statusText = 'ZERO EDGE';
+  } else if (num === '04') {
+    percentage = '95%';
+    statusText = 'CAPITAL AT RISK';
+  }
+
+  return (
+    <div className="w-32 hidden lg:flex flex-col justify-center shrink-0 text-left">
+      <div className="flex justify-between text-[8px] font-mono mb-1 tracking-wider">
+        <span className="text-gray-500">DIAGNOSTIC</span>
+        <span className={isHovered ? 'text-red-500 font-bold' : 'text-gray-600'}>
+          {statusText}
+        </span>
+      </div>
+      <div className="danger-gauge-bar relative">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: isHovered ? percentage : '15%' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="h-full bg-red-500"
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ProblemSection() {
   const [hovered, setHovered] = useState(null);
 
@@ -68,13 +107,12 @@ export default function ProblemSection() {
 
         {/* Header — Left-aligned, editorial */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
-          <div>
+          <div className="text-left">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-sm tracking-widest uppercase mb-4"
-              style={{ color: '#ef4444' }}
+              className="font-mono text-sm tracking-widest uppercase mb-4 text-red-500 font-bold"
             >
               The Reality
             </motion.p>
@@ -87,8 +125,7 @@ export default function ProblemSection() {
             >
               Why most
               <br />
-              beginners{' '}
-              <span style={{ color: '#ef4444' }}>fail.</span>
+              beginners <span className="text-red-500">fail.</span>
             </motion.h2>
           </div>
           <motion.p
@@ -96,14 +133,14 @@ export default function ProblemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-500 max-w-sm text-base leading-relaxed"
+            className="text-gray-500 max-w-sm text-base leading-relaxed text-left"
           >
             It's not about being smart. It's about having a structured,
             emotion-free process. These are the four mistakes that kill 90% of accounts.
           </motion.p>
         </div>
 
-        {/* Problem Cards — Stacked rows with numbers */}
+        {/* Problem Cards — Stacked rows with diagnostic gauges */}
         <div className="space-y-4">
           {problems.map((p, i) => {
             const Icon = p.icon;
@@ -118,15 +155,16 @@ export default function ProblemSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className="relative overflow-hidden rounded-2xl cursor-default group"
+                className={`relative overflow-hidden rounded-2xl cursor-default group border transition-all duration-300 ${
+                  isHovered ? 'system-warning-hud shadow-lg shadow-red-900/5' : ''
+                }`}
                 style={{
                   background: isHovered
                     ? 'rgba(239,68,68,0.06)'
                     : 'rgba(255,255,255,0.02)',
-                  border: isHovered
-                    ? '1px solid rgba(239,68,68,0.25)'
-                    : '1px solid rgba(255,255,255,0.05)',
-                  transition: 'background 0.3s ease, border 0.3s ease',
+                  borderColor: isHovered
+                    ? 'rgba(239,68,68,0.25)'
+                    : 'rgba(255,255,255,0.05)',
                 }}
               >
                 {/* Subtle left accent bar */}
@@ -139,40 +177,55 @@ export default function ProblemSection() {
                   }}
                 />
 
-                <div className="flex flex-col md:flex-row md:items-center gap-6 p-7 md:p-8 pl-8 md:pl-10">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-7 pl-8 md:pl-10">
 
                   {/* Number */}
                   <div
-                    className="font-display font-bold text-5xl md:text-6xl select-none leading-none shrink-0 transition-colors duration-300 w-20 text-center md:text-left"
-                    style={{ color: isHovered ? 'var(--color-problem-num-active, rgba(239,68,68,0.5))' : 'var(--color-problem-num-inactive, rgba(255,255,255,0.06))' }}
+                    className="font-display font-bold text-4xl md:text-5xl select-none leading-none shrink-0 transition-colors duration-300 w-12 text-left"
+                    style={{
+                      color: isHovered
+                        ? 'var(--color-problem-num-active, rgba(239,68,68,0.5))'
+                        : 'var(--color-problem-num-inactive, rgba(255,255,255,0.06))',
+                    }}
                   >
                     {p.num}
                   </div>
 
                   {/* Icon */}
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
                     style={{
-                      background: isHovered ? 'rgba(239,68,68,0.15)' : 'var(--color-problem-icon-bg, rgba(255,255,255,0.04))',
+                      background: isHovered
+                        ? 'rgba(239,68,68,0.15)'
+                        : 'var(--color-problem-icon-bg, rgba(255,255,255,0.04))',
                       color: isHovered ? '#ef4444' : '#6b7280',
-                      border: isHovered ? '1px solid rgba(239,68,68,0.3)' : 'var(--color-problem-icon-border, 1px solid rgba(255,255,255,0.07))',
+                      border: isHovered
+                        ? '1px solid rgba(239,68,68,0.3)'
+                        : 'var(--color-problem-icon-border, 1px solid rgba(255,255,255,0.07))',
                     }}
                   >
-                    <Icon size={22} />
+                    <Icon size={20} />
                   </div>
 
                   {/* Title + desc */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-1">
+                  <div className="flex-1 min-w-0 text-left">
+                    <h3 className="text-lg md:text-xl font-display font-bold text-white mb-0.5">
                       {p.title}
                     </h3>
                     <p
-                      className="text-sm leading-relaxed transition-colors duration-300"
-                      style={{ color: isHovered ? 'var(--color-problem-desc-active, #d1d5db)' : 'var(--color-problem-desc-inactive, #6b7280)' }}
+                      className="text-xs md:text-sm leading-relaxed transition-colors duration-300"
+                      style={{
+                        color: isHovered
+                          ? 'var(--color-problem-desc-active, #f3f4f6)'
+                          : 'var(--color-problem-desc-inactive, #9ca3af)',
+                      }}
                     >
                       {isHovered ? p.fullDesc : p.shortDesc}
                     </p>
                   </div>
+
+                  {/* Diagnostic Warning Gauge (Middle Column on Desktop) */}
+                  <DangerGauge num={p.num} isHovered={isHovered} />
 
                   {/* Stat — always visible but shifts color */}
                   <div
@@ -180,28 +233,32 @@ export default function ProblemSection() {
                     style={{ minWidth: '140px' }}
                   >
                     <div
-                      className="font-display font-bold text-3xl transition-colors duration-300"
-                      style={{ color: isHovered ? '#ef4444' : '#374151' }}
+                      className="font-display font-bold text-2xl md:text-3xl transition-colors duration-300"
+                      style={{ color: isHovered ? '#ef4444' : '#6b7280' }}
                     >
                       {p.stat}
                     </div>
                     <div
-                      className="text-xs font-mono leading-tight mt-1 max-w-[130px] ml-auto"
-                      style={{ color: isHovered ? 'var(--color-problem-stat-active, #9ca3af)' : 'var(--color-problem-stat-inactive, #374151)' }}
+                      className="text-[10px] font-mono leading-tight mt-1 max-w-[130px] ml-auto uppercase tracking-wide"
+                      style={{
+                        color: isHovered
+                          ? 'var(--color-problem-stat-active, #d1d5db)'
+                          : 'var(--color-problem-stat-inactive, #6b7280)',
+                      }}
                     >
                       {p.statLabel}
                     </div>
                   </div>
 
-                  {/* X icon on hover */}
+                  {/* Warning Alert Icon indicator */}
                   <div
                     className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
                     style={{
-                      background: isHovered ? 'rgba(239,68,68,0.15)' : 'transparent',
+                      background: isHovered ? 'rgba(239,68,68,0.12)' : 'transparent',
                       color: isHovered ? '#ef4444' : 'transparent',
                     }}
                   >
-                    <X size={16} />
+                    <AlertTriangle size={15} />
                   </div>
                 </div>
               </motion.div>
@@ -227,7 +284,7 @@ export default function ProblemSection() {
           >
             The good news?
           </div>
-          <p className="text-gray-400 text-base">
+          <p className="text-gray-400 text-sm md:text-base">
             Every single one of these mistakes is{' '}
             <span className="text-white font-semibold">teachable and fixable</span> with the right system.
           </p>

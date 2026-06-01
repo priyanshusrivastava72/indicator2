@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { X, Check } from 'lucide-react';
+import { X, Check, TrendingUp } from 'lucide-react';
 
 const rows = [
   {
@@ -86,75 +86,176 @@ export default function CareerVsEducation() {
           </motion.p>
         </div>
 
-        {/* Comparison Table */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="overflow-x-auto pb-4 scrollbar-thin"
-        >
-          <div className="comp-table-wrapper max-w-5xl mx-auto rounded-3xl overflow-hidden min-w-[700px] lg:min-w-0">
-            {/* Table Header */}
-            <div className="grid grid-cols-3 comp-table-header">
-              <div className="comp-header-cell comp-header-cell-topic">
-                <span>Comparison Area</span>
+        {/* Comparison Grid (2-column layout on large screens) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+          
+          {/* Left Column: Comparison Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 overflow-x-auto pb-4 scrollbar-thin"
+          >
+            <div className="comp-table-wrapper rounded-3xl overflow-hidden min-w-[650px] lg:min-w-0">
+              {/* Table Header */}
+              <div className="grid grid-cols-3 comp-table-header">
+                <div className="comp-header-cell comp-header-cell-topic">
+                  <span>Comparison Area</span>
+                </div>
+                <div className="comp-header-cell comp-header-cell-traditional">
+                  <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-red-500/10 text-red-400 border border-red-500/20 light:bg-red-500/10 light:text-red-700 light:border-red-500/15 mb-2">
+                    Traditional Path
+                  </span>
+                  <span className="flex items-center gap-1.5 font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+                    Career Only
+                  </span>
+                </div>
+                <div className="comp-header-cell comp-header-cell-growth">
+                  <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 light:bg-emerald-500/10 light:text-emerald-700 light:border-emerald-500/15 mb-2">
+                    Accelerated Growth
+                  </span>
+                  <span className="flex items-center gap-1.5 font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                    Career + Finance
+                  </span>
+                </div>
               </div>
-              <div className="comp-header-cell comp-header-cell-traditional">
-                <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-red-500/10 text-red-400 border border-red-500/20 light:bg-red-500/10 light:text-red-700 light:border-red-500/15 mb-2">
-                  Traditional Path
-                </span>
-                <span className="flex items-center gap-1.5 font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
-                  Career Only
-                </span>
+
+              {/* Rows */}
+              {rows.map((row, i) => (
+                <motion.div
+                  key={row.topic}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="grid grid-cols-3 comp-row group"
+                >
+                  {/* Topic */}
+                  <div className="comp-cell-topic">
+                    <span className="comp-num">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="text-sm font-semibold tracking-wide">{row.topic}</span>
+                  </div>
+
+                  {/* Traditional */}
+                  <div className="comp-cell-traditional">
+                    <div className="comp-icon-box comp-icon-box-red">
+                      <X size={13} strokeWidth={2.5} />
+                    </div>
+                    <span className="text-sm leading-relaxed">{row.traditional}</span>
+                  </div>
+
+                  {/* Growth */}
+                  <div className="comp-cell-growth">
+                    <div className="comp-icon-box comp-icon-box-green">
+                      <Check size={13} strokeWidth={2.5} />
+                    </div>
+                    <span className="text-sm leading-relaxed">{row.growth}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Column: Visual Trajectory Chart Mockup */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 flex flex-col justify-between"
+          >
+            <div className="glass-card rounded-3xl p-6 border border-white/5 bg-dark-100/50 flex flex-col justify-between h-full relative overflow-hidden shadow-xl">
+              {/* Decorative light */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
+              
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="text-[9px] font-mono tracking-widest text-emerald-400 font-bold uppercase">EQUITY SIMULATION</span>
+                    <h3 className="text-xl font-bold text-white mt-1">10-Year Trajectory Gap</h3>
+                  </div>
+                  <span className="px-2 py-0.5 rounded-full text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    CAGR PROJECTION
+                  </span>
+                </div>
+                
+                <p className="text-gray-400 text-xs leading-relaxed mb-6">
+                  Traditional career income rises linearly, whereas adding structured trading compounding triggers exponential asset acceleration.
+                </p>
+
+                {/* SVG Graph */}
+                <div className="h-44 w-full relative mb-6">
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 300 150" fill="none">
+                    {/* Grid lines */}
+                    <line x1="0" y1="30" x2="300" y2="30" stroke="rgba(255,255,255,0.03)" />
+                    <line x1="0" y1="75" x2="300" y2="75" stroke="rgba(255,255,255,0.03)" />
+                    <line x1="0" y1="120" x2="300" y2="120" stroke="rgba(255,255,255,0.03)" />
+
+                    {/* Path 1: Traditional Career Only (Linear gray line) */}
+                    <motion.path
+                      d="M 10 120 L 70 110 L 130 100 L 190 90 L 250 80 L 290 75"
+                      stroke="#4b5563"
+                      strokeWidth="2"
+                      strokeDasharray="4,4"
+                      fill="none"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5 }}
+                    />
+
+                    {/* Path 2: Career + Trading (Exponential green line) */}
+                    <motion.path
+                      d="M 10 120 Q 100 110 180 80 T 290 20"
+                      stroke="#10b981"
+                      strokeWidth="3.5"
+                      fill="none"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 2, ease: "easeOut" }}
+                    />
+                    
+                    {/* Pulsing trigger node */}
+                    <circle cx="290" cy="20" r="4" fill="#10b981" />
+                    
+                    {/* Axis Labels */}
+                    <text x="10" y="140" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace">Year 0</text>
+                    <text x="150" y="140" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace" textAnchor="middle">Year 5</text>
+                    <text x="290" y="140" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace" textAnchor="end">Year 10</text>
+
+                    <g transform="translate(260, 20)">
+                      <rect x="-42" y="-24" width="84" height="18" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
+                      <text x="0" y="-12" fill="#10b981" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">3.5X COMPLIANCE GAP</text>
+                    </g>
+                  </svg>
+                </div>
               </div>
-              <div className="comp-header-cell comp-header-cell-growth">
-                <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 light:bg-emerald-500/10 light:text-emerald-700 light:border-emerald-500/15 mb-2">
-                  Accelerated Growth
-                </span>
-                <span className="flex items-center gap-1.5 font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                  Career + Finance
-                </span>
+
+              {/* Lower HUD Metrics */}
+              <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-4 mt-2 font-mono text-[10px]">
+                <div>
+                  <span className="text-gray-500 block">CAREER ONLY</span>
+                  <span className="text-gray-400 font-bold mt-0.5 block">₹12.0L</span>
+                </div>
+                <div className="border-l border-white/5 pl-3">
+                  <span className="text-gray-500 block">CAREER + TRADE</span>
+                  <span className="text-emerald-400 font-bold mt-0.5 block">₹42.8L</span>
+                </div>
+                <div className="border-l border-white/5 pl-3">
+                  <span className="text-gray-500 block">SURPLUS GAIN</span>
+                  <span className="text-emerald-400 font-bold mt-0.5 block flex items-center gap-0.5">
+                    <TrendingUp size={10} /> +256%
+                  </span>
+                </div>
               </div>
             </div>
+          </motion.div>
 
-            {/* Rows */}
-            {rows.map((row, i) => (
-              <motion.div
-                key={row.topic}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="grid grid-cols-3 comp-row group"
-              >
-                {/* Topic */}
-                <div className="comp-cell-topic">
-                  <span className="comp-num">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="text-sm font-semibold tracking-wide">{row.topic}</span>
-                </div>
-
-                {/* Traditional */}
-                <div className="comp-cell-traditional">
-                  <div className="comp-icon-box comp-icon-box-red">
-                    <X size={13} strokeWidth={2.5} />
-                  </div>
-                  <span className="text-sm leading-relaxed">{row.traditional}</span>
-                </div>
-
-                {/* Growth */}
-                <div className="comp-cell-growth">
-                  <div className="comp-icon-box comp-icon-box-green">
-                    <Check size={13} strokeWidth={2.5} />
-                  </div>
-                  <span className="text-sm leading-relaxed">{row.growth}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        </div>
 
         {/* Bottom tagline callout */}
         <motion.div
