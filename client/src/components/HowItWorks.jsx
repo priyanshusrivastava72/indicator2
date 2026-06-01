@@ -1,91 +1,363 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Activity, ShieldCheck, Crosshair, Play } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Activity, ShieldCheck, Crosshair, Play, Check } from 'lucide-react';
 
-const HowItWorks = () => {
-  const steps = [
-    {
-      num: '01',
-      icon: <Activity size={24} />,
-      title: 'Apply Indicator',
-      desc: 'Add the proprietary TradeCraft indicator directly to your TradingView chart. It instantly overlays trend zones, key levels, and momentum data.',
-      color: 'from-emerald-500/20 to-emerald-600/5',
-      borderColor: 'border-emerald-500/30'
-    },
-    {
-      num: '02',
-      icon: <ShieldCheck size={24} />,
-      title: 'Wait For Confirmation',
-      desc: 'Patience is an edge. Wait for the algorithm to flash a clear Buy or Sell signal that aligns with the higher timeframe trend zone.',
-      color: 'from-blue-500/20 to-blue-600/5',
-      borderColor: 'border-blue-500/30'
-    },
-    {
-      num: '03',
-      icon: <Crosshair size={24} />,
-      title: 'Manage Risk',
-      desc: 'Use our mathematical risk framework. Never risk more than 1% per trade. Define your stop-loss and take-profit targets mechanically.',
-      color: 'from-purple-500/20 to-purple-600/5',
-      borderColor: 'border-purple-500/30'
-    },
-    {
-      num: '04',
-      icon: <Play size={24} />,
-      title: 'Execute Trade',
-      desc: 'Click buy or sell with zero hesitation. Let the math and the probabilities play out without emotional interference.',
-      color: 'from-orange-500/20 to-orange-600/5',
-      borderColor: 'border-orange-500/30'
-    }
-  ];
+const steps = [
+  {
+    id: 'apply',
+    num: '01',
+    icon: Activity,
+    title: 'Apply Indicator',
+    label: 'INTEGRATE',
+    desc: 'Overlay the TradeCraft algorithm on your TradingView chart. It instantly maps out key institutional liquidity levels and trend zones, preparing your workspace.',
+  },
+  {
+    id: 'confirm',
+    num: '02',
+    icon: ShieldCheck,
+    title: 'Wait For Confirmation',
+    label: 'CONFLUENCE',
+    desc: 'Patience is your edge. The algorithm scans multiple timeframes, wait for it to confirm trend direction and print a high-probability BUY/SELL signal.',
+  },
+  {
+    id: 'risk',
+    num: '03',
+    icon: Crosshair,
+    title: 'Manage Risk Parameters',
+    label: 'PRESERVE',
+    desc: 'Enter parameters into the position sizing tool. Calculate your exact entry, stop-loss, and target boundaries mechanically to limit risk under 1% per trade.',
+  },
+  {
+    id: 'execute',
+    num: '04',
+    icon: Play,
+    title: 'Execute & Journal',
+    desc: 'Deploy the order to your broker panel with zero emotional hesitation. Log the trade parameters in your spreadsheet to audit outcomes.',
+  },
+];
+
+// Left side visual screens based on active step
+function TerminalVisual({ stepId }) {
+  if (stepId === 'apply') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
+        <div>
+          <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
+            <span>CHART_WORKSPACE_V1</span>
+            <span className="text-emerald-500">READY</span>
+          </div>
+          <div className="mt-4 space-y-1 text-[10px]">
+            <p className="text-emerald-400">&gt; Loading TradeCraft Engine...</p>
+            <p className="text-gray-500">&gt; Computing historical averages...</p>
+            <p className="text-gray-500">&gt; Rendering primary zones...</p>
+          </div>
+        </div>
+
+        {/* Mini simulated chart overlay */}
+        <div className="relative h-28 w-full border border-white/5 bg-dark-200/50 rounded-lg overflow-hidden flex items-end">
+          <div className="absolute inset-0 bg-emerald-500/[0.02]" />
+          <svg className="w-full h-full text-emerald-500/20" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <path d="M 0 35 L 20 30 L 40 32 L 60 15 L 80 18 L 100 10" fill="none" stroke="currentColor" strokeWidth="1" />
+          </svg>
+          <div className="absolute top-2 left-2 text-[8px] text-emerald-500/70 border border-emerald-500/20 px-1 rounded">
+            + TRADECRAFT OVERLAY ACTIVE
+          </div>
+        </div>
+
+        <div className="text-[9px] text-gray-600">
+          // STATUS: 124 KEY LIQUIDITY LEVELS RENDERED
+        </div>
+      </div>
+    );
+  }
+
+  if (stepId === 'confirm') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
+        <div>
+          <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
+            <span>CONFLUENCE_SCANNER</span>
+            <span className="text-emerald-400 animate-pulse">ANALYZING</span>
+          </div>
+          <div className="mt-4 space-y-1.5 text-[10px]">
+            <div className="flex justify-between"><span>M15 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+            <div className="flex justify-between"><span>H1 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+            <div className="flex justify-between"><span>H4 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+          </div>
+        </div>
+
+        {/* Flashing BUY signal mockup */}
+        <div className="my-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5 shadow-lg shadow-emerald-950/20">
+          <span className="text-[9px] text-emerald-500 font-bold tracking-widest uppercase">CONFLUENCE APPROVED</span>
+          <span className="text-lg font-black text-white tracking-widest flex items-center gap-1 animate-pulse">
+            ▲ BUY SIGNAL
+          </span>
+          <span className="text-[8px] text-gray-400">ENTRY TRIGGER LEVEL 24,120</span>
+        </div>
+
+        <div className="text-[9px] text-gray-600">
+          // SYSTEM STATE: READY TO CALCULATE POSITION
+        </div>
+      </div>
+    );
+  }
+
+  if (stepId === 'risk') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
+        <div>
+          <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
+            <span>POSITION_CALCULATOR</span>
+            <span className="text-emerald-500">LOADED</span>
+          </div>
+          
+          <div className="mt-4 space-y-2 text-[10px]">
+            <div className="flex justify-between border-b border-white/5 pb-1">
+              <span>Account Size:</span>
+              <span className="text-white">₹1,00,000</span>
+            </div>
+            <div className="flex justify-between border-b border-white/5 pb-1">
+              <span>Risk Margin (1%):</span>
+              <span className="text-emerald-400 font-bold">₹1,000</span>
+            </div>
+            <div className="flex justify-between border-b border-white/5 pb-1">
+              <span>Required SL:</span>
+              <span className="text-red-400">50 Points</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Computed size bubble */}
+        <div className="bg-white/5 border border-white/10 rounded-xl p-3.5 flex justify-between items-center">
+          <div>
+            <span className="text-[8px] text-gray-500 block">MAX QUANTITY</span>
+            <span className="text-sm font-bold text-white">20 Units</span>
+          </div>
+          <div className="text-right">
+            <span className="text-[8px] text-gray-500 block">RISK TO REWARD</span>
+            <span className="text-sm font-bold text-emerald-400">1 : 3.2</span>
+          </div>
+        </div>
+
+        <div className="text-[9px] text-gray-600">
+          // FORMULA: ACC_RISK / (ENTRY - SL) = SIZE
+        </div>
+      </div>
+    );
+  }
+
+  if (stepId === 'execute') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
+        <div>
+          <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
+            <span>EXECUTION_LOGGER</span>
+            <span className="text-emerald-500">SUCCESS</span>
+          </div>
+          
+          <div className="mt-4 space-y-1 text-[10px]">
+            <p className="text-gray-500">&gt; Dispatching order via API...</p>
+            <p className="text-emerald-400">&gt; Order Filled. Cost: ₹4,82,400</p>
+            <p className="text-gray-500">&gt; Recording parameters to database...</p>
+          </div>
+        </div>
+
+        {/* Order ticket receipt */}
+        <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <Check size={12} />
+            </div>
+            <div>
+              <span className="text-[9px] text-gray-500 block">NIFTY BUY TICKET</span>
+              <span className="text-xs font-bold text-white">20 Qty @ 24,120</span>
+            </div>
+          </div>
+          <span className="text-[9px] font-bold text-emerald-400">FILLED</span>
+        </div>
+
+        <div className="text-[9px] text-gray-600">
+          // JOURNALING ROUTINE COMPLETED &middot; STANDBY
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+export default function HowItWorks() {
+  const [activeStep, setActiveStep] = useState('apply');
 
   return (
-    <section className="py-24 bg-dark-100 relative border-t border-white/5">
+    <section
+      id="how-it-works"
+      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5"
+      style={{ backgroundColor: '#050505' }}
+    >
+      {/* Background soft ambient orbs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[350px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 65%)',
+            filter: 'blur(80px)',
+          }}
+        />
+      </div>
+
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.012]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="eyebrow">The Process</span>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2.5 justify-center mb-5"
+          >
+            <div className="w-5 h-px bg-emerald-500/50" />
+            <p className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
+              The Process
+            </p>
+            <div className="w-5 h-px bg-emerald-500/50" />
+          </motion.div>
+
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
             How The Indicator Works
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-500 text-base md:text-lg">
             A simple, mechanical 4-step execution process. No guesswork, no hesitation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        {/* Split screen dynamic dashboard layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-5xl mx-auto items-center">
           
-          {/* Connector Line (Desktop) */}
-          <div className="hidden lg:block absolute top-12 left-24 right-24 h-0.5 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-orange-500/20" />
-
-          {steps.map((step, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="relative"
+          {/* Left Side: Dynamic HUD Terminal Screen */}
+          <div className="lg:col-span-5 h-[340px] flex items-center justify-center">
+            <div
+              className="w-full h-full rounded-2xl border overflow-hidden relative flex flex-col justify-between"
+              style={{
+                backgroundColor: '#0a0a0a',
+                borderColor: 'rgba(255,255,255,0.05)',
+                boxShadow: '0 25px 60px -30px rgba(16,185,129,0.12), inset 0 1px 0 rgba(255,255,255,0.03)',
+              }}
             >
-              <div className={`w-24 h-24 mx-auto bg-dark-200 border ${step.borderColor} rounded-2xl flex items-center justify-center mb-8 relative z-10 shadow-xl overflow-hidden group`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-50 group-hover:opacity-100 transition-opacity`} />
-                <div className="text-white relative z-10">
-                  {step.icon}
+              {/* Top border glowing stripe */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-emerald-500/40" />
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStep}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full h-full"
+                >
+                  <TerminalVisual stepId={activeStep} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Right Side: Step Timeline Accordion List */}
+          <div className="lg:col-span-7 space-y-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isActive = activeStep === step.id;
+
+              return (
+                <div
+                  key={step.id}
+                  onClick={() => setActiveStep(step.id)}
+                  className="group cursor-pointer rounded-2xl border transition-all duration-300 relative overflow-hidden"
+                  style={{
+                    backgroundColor: isActive ? 'rgba(16,185,129,0.04)' : 'rgba(10,10,10,0.3)',
+                    borderColor: isActive ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.04)',
+                  }}
+                >
+                  {/* Left edge colored stripe */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="howItWorksActiveIndicator"
+                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-emerald-500"
+                    />
+                  )}
+
+                  <div className="p-5 flex items-start gap-4">
+                    {/* Step Icon */}
+                    <div
+                      className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 transition-colors duration-300"
+                      style={{
+                        backgroundColor: isActive ? 'rgba(16,185,129,0.1)' : 'rgba(255,255,255,0.02)',
+                        borderColor: isActive ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.06)',
+                        color: isActive ? '#10b981' : '#555',
+                      }}
+                    >
+                      <Icon size={18} />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      {/* Step label / num */}
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-mono text-[9px] font-bold text-gray-500">{step.num}</span>
+                        <span
+                          className="font-mono text-[9px] font-bold px-1.5 py-0.5 rounded"
+                          style={{
+                            backgroundColor: isActive ? 'rgba(16,185,129,0.1)' : 'rgba(255,255,255,0.02)',
+                            color: isActive ? '#34d399' : '#555',
+                          }}
+                        >
+                          {step.label}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3
+                        className="text-sm font-bold transition-colors duration-300"
+                        style={{ color: isActive ? '#fff' : '#888' }}
+                      >
+                        {step.title}
+                      </h3>
+
+                      {/* Description - expanded on active */}
+                      <AnimatePresence initial={false}>
+                        {isActive && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                            animate={{ height: 'auto', opacity: 1, marginTop: 8 }}
+                            exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <p className="text-gray-400 text-xs leading-relaxed">
+                              {step.desc}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
                 </div>
-                {/* Number Badge */}
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-dark border border-white/10 flex items-center justify-center text-xs font-bold text-gray-400">
-                  {step.num}
-                </div>
-              </div>
-              
-              <div className="text-center glass-card p-6 rounded-2xl h-[calc(100%-8rem)]">
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+              );
+            })}
+          </div>
+
         </div>
+
       </div>
     </section>
   );
-};
-
-export default HowItWorks;
+}

@@ -38,6 +38,7 @@ const rows = [
 export default function CareerVsEducation() {
   return (
     <section
+      id="career-vs-education"
       className="py-28 relative overflow-hidden border-t border-white/5"
       style={{ backgroundColor: '#07080a' }}
     >

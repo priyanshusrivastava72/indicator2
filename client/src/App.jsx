@@ -35,6 +35,14 @@ function App() {
   const cursorY = useSpring(0, springConfig);
 
   useEffect(() => {
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+    }
+
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       cursorX.set(e.clientX);

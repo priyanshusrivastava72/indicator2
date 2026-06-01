@@ -25,7 +25,7 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-24 bg-dark-100 relative">
+    <section id="social-proof" className="py-24 bg-dark-100 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">Real Results</span>

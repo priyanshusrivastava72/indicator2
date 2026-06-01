@@ -33,7 +33,7 @@ const Curriculum = () => {
   ];
 
   return (
-    <section className="py-24 bg-dark relative">
+    <section id="curriculum-section" className="py-24 bg-dark relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">The Curriculum</span>

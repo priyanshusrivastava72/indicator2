@@ -50,6 +50,7 @@ export default function ProblemSection() {
 
   return (
     <section
+      id="problem-section"
       className="py-28 relative overflow-hidden border-t border-white/5"
       style={{ backgroundColor: '#080909' }}
     >

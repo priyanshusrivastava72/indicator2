@@ -44,6 +44,7 @@ const steps = [
 export default function FinancialEducation() {
   return (
     <section
+      id="financial-education"
       className="py-28 relative overflow-hidden border-t border-white/5"
       style={{ backgroundColor: '#08090a' }}
     >

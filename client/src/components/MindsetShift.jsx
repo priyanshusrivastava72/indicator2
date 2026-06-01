@@ -50,6 +50,7 @@ export default function MindsetShift() {
 
   return (
     <section
+      id="mindset-shift"
       className="py-28 relative overflow-hidden border-t border-white/5"
       style={{ backgroundColor: '#050505' }}
     >

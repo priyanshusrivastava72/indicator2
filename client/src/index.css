@@ -20,6 +20,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -60,3 +61,433 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   GLOBAL LIGHT THEME OVERRIDES
+   ────────────────────────────────────────────────────────────────────────── */
+.light {
+  --color-dark: #f9fafb;
+  --color-dark-100: #ffffff;
+  --color-dark-200: #f3f4f6;
+  --color-dark-300: #e5e7eb;
+  --color-dark-400: #d1d5db;
+}
+
+.light body {
+  background-color: #f9fafb !important;
+  color: #1f2937 !important;
+}
+
+/* ── Section Background Overrides ── */
+.light section {
+  background-color: #f9fafb !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light section:nth-of-type(even) {
+  background-color: #f3f4f6 !important;
+}
+
+/* ── Typography Overrides ── */
+.light h1, 
+.light h2, 
+.light h3, 
+.light h4, 
+.light .text-white:not(
+  button, button *, 
+  .bg-emerald-500, .bg-emerald-500 *, 
+  a.bg-emerald-500, a.bg-emerald-500 *, 
+  .bg-emerald-600, .bg-emerald-600 *, 
+  .badge, .badge *,
+  span.font-mono
+) {
+  color: #111827 !important;
+}
+
+.light p,
+.light .text-gray-300,
+.light .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+.light .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.light .text-gray-600 {
+  color: #9ca3af !important;
+}
+
+/* ── Glassmorphism and Panels ── */
+.light .glass-card {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.light .glass-panel {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ── Header / Navigation ── */
+.light header {
+  background-color: rgba(250, 250, 250, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light header a {
+  color: #4b5563 !important;
+}
+
+.light header a:hover {
+  color: #111827 !important;
+}
+
+/* ── Border overrides ── */
+.light .border-white\/5,
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ── Outline & Ghost Button Overrides in Light Mode ── */
+.light button.border-white\/10,
+.light button.border-white\/5,
+.light a.border-white\/10,
+.light a.border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #111827 !important;
+}
+.light button.border-white\/10:hover,
+.light button.border-white\/5:hover,
+.light a.border-white\/10:hover,
+.light a.border-white\/5:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.light .bg-dark,
+.light .bg-dark-100,
+.light .bg-dark-200,
+.light .bg-dark-300,
+.light .bg-dark-400 {
+  background-color: #ffffff !important;
+}
+
+.light .bg-dark-150 {
+  background-color: #f3f4f6 !important;
+}
+
+/* ── Custom scrollbar ── */
+.light ::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+}
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* ── Simulated Grid Line Colors ── */
+.light svg line {
+  stroke: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   COMPONENT SPECIFIC LIGHT THEME CORRECTIONS
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Dreams and Aspirations */
+.light #dreams-section .grid > div > div {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+.light #dreams-section span.font-mono {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #4b5563 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 2. Ecosystem Pillars */
+.light #ecosystem .grid > div > div {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+.light #ecosystem span.font-mono {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #4b5563 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #ecosystem div.font-mono {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 3. Learning Roadmap */
+.light #roadmap-section .w-14 {
+  background-color: #ffffff !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1) !important;
+}
+.light #roadmap-section .rounded-2xl.w-full {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 4. Indicator Showcase */
+.light #indicator button {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #indicator button:has(.text-emerald-500) {
+  background-color: rgba(16, 185, 129, 0.06) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #indicator .lg\:col-span-8 > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+}
+.light #indicator div.bg-dark {
+  background-color: #f9fafb !important;
+}
+.light #indicator .bg-dark-300 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 5. How It Works */
+.light #how-it-works .lg\:col-span-5 > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+}
+.light #how-it-works .lg\:col-span-7 > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #how-it-works .lg\:col-span-7 > div:has(.text-emerald-500) {
+  background-color: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #how-it-works .bg-white\/5 {
+  background-color: #f3f4f6 !important;
+}
+
+/* 6. Target Audience */
+.light #target-audience button > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #target-audience button:has(.text-emerald-500) > div {
+  background-color: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #target-audience .lg\:col-span-8 .rounded-3xl {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 7. Problem Section */
+.light #problem-section .space-y-4 > div {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #problem-section .space-y-4 > div:hover {
+  background: rgba(239, 68, 68, 0.04) !important;
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+
+/* 8. Mindset Shift */
+.light #mindset-shift .space-y-3 > div {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #mindset-shift .space-y-3 > div:hover {
+  background: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #mindset-shift .lg\:grid > div:nth-child(2) {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05) !important;
+}
+.light #mindset-shift .bg-white\/3 {
+  background-color: #f3f4f6 !important;
+}
+
+/* 9. Career vs Education */
+.light #career-vs-education .max-w-5xl {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.03) !important;
+}
+.light #career-vs-education .grid {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #career-vs-education .grid > div {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #career-vs-education .grid:first-child {
+  background-color: rgba(0, 0, 0, 0.01) !important;
+}
+.light #career-vs-education .grid:first-child > div:nth-child(2) {
+  background-color: rgba(239, 68, 68, 0.02) !important;
+}
+.light #career-vs-education .grid:first-child > div:nth-child(3) {
+  background-color: rgba(16, 185, 129, 0.03) !important;
+}
+
+/* 10. Financial Education */
+.light #financial-education .max-w-5xl > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+.light #financial-education .max-w-5xl > div:has(.text-emerald-500) {
+  background-color: rgba(16, 185, 129, 0.03) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #financial-education .max-w-5xl > div .rounded-xl {
+  background-color: #f9fafb !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+.light #financial-education .max-w-5xl > div:has(.text-emerald-500) .rounded-xl {
+  background-color: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* 11. Live Trades Ledger */
+.light #live-trades .bg-dark-100 {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+}
+.light #live-trades .bg-dark-100\/40 {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #live-trades .bg-white\/5 {
+  background-color: #ffffff !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08) !important;
+}
+.light #live-trades .shadow-xl {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05) !important;
+}
+.light #live-trades .bg-white\/\[0\.01\] {
+  background-color: #f9fafb !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #live-trades span.bg-white\/5 {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  color: #4b5563 !important;
+}
+.light #live-trades .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 12. FAQ Accordion */
+.light #faq-section button span.text-white {
+  color: #111827 !important;
+}
+.light #faq-section button:hover span.text-white {
+  color: #10b981 !important;
+}
+.light #faq-section .border-b {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 13. Social Proof & Testimonials */
+.light #social-proof .glass-card {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #social-proof .w-full.h-40 {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #social-proof .w-10.h-10 {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light #social-proof .flex.-space-x-4 > div {
+  border-color: #ffffff !important;
+  background-color: #e5e7eb !important;
+  color: #4b5563 !important;
+}
+.light #social-proof .flex.-space-x-4 > div.bg-emerald-500 {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+/* 14. Curriculum Accordion */
+.light #curriculum-section button span.text-gray-300 {
+  color: #4b5563 !important;
+}
+.light #curriculum-section button:hover span {
+  color: #10b981 !important;
+}
+.light #curriculum-section button div.border {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+.light #curriculum-section button div.border.bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+.light #curriculum-section .border-b {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 15. Pricing Cards */
+.light #pricing .grid > div {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+.light #pricing .grid > div.border-emerald-500\/50 {
+  background-color: rgba(16, 185, 129, 0.02) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.1) !important;
+}
+.light #pricing h3.text-emerald-400 {
+  color: #059669 !important;
+}
+.light #pricing svg.text-emerald-500 {
+  color: #10b981 !important;
+}
+
+/* 16. Footer Overrides */
+.light footer {
+  background-color: #f3f4f6 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light footer .mb-16.p-6 {
+  background-color: rgba(239, 68, 68, 0.03) !important;
+  border-color: rgba(239, 68, 68, 0.12) !important;
+}
+.light footer a.w-10 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #4b5563 !important;
+}
+.light footer a.w-10:hover {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+}
+.light footer .border-t {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.light footer .text-white {
+  color: #111827 !important;
+}
+
+
+
