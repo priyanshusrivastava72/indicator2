@@ -5,41 +5,41 @@ import { TrendingUp, TrendingDown, Scale, Check, Shield } from 'lucide-react';
 const tradesData = [
   {
     id: 'TC-284',
-    type: 'WINNING TRADE',
+    type: 'BULLISH TREND CONFLUENCE',
     ticker: 'NIFTY / INR',
-    direction: 'BUY',
-    outcome: 'PROFIT: +3R',
+    direction: 'STUDY: TREND THEORY',
+    outcome: 'SUPPORT CONFIRMED',
     outcomeType: 'win',
-    impact: '+3.0% Account',
-    rule: 'Target Hit Mechanically',
-    desc: 'The market aligned with our key support levels and indicator. The trade hit our take-profit limit order exactly, securing a 1:3 Risk/Reward ratio with zero deviation from the rulebook.',
-    metrics: { entry: '24,120', exit: '24,270', stop: '24,070', size: '20 Qty' },
+    impact: 'Support Rebound',
+    rule: 'Structure Aligned',
+    desc: 'This case study shows how price historical support aligns with volume expansion. Understanding support zones helps identify consolidation structures for theory and backtesting.',
+    metrics: { entry: '24,120', exit: '24,270', stop: '24,070', size: 'Support Rebound' },
     chartData: [35, 30, 45, 55, 52, 75, 80],
   },
   {
     id: 'TC-285',
-    type: 'LOSING TRADE',
+    type: 'FAILED BREAKOUT STUDY',
     ticker: 'NIFTY / INR',
-    direction: 'BUY',
-    outcome: 'LOSS: -1R',
+    direction: 'STUDY: RISK THEORY',
+    outcome: 'INVALID BREAKOUT',
     outcomeType: 'loss',
-    impact: '-1.0% Account',
-    rule: 'Risk Capped at 1% Max',
-    desc: 'Yes, we take losses. But because of our strict mathematical position sizing guidelines, the stop-loss order was filled automatically, preserving 99% of our capital to trade another day.',
-    metrics: { entry: '24,180', exit: '24,130', stop: '24,130', size: '20 Qty' },
+    impact: 'Downside Protection',
+    rule: '1% Risk Limit Rule',
+    desc: 'Analyzing failed breakouts is crucial. If the price slips below the support level, a strict stop loss limits the hypothetical loss to 1%, protecting simulator capital.',
+    metrics: { entry: '24,180', exit: '24,130', stop: '24,130', size: 'Downside Cut' },
     chartData: [60, 55, 58, 48, 40, 35, 35],
   },
   {
     id: 'TC-286',
-    type: 'BREAK-EVEN',
+    type: 'TRAILING STOP SIMULATION',
     ticker: 'NIFTY / INR',
-    direction: 'BUY',
-    outcome: 'NEUTRAL: 0R',
+    direction: 'STUDY: TRAILING THEORY',
+    outcome: 'BREAK-EVEN EXIT',
     outcomeType: 'breakeven',
-    impact: '0.0% Net Change',
-    rule: 'Trailing Stop Activated',
-    desc: 'The market moved in our favor but reversed before hitting the target. Our trailing stop rules shifted the exit point to the entry price, protecting capital from emotional hope.',
-    metrics: { entry: '24,150', exit: '24,150', stop: '24,150', size: '20 Qty' },
+    impact: 'Capital Protected',
+    rule: 'Risk Shield Setup',
+    desc: 'In this simulation, price moves in our favor but reverses. Trailing stop-loss concepts protect the initial capital by shifting the exit point to the entry price.',
+    metrics: { entry: '24,150', exit: '24,150', stop: '24,150', size: 'Risk Shielded' },
     chartData: [45, 48, 55, 62, 50, 45, 45],
   },
 ];
@@ -86,11 +86,11 @@ export default function LiveTrades() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-            The Reality of Live Trading
+            Market Case Studies & Risk Theory
           </h2>
           
           <p className="text-sm md:text-base text-gray-500 leading-relaxed mt-4 max-w-2xl">
-            We don't sell 100% win-rate illusions. A professional edge relies on mathematical risk limits and managing all three outcomes.
+            We focus on structure, not alerts. Building a professional edge relies on understanding risk limits and studying multiple market scenarios.
           </p>
         </div>
 
@@ -103,16 +103,16 @@ export default function LiveTrades() {
             {/* Account Stats HUD */}
             <div className="grid grid-cols-3 gap-3 border bg-dark-100 border-white/5 p-4 rounded-2xl font-mono text-[10px]">
               <div>
-                <span className="text-gray-500 block">EXPECTANCY</span>
-                <span className="text-emerald-400 font-bold text-sm mt-1 block">+1.2R / Trade</span>
+                <span className="text-gray-500 block">CONFLUENCE</span>
+                <span className="text-emerald-400 font-bold text-sm mt-1 block">Level Aligned</span>
               </div>
               <div className="border-l border-white/5 pl-3">
-                <span className="text-gray-500 block">PROFIT FACTOR</span>
-                <span className="text-white font-bold text-sm mt-1 block">2.14 Ratio</span>
+                <span className="text-gray-500 block">TARGET THEORY</span>
+                <span className="text-white font-bold text-sm mt-1 block">1:2 Minimum</span>
               </div>
               <div className="border-l border-white/5 pl-3">
-                <span className="text-gray-500 block">MAX DRAWDOWN</span>
-                <span className="text-red-400 font-bold text-sm mt-1 block">-4.2% Peak</span>
+                <span className="text-gray-500 block">MAX RISK RULE</span>
+                <span className="text-red-400 font-bold text-sm mt-1 block">1.0% Peak</span>
               </div>
             </div>
 
@@ -182,7 +182,7 @@ export default function LiveTrades() {
             </div>
             
             <p className="text-[9px] font-mono text-gray-600 uppercase tracking-widest pt-2">
-              // AUDITED BY TRADECRAFT RISK FRAMEWORK ENGINE
+              // STUDIED UNDER TRADECRAFT RISK FRAMEWORK RULES
             </p>
           </div>
 
@@ -229,19 +229,19 @@ export default function LiveTrades() {
                 {/* Computed stats detail matrix */}
                 <div className="grid grid-cols-2 gap-2 font-mono text-[9px] p-3.5 rounded-xl border border-white/5 bg-white/[0.01] my-4">
                   <div className="flex justify-between border-b border-white/5 pb-1">
-                    <span className="text-gray-500">ENTRY LIMIT:</span>
+                    <span className="text-gray-500">SUPPORT LEVEL:</span>
                     <span className="text-white font-bold">{selectedTrade.metrics.entry}</span>
                   </div>
                   <div className="flex justify-between border-b border-white/5 pb-1">
-                    <span className="text-gray-500">STOP LOSS:</span>
+                    <span className="text-gray-500">RISK FLOOR:</span>
                     <span className="text-red-400 font-bold">{selectedTrade.metrics.stop}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">EXIT LEVEL:</span>
+                    <span className="text-gray-500">RESISTANCE:</span>
                     <span className="text-emerald-400 font-bold">{selectedTrade.metrics.exit}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">CONTRACTS:</span>
+                    <span className="text-gray-500">STUDY FOCUS:</span>
                     <span className="text-white font-bold">{selectedTrade.metrics.size}</span>
                   </div>
                 </div>

@@ -12,23 +12,23 @@ const FAQ = () => {
     },
     {
       q: 'How much time do I need per day?',
-      a: 'The system is designed for people with jobs or studies. You only need about 45-60 minutes a day to analyze the charts and execute your plan.'
+      a: 'The curriculum is designed for people with jobs or studies. You only need about 45-60 minutes a day to analyze the charts and practice the theoretical concepts.'
     },
     {
       q: 'Do I need a paid TradingView account?',
-      a: 'No, our proprietary indicator is built specifically for TradingView. A free TradingView account is completely sufficient to use all our tools.'
+      a: 'No, our helper charting script is built specifically for TradingView. A free TradingView account is completely sufficient to use all our tools.'
     },
     {
       q: 'How long is my access valid?',
       a: 'You get lifetime access to the course materials, including all future updates and additions to the curriculum.'
     },
     {
-      q: 'Will I get indicator updates?',
-      a: 'Yes. Any future optimizations or updates to the indicator logic are provided to all Pro and Elite students at no additional cost.'
+      q: 'Will I get charting script updates?',
+      a: 'Yes. Any future optimizations or updates to the charting script logic are provided to all Pro and Elite students at no additional cost.'
     },
     {
       q: 'What is the refund policy?',
-      a: 'We offer a 30-day action-based money-back guarantee. If you complete the course, apply the system, and do not find value, we will refund your investment.'
+      a: 'We offer a 30-day action-based money-back guarantee. If you complete the course, log the simulated case studies, and do not find value, we will refund your investment.'
     }
   ];
 

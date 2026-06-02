@@ -4,10 +4,10 @@ import './WhatYouGet.css';
 const WhatYouGet = () => {
   const items = [
     { title: 'Full Course (6 Modules)', desc: 'From basics to advanced technical analysis.' },
-    { title: 'Smart Trading Indicator', desc: 'Proprietary signals directly on your chart.' },
-    { title: 'Private Community Access', desc: 'Network with serious traders and mentors.' },
+    { title: 'Smart Charting Helper', desc: 'Support/resistance and trend theory companion.' },
+    { title: 'Private Community Access', desc: 'Network with serious students and mentors.' },
     { title: 'Lifetime Content Updates', desc: 'Get all future module additions for free.' },
-    { title: 'Student Support', desc: 'Answers to your trading questions.' },
+    { title: 'Student Support', desc: 'Answers to your study and market theory questions.' },
     { title: 'Completion Certificate', desc: 'Official proof of your new skillset.' }
   ];
 

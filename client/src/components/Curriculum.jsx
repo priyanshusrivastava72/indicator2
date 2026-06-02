@@ -20,12 +20,12 @@ const modules = [
     lessons: ['The 1% Capital Protection Rule', 'Calculating Position Size', 'Risk-to-Reward Ratios', 'Handling Drawdowns mathematically']
   },
   {
-    title: 'Indicator Mastery',
-    lessons: ['Installing the Proprietary Indicator', 'Interpreting Buy/Sell Signals', 'Filtering False Signals', 'The Re-entry Strategy']
+    title: 'Charting & Analysis Tools',
+    lessons: ['Setting Up Charting Helper Script', 'Interpreting Support & Resistance Zones', 'Identifying Valid Trend Confluences', 'Determining Risk Limits']
   },
   {
-    title: 'Live Market Application',
-    lessons: ['Pre-market Routine', 'Live Trade Breakdown 1', 'Live Trade Breakdown 2', 'Journaling & Scaling Up']
+    title: 'Market Simulation Labs',
+    lessons: ['Pre-market Structure Analysis Routine', 'Simulated Case Study breakdown 1', 'Simulated Case Study breakdown 2', 'Simulation Logging & Risk Verification']
   }
 ];
 

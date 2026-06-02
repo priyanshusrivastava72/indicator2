@@ -7,32 +7,32 @@ const steps = [
     id: 'apply',
     num: '01',
     icon: Activity,
-    title: 'Apply Indicator',
+    title: 'Apply Chart Setup',
     label: 'INTEGRATE',
-    desc: 'Overlay the TradeCraft algorithm on your TradingView chart. It instantly maps out key institutional liquidity levels and trend zones, preparing your workspace.',
+    desc: 'Configure standard TradingView charting tools with support, resistance, and volume profiles to organize your workspace.',
   },
   {
     id: 'confirm',
     num: '02',
     icon: ShieldCheck,
-    title: 'Wait For Confirmation',
+    title: 'Wait For Confluence',
     label: 'CONFLUENCE',
-    desc: 'Patience is your edge. The algorithm scans multiple timeframes, wait for it to confirm trend direction and print a high-probability BUY/SELL signal.',
+    desc: 'Patience is key. Study multiple timeframes to wait for alignment between volume trends and market structure levels.',
   },
   {
     id: 'risk',
     num: '03',
     icon: Crosshair,
-    title: 'Manage Risk Parameters',
+    title: 'Apply Risk Rules',
     label: 'PRESERVE',
-    desc: 'Enter parameters into the position sizing tool. Calculate your exact entry, stop-loss, and target boundaries mechanically to limit risk under 1% per trade.',
+    desc: 'Calculate position size based on strict risk rules. Determine appropriate stop-loss placement to keep potential downside under 1% of total hypothetical capital.',
   },
   {
     id: 'execute',
     num: '04',
     icon: Play,
-    title: 'Execute & Journal',
-    desc: 'Deploy the order to your broker panel with zero emotional hesitation. Log the trade parameters in your spreadsheet to audit outcomes.',
+    title: 'Simulate & Journal',
+    desc: 'Log your simulated charts and notes in your study spreadsheet. Audit the theoretical outcomes to build discipline and pattern recognition.',
   },
 ];
 
@@ -47,9 +47,9 @@ function TerminalVisual({ stepId }) {
             <span className="text-emerald-500">READY</span>
           </div>
           <div className="mt-4 space-y-1 text-[10px]">
-            <p className="text-emerald-400">&gt; Loading TradeCraft Engine...</p>
-            <p className="text-gray-500">&gt; Computing historical averages...</p>
-            <p className="text-gray-500">&gt; Rendering primary zones...</p>
+            <p className="text-emerald-400">&gt; Loading Chart Setup...</p>
+            <p className="text-gray-500">&gt; Analyzing historical ranges...</p>
+            <p className="text-gray-500">&gt; Drawing key levels...</p>
           </div>
         </div>
 
@@ -60,12 +60,12 @@ function TerminalVisual({ stepId }) {
             <path d="M 0 35 L 20 30 L 40 32 L 60 15 L 80 18 L 100 10" fill="none" stroke="currentColor" strokeWidth="1" />
           </svg>
           <div className="absolute top-2 left-2 text-[8px] text-emerald-500/70 border border-emerald-500/20 px-1 rounded">
-            + TRADECRAFT OVERLAY ACTIVE
+            + CHART ANALYSIS READY
           </div>
         </div>
 
         <div className="text-[9px] text-gray-600">
-          // STATUS: 124 KEY LIQUIDITY LEVELS RENDERED
+          // STATUS: SUPPORT & RESISTANCE MAPPED
         </div>
       </div>
     );
@@ -76,13 +76,13 @@ function TerminalVisual({ stepId }) {
       <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
         <div>
           <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
-            <span>CONFLUENCE_SCANNER</span>
+            <span>CONFLUENCE_STUDY</span>
             <span className="text-emerald-400 animate-pulse">ANALYZING</span>
           </div>
           <div className="mt-4 space-y-1.5 text-[10px]">
-            <div className="flex justify-between"><span>M15 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
-            <div className="flex justify-between"><span>H1 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
-            <div className="flex justify-between"><span>H4 TREND:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+            <div className="flex justify-between"><span>M15 STRUCT:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+            <div className="flex justify-between"><span>H1 STRUCT:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
+            <div className="flex justify-between"><span>H4 STRUCT:</span><span className="text-emerald-400">🟢 BULLISH</span></div>
           </div>
         </div>
 
@@ -90,13 +90,13 @@ function TerminalVisual({ stepId }) {
         <div className="my-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5 shadow-lg shadow-emerald-950/20">
           <span className="text-[9px] text-emerald-500 font-bold tracking-widest uppercase">CONFLUENCE APPROVED</span>
           <span className="text-lg font-black text-white tracking-widest flex items-center gap-1 animate-pulse">
-            ▲ BUY SIGNAL
+            ▲ BULLISH STRUCT
           </span>
-          <span className="text-[8px] text-gray-400">ENTRY TRIGGER LEVEL 24,120</span>
+          <span className="text-[8px] text-gray-400">SUPPORT ZONE AT 24,120</span>
         </div>
 
         <div className="text-[9px] text-gray-600">
-          // SYSTEM STATE: READY TO CALCULATE POSITION
+          // STATE: READY TO APPLY RISK RULES
         </div>
       </div>
     );
@@ -117,7 +117,7 @@ function TerminalVisual({ stepId }) {
               <span className="text-white">₹1,00,000</span>
             </div>
             <div className="flex justify-between border-b border-white/5 pb-1">
-              <span>Risk Margin (1%):</span>
+              <span>Hypothetical Risk (1%):</span>
               <span className="text-emerald-400 font-bold">₹1,000</span>
             </div>
             <div className="flex justify-between border-b border-white/5 pb-1">
@@ -130,7 +130,7 @@ function TerminalVisual({ stepId }) {
         {/* Computed size bubble */}
         <div className="bg-white/5 border border-white/10 rounded-xl p-3.5 flex justify-between items-center">
           <div>
-            <span className="text-[8px] text-gray-500 block">MAX QUANTITY</span>
+            <span className="text-[8px] text-gray-500 block">HYPOTHETICAL SIZE</span>
             <span className="text-sm font-bold text-white">20 Units</span>
           </div>
           <div className="text-right">
@@ -140,7 +140,7 @@ function TerminalVisual({ stepId }) {
         </div>
 
         <div className="text-[9px] text-gray-600">
-          // FORMULA: ACC_RISK / (ENTRY - SL) = SIZE
+          // FORMULA: RISK_CAPITAL / SL_POINTS = HYPO_SIZE
         </div>
       </div>
     );
@@ -156,9 +156,9 @@ function TerminalVisual({ stepId }) {
           </div>
           
           <div className="mt-4 space-y-1 text-[10px]">
-            <p className="text-gray-500">&gt; Dispatching order via API...</p>
-            <p className="text-emerald-400">&gt; Order Filled. Cost: ₹4,82,400</p>
-            <p className="text-gray-500">&gt; Recording parameters to database...</p>
+            <p className="text-gray-500">&gt; Simulating entry in log...</p>
+            <p className="text-emerald-400">&gt; Demo Log Success. Level: 24,120</p>
+            <p className="text-gray-500">&gt; Saving study metrics to journal...</p>
           </div>
         </div>
 
@@ -169,15 +169,15 @@ function TerminalVisual({ stepId }) {
               <Check size={12} />
             </div>
             <div>
-              <span className="text-[9px] text-gray-500 block">NIFTY BUY TICKET</span>
-              <span className="text-xs font-bold text-white">20 Qty @ 24,120</span>
+              <span className="text-[9px] text-gray-500 block">SIMULATED NIFTY JOURNAL</span>
+              <span className="text-xs font-bold text-white">20 Units @ 24,120</span>
             </div>
           </div>
-          <span className="text-[9px] font-bold text-emerald-400">FILLED</span>
+          <span className="text-[9px] font-bold text-emerald-400">LOGGED</span>
         </div>
 
         <div className="text-[9px] text-gray-600">
-          // JOURNALING ROUTINE COMPLETED &middot; STANDBY
+          // JOURNALING COMPLETED
         </div>
       </div>
     );
@@ -233,7 +233,7 @@ export default function HowItWorks() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            How The Indicator Works
+            How The System Works
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
             A simple, mechanical 4-step execution process. No guesswork, no hesitation.

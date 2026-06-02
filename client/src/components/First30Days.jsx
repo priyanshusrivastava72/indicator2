@@ -20,15 +20,15 @@ const First30Days = () => {
     },
     {
       week: 3,
-      title: 'The System & Indicator',
-      desc: 'Combine your structural knowledge with our proprietary indicator. Learn exactly when a signal is valid and when it should be ignored.',
-      tasks: ['Indicator Installation', 'Valid vs Invalid Signals', 'The Execution Checklist']
+      title: 'The System & Charting Script',
+      desc: 'Combine your structural knowledge with our proprietary charting helper script. Learn exactly when a confluence is valid and when it should be ignored.',
+      tasks: ['Script Installation', 'Valid vs Invalid Confluences', 'The Verification Checklist']
     },
     {
       week: 4,
-      title: 'Live Application',
-      desc: 'Move to a simulator or micro-account. Apply the rules mechanically, log your trades, and review your performance data.',
-      tasks: ['Paper Trading Phase', 'Trade Journaling', 'Performance Review']
+      title: 'Simulated Application',
+      desc: 'Move to a simulator or practice log. Apply the rules mechanically, log your mock outcomes, and review your simulation statistics.',
+      tasks: ['Paper Trading Phase', 'Study Journaling', 'Simulation Review']
     }
   ];
 
@@ -41,7 +41,7 @@ const First30Days = () => {
             The First 30 Days
           </h2>
           <p className="text-gray-400 text-lg">
-            A precise, week-by-week action plan to get you executing trades mechanically.
+            A precise, week-by-week action plan to get you studying structures systematically.
           </p>
         </div>
 

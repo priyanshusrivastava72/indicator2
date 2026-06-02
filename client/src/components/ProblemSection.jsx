@@ -29,7 +29,7 @@ const problems = [
     title: 'Random Entries',
     shortDesc: 'Chasing every green candle.',
     fullDesc:
-      'Entering because price is moving up is a guaranteed way to buy the top. You need specific, mathematical trigger conditions before you click buy.',
+      'Entering because price is moving up is a common retail trap. You need objective, structural confluence conditions before formulating a market bias.',
     stat: '0',
     statLabel: 'edge without a defined entry criteria',
   },

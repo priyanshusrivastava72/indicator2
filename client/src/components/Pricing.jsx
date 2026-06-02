@@ -46,7 +46,7 @@ const Pricing = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Full 6-Phase Course</li>
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Risk Management Framework</li>
-                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Indicator Access</li>
+                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Charting Tool Access</li>
                 <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Private Community</li>
               </ul>
             </div>
@@ -76,7 +76,7 @@ const Pricing = () => {
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-5xl font-bold text-white">₹9,999</span>
               </div>
-              <p className="text-gray-400 text-xs mb-6">Everything you need to execute consistently.</p>
+              <p className="text-gray-400 text-xs mb-6">Everything you need to study market dynamics.</p>
 
               {/* Graphical Inclusion Meter */}
               <div className="pricing-value-gauge">
@@ -95,7 +95,7 @@ const Pricing = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3 text-gray-200 text-xs font-semibold"><Check size={18} className="text-emerald-500 shrink-0" /> Everything in Basic</li>
-                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Smart Trading Indicator</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Smart Charting Helper Tool</li>
                 <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Private Community Access</li>
                 <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Lifetime Content Updates</li>
               </ul>
@@ -139,8 +139,8 @@ const Pricing = () => {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Everything in Pro</li>
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> 4x 1-on-1 Mentorship Calls</li>
-                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Personal Trade Reviews</li>
-                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Direct WhatsApp Access</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Personal Study Reviews</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Direct Chat Q&A Support</li>
               </ul>
             </div>
             

@@ -8,7 +8,7 @@ const testimonials = [
     role: 'Software Engineer',
     quote: "The risk management framework alone paid for the course in my first week. Finally, a system that focuses on capital protection.",
     type: 'video',
-    badge: '+14% Return Edge'
+    badge: 'Risk Moat Applied'
   },
   {
     name: 'Sneha M.',
@@ -20,9 +20,9 @@ const testimonials = [
   {
     name: 'Karan P.',
     role: 'Business Owner',
-    quote: "No fluff, no flashy cars, just pure market mechanics. I went from losing money consistently to being profitable for 3 months straight.",
+    quote: "No fluff, no flashy cars, just pure market mechanics. I went from placing random guesses to drawing logical support/resistance structures on my own.",
     type: 'text',
-    badge: '3-Month Profit Run'
+    badge: 'Consistent Study Habits'
   }
 ];
 
@@ -130,9 +130,9 @@ const SocialProof = () => {
           <div className="flex-1 text-left">
             <div className="flex items-center gap-3 text-emerald-400 mb-4">
               <MessageCircle size={20} />
-              <h3 className="text-lg font-bold text-white">Exclusive Private Community</h3>
+              <h3 className="text-lg font-bold text-white">Exclusive Student Community</h3>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">Join hundreds of serious traders posting their setups, asking questions, and improving together every single day.</p>
+            <p className="text-gray-400 text-sm leading-relaxed">Join hundreds of serious students asking questions, sharing case studies, and improving their chart-reading skills together every single day.</p>
           </div>
           
           <div className="flex -space-x-3 shrink-0">

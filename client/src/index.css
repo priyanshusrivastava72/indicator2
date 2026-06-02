@@ -570,6 +570,8 @@ html {
   --color-stat-border: rgba(0, 0, 0, 0.04);
   --color-stat-text-inactive: #4b5563;
   --color-accent-green: #047857;
+  --color-card-bg: rgba(255, 255, 255, 0.75);
+  --color-card-border: rgba(0, 0, 0, 0.05);
 
   /* Problem Section specific variables */
   --color-problem-num-inactive: rgba(0, 0, 0, 0.04);
@@ -1087,7 +1089,7 @@ html {
     0 10px 30px -10px rgba(0, 0, 0, 0.03),
     inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
-.light #financial-education .max-w-7xl > div.highlighted-education-card {
+.light #financial-education .highlighted-education-card {
   background-color: rgba(16, 185, 129, 0.08) !important;
   border-color: rgba(16, 185, 129, 0.3) !important;
   border-radius: 2rem !important;
@@ -1095,14 +1097,7 @@ html {
     0 10px 30px -10px rgba(16, 185, 129, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
-.light #financial-education .max-w-7xl > div div[style*="background"] {
-  background-color: rgba(0, 0, 0, 0.02) !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-}
-.light #financial-education .max-w-7xl > div.highlighted-education-card div[style*="background"] {
-  background-color: rgba(16, 185, 129, 0.1) !important;
-  border-color: rgba(16, 185, 129, 0.2) !important;
-}
+/* Card backgrounds and borders are handled dynamically via --color-card-bg, --color-card-border, --color-stat-bg, and --color-stat-border variables. */
 
 /* 11. Live Trades Ledger */
 .light #live-trades .bg-dark-100 {

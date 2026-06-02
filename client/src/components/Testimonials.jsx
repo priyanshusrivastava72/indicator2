@@ -31,13 +31,13 @@ const Testimonials = () => {
       role: "Software Engineer"
     },
     {
-      text: "I've bought three other courses before this. They all felt like scams. This is the first time I've learned a repeatable process. The indicator is a game-changer.",
+      text: "I've bought three other courses before this. They all felt like scams. This is the first time I've learned a repeatable process. The charting helper script is a game-changer.",
       initials: "SM",
       name: "Sneha M.",
       role: "College Student"
     },
     {
-      text: "No fluff, no flashy cars, just pure market mechanics. I went from losing money consistently to being profitable for 3 months straight.",
+      text: "No fluff, no flashy cars, just pure market mechanics. I went from drawing random trendlines to creating structured study logs and managing risk guidelines effectively.",
       initials: "KP",
       name: "Karan P.",
       role: "Business Owner"

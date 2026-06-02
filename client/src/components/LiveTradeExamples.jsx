@@ -9,7 +9,7 @@ const LiveTradeExamples = () => {
       entry: '19,450',
       exit: '19,520',
       result: '+70 Points',
-      lesson: 'Perfect setup based on indicator buy signal at support. Trend confirmation was clear.'
+      lesson: 'Perfect setup based on support zone confluence. Trend confirmation was clear.'
     },
     loss: {
       entry: '19,600',
@@ -31,9 +31,9 @@ const LiveTradeExamples = () => {
     <section id="results" className="section bg-secondary">
       <div className="container text-center fade-up">
         <span className="eyebrow">TRANSPARENCY</span>
-        <h2 className="trade-title">Real trades. Including the losses.</h2>
+        <h2 className="trade-title">Simulated case studies. Including the failures.</h2>
         <p className="trade-subtext">
-          We show you everything — because real education 
+          We study everything — because real education 
           doesn't hide the full picture.
         </p>
 

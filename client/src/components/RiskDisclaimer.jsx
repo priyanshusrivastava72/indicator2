@@ -22,10 +22,10 @@ const RiskDisclaimer = () => {
           }}
         >
           Trading in financial markets involves substantial risk of loss 
-          and is not suitable for all investors. Past performance is not 
-          indicative of future results. This course is for educational 
-          purposes only. Please consult a financial advisor before 
-          making any investment decisions.
+          and is not suitable for all investors. We are NOT SEBI-registered advisors, 
+          and the contents of this website, course, and charting tools are strictly for 
+          general educational purposes only. Past performance is not indicative of future 
+          results. No returns or profits are promised.
         </p>
       </div>
     </section>

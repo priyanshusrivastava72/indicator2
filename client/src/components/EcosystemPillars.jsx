@@ -15,10 +15,10 @@ const pillars = [
   {
     id: 'indicator',
     icon: Activity,
-    title: 'Smart Indicator',
-    desc: 'Proprietary TradingView algorithm that filters market noise.',
-    details: 'Buy/Sell Signals & Volume Profiles',
-    badge: 'ALGORITHM',
+    title: 'Smart Charting Tool',
+    desc: 'Proprietary TradingView charting helper to visualize structures.',
+    details: 'Trend Analysis & Volume Profiles',
+    badge: 'ANALYSIS',
     decor: 'signals',
   },
   {
@@ -34,8 +34,8 @@ const pillars = [
     id: 'community',
     icon: Users,
     title: 'Private Community',
-    desc: 'Network with serious traders. No spam, just pure execution.',
-    details: 'Daily Watchlists & Live Trade Sharing',
+    desc: 'Network with serious students. No spam, just pure study.',
+    details: 'Daily Chart Studies & Theory Support',
     badge: 'NETWORK',
     decor: 'community-pulse',
   },
@@ -69,7 +69,7 @@ function CardDecor({ type, isHovered }) {
         </svg>
         <div className="flex items-center gap-3 relative z-10">
           <span className="text-[9px] font-mono font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-            [ BUY TRIGGER ]
+            [ TREND BREAK ]
           </span>
           <span className="text-[10px] font-mono text-gray-400 font-semibold">@ 22,450</span>
         </div>
@@ -160,7 +160,7 @@ export default function EcosystemPillars() {
             <span className="text-gradient block mt-1">In One Unified Framework.</span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            We don't just sell an indicator or a course. We provide a full, structured system where each piece leverages the next to secure your growth.
+            We don't just provide a charting tool or a course. We provide a full, structured system where each piece leverages the next to secure your growth.
           </p>
         </div>
 

@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LineChart, Activity, Clock, ShieldAlert, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const tabs = [
-  { id: 'buy', label: 'Buy Signals', icon: <Activity size={16} /> },
-  { id: 'sell', label: 'Sell Signals', icon: <ShieldAlert size={16} /> },
-  { id: 'trend', label: 'Trend Zones', icon: <LineChart size={16} /> },
-  { id: 'mtf', label: 'Multi-Timeframe', icon: <Clock size={16} /> },
+  { id: 'buy', label: 'Support Zones', icon: <Activity size={16} /> },
+  { id: 'sell', label: 'Resistance Zones', icon: <ShieldAlert size={16} /> },
+  { id: 'trend', label: 'Trend Channels', icon: <LineChart size={16} /> },
+  { id: 'mtf', label: 'Multi-Timeframe Structure', icon: <Clock size={16} /> },
 ];
 
 export default function IndicatorShowcase() {
@@ -56,10 +56,10 @@ export default function IndicatorShowcase() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            The Smart Trading Indicator
+            Trend & Volume Charting Helper
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
-            Remove the guesswork. Our algorithm filters out market noise and displays objective entry, exit, and trend conditions.
+            Visualize market structure. The tool highlights key zones, trend directions, and volume profiles for study and theory.
           </p>
         </div>
 
@@ -70,13 +70,13 @@ export default function IndicatorShowcase() {
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div className="space-y-2">
               <span className="font-mono text-[9px] tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
-                MODULE 5 ALGORITHM
+                MODULE 5 CHART THEORY
               </span>
               <h3 className="text-2xl font-bold text-white mt-4">
-                Execute with institutional rules.
+                Study market structure interactively.
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mt-2 mb-6">
-                Instead of reading complex indicators, get direct visual cues overlayed onto your standard TradingView charts.
+                Learn how to map support, resistance, and volume profiles directly onto standard TradingView charts.
               </p>
 
               {/* Custom Vertical Tabs list */}
@@ -122,7 +122,7 @@ export default function IndicatorShowcase() {
             {/* Micro details panel bottom */}
             <div className="mt-8 pt-6 border-t border-white/5 font-mono text-[9px] text-gray-600 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>ALGO V2.4 DIRECT CONFLUENCE MODE ACTIVATED</span>
+              <span>CHART STUDY V2.4 CONFLUENCE MODE ACTIVATED</span>
             </div>
           </div>
 
@@ -190,13 +190,13 @@ export default function IndicatorShowcase() {
                       {activeTab === 'buy' && (
                         <div>
                           <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
-                            BUY SIGNAL MATRIX
+                            SUPPORT ZONE MAPPING
                           </span>
                           <h4 className="text-lg font-bold text-white mt-1">
-                            High-Probability Buy Entries
+                            Support Level Identification
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
-                            The algorithm screens for consolidation zones and volume expansion. When both align with market trend direction, it generates a clear BUY signal with a predefined stop loss.
+                            The tool identifies key historical support zones where buying interest has historically emerged, helping students study potential consolidation areas.
                           </p>
                         </div>
                       )}
@@ -204,13 +204,13 @@ export default function IndicatorShowcase() {
                       {activeTab === 'sell' && (
                         <div>
                           <span className="text-[10px] font-mono text-red-400 font-bold tracking-widest uppercase">
-                            SELL EXIT MATRIX
+                            RESISTANCE ZONE MAPPING
                           </span>
                           <h4 className="text-lg font-bold text-white mt-1">
-                            Precise Sell Triggers
+                            Resistance Level Identification
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
-                            Never guess when to lock in profits. The indicator screens for bearish momentum divergence and warns you to scale out or exit before a reversal triggers.
+                            The tool identifies key historical resistance zones where selling pressure has historically emerged, helping students study potential reversal points.
                           </p>
                         </div>
                       )}
@@ -218,13 +218,13 @@ export default function IndicatorShowcase() {
                       {activeTab === 'trend' && (
                         <div>
                           <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
-                            TREND MATRIX BAND
+                            TREND CHANNEL ANALYSIS
                           </span>
                           <h4 className="text-lg font-bold text-white mt-1">
-                            Clean Trend Visualization
+                            Trend Channel Mapping
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
-                            Dynamic background color channels (Green for uptrends, Red for downtrends) filter out temporary counter-trend noise. Always trade in sync with the primary institutional flow.
+                            Dynamic background color channels (Green for uptrends, Red for downtrends) help visualize the primary trend direction for backtesting and study purposes.
                           </p>
                         </div>
                       )}
@@ -232,13 +232,13 @@ export default function IndicatorShowcase() {
                       {activeTab === 'mtf' && (
                         <div>
                           <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
-                            ALIGNMENT MATRIX
+                            MULTI-TIMEFRAME STRUCTURE
                           </span>
                           <h4 className="text-lg font-bold text-white mt-1">
-                            Multi-Timeframe Integration
+                            Multi-Timeframe Theory
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
-                            Displays higher timeframe (15m, 1h, 4h, 1D) market structures on your current execution chart. Eliminate blindspots without switching tabs.
+                            Displays higher timeframe (15m, 1h, 4h, 1D) structures on your study chart, helping you visualize market trend alignment without switching tabs.
                           </p>
                         </div>
                       )}
@@ -373,16 +373,16 @@ function ChartMockup({ type }) {
           >
             {/* Dashed Buy parameters */}
             <line x1="305" y1="100" x2="550" y2="100" stroke="#10b981" strokeWidth="1" strokeDasharray="3,3" opacity="0.6" />
-            <text x="315" y="94" fill="#10b981" fontSize="7" fontFamily="monospace" fontWeight="bold">ENTRY LIMIT: 24,120</text>
+            <text x="315" y="94" fill="#10b981" fontSize="7" fontFamily="monospace" fontWeight="bold">SUPPORT LEVEL: 24,120</text>
 
             <line x1="305" y1="140" x2="550" y2="140" stroke="#ef4444" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
-            <text x="315" y="134" fill="#ef4444" fontSize="7" fontFamily="monospace" fontWeight="bold">STOP LOSS: 23,980</text>
+            <text x="315" y="134" fill="#ef4444" fontSize="7" fontFamily="monospace" fontWeight="bold">RISK FLOOR: 23,980</text>
 
             {/* Glowing Buy Bubble */}
             <circle cx="305" cy="100" r="14" fill="#10b981" opacity="0.15" />
             <polygon points="305,94 300,103 310,103" fill="#10b981" />
-            <rect x="290" y="112" width="30" height="12" fill="#10b981" rx="2" />
-            <text x="305" y="120" fill="#ffffff" fontSize="7" fontWeight="black" fontFamily="monospace" textAnchor="middle">BUY</text>
+            <rect x="285" y="112" width="40" height="12" fill="#10b981" rx="2" />
+            <text x="305" y="120" fill="#ffffff" fontSize="7" fontWeight="black" fontFamily="monospace" textAnchor="middle">SUPPORT</text>
           </motion.g>
         )}
 
@@ -395,13 +395,13 @@ function ChartMockup({ type }) {
           >
             {/* Dashed Sell parameters */}
             <line x1="470" y1="60" x2="580" y2="60" stroke="#ef4444" strokeWidth="1" strokeDasharray="3,3" opacity="0.6" />
-            <text x="480" y="54" fill="#ef4444" fontSize="7" fontFamily="monospace" fontWeight="bold">EXIT/SELL: 24,240</text>
+            <text x="480" y="54" fill="#ef4444" fontSize="7" fontFamily="monospace" fontWeight="bold">RESISTANCE LEVEL: 24,240</text>
 
             {/* Glowing Sell Bubble */}
             <circle cx="470" cy="60" r="14" fill="#ef4444" opacity="0.15" />
             <polygon points="470,66 465,57 475,57" fill="#ef4444" />
-            <rect x="455" y="24" width="30" height="12" fill="#ef4444" rx="2" />
-            <text x="470" y="32" fill="#ffffff" fontSize="7" fontWeight="black" fontFamily="monospace" textAnchor="middle">SELL</text>
+            <rect x="445" y="24" width="50" height="12" fill="#ef4444" rx="2" />
+            <text x="470" y="32" fill="#ffffff" fontSize="7" fontWeight="black" fontFamily="monospace" textAnchor="middle">RESISTANCE</text>
           </motion.g>
         )}
       </svg>

@@ -35,31 +35,31 @@ const Hero = () => {
 
           {/* New Left-Column Metric HUD Grid */}
           <div className="grid grid-cols-3 gap-3.5 my-8 max-w-lg">
-            {/* HUD 1: P&L Sparkline */}
+            {/* HUD 1: Study hours */}
             <div className="hero-hud-card">
-              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">Live Session</span>
-              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">+₹12,450</span>
+              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">STUDY HOURS</span>
+              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">120+ Hrs</span>
               {/* Miniature sparkline SVG */}
               <svg className="w-full h-4 mt-2 text-emerald-500" viewBox="0 0 50 15" fill="none" stroke="currentColor" strokeWidth="1">
                 <path d="M0,12 Q10,12 15,7 T30,10 T40,2 T50,5" />
               </svg>
             </div>
 
-            {/* HUD 2: Win Rate */}
+            {/* HUD 2: Lectures */}
             <div className="hero-hud-card">
-              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">System Win</span>
-              <span className="font-display font-black text-sm text-white light:text-gray-900 leading-none mt-1">68.4%</span>
+              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">LECTURES</span>
+              <span className="font-display font-black text-sm text-white light:text-gray-900 leading-none mt-1">45+ Lessons</span>
               {/* Mini progress bar */}
               <div className="w-full h-1 bg-white/10 rounded-full mt-3 overflow-hidden">
-                <div className="h-full bg-emerald-500 w-[68%]" />
+                <div className="h-full bg-emerald-500 w-[80%]" />
               </div>
             </div>
 
-            {/* HUD 3: Risk Factor */}
+            {/* HUD 3: Risk Rule */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">Risk Guard</span>
               <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">1.00%</span>
-              <span className="text-[7px] font-mono text-gray-500 mt-2.5 leading-none">MAX RISK / POS</span>
+              <span className="text-[7px] font-mono text-gray-500 mt-2.5 leading-none">HYPO RISK / POS</span>
             </div>
           </div>
           
@@ -94,8 +94,8 @@ const Hero = () => {
           >
             <div className="w-5 h-5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-[9px] font-bold">R:R</div>
             <div className="text-left">
-              <div className="text-[8px] text-gray-500 leading-none">Ratio</div>
-              <div className="text-[10px] font-bold text-gray-300 light:text-gray-800 mt-0.5">1:2.5 Setup</div>
+              <div className="text-[8px] text-gray-500 leading-none">Risk Ratio</div>
+              <div className="text-[10px] font-bold text-gray-300 light:text-gray-800 mt-0.5">1:2+ Theory</div>
             </div>
           </motion.div>
 
@@ -161,9 +161,8 @@ const Hero = () => {
                   <line x1="200" y1="80" x2="200" y2="130" stroke="#10b981" />
                   <rect x="195" y="90" width="10" height="30" fill="#10b981" />
                   
-                  {/* Buy Signal Arrow */}
-                  <polygon points="200,150 190,165 210,165" fill="#10b981" />
-
+                  {/* Simulated analysis markers */}
+                  <line x1="250" y1="60" x2="250" y2="100" stroke="#ef4444" strokeWidth="2" />
                   <line x1="250" y1="60" x2="250" y2="100" stroke="#ef4444" />
                   <rect x="245" y="70" width="10" height="20" fill="#ef4444" />
 
@@ -174,16 +173,16 @@ const Hero = () => {
                   <rect x="345" y="30" width="10" height="20" fill="#10b981" />
                 </g>
 
-                {/* BUY Trigger Signal Bubble Annotation */}
+                {/* Support Annotation */}
                 <g transform="translate(195, 135)">
                   <rect x="-30" y="-8" width="60" height="16" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
-                  <text x="0" y="3" fill="#10b981" fontSize="7" fontFamily="monospace" textAnchor="middle" fontWeight="bold">BUY TRIGGER</text>
+                  <text x="0" y="3" fill="#10b981" fontSize="7" fontFamily="monospace" textAnchor="middle" fontWeight="bold">SUPPORT LEVEL</text>
                 </g>
 
-                {/* TARGET HIT Signal Bubble Annotation */}
+                {/* Resistance Annotation */}
                 <g transform="translate(345, 60)">
                   <rect x="-30" y="-8" width="60" height="16" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
-                  <text x="0" y="3" fill="#10b981" fontSize="7" fontFamily="monospace" textAnchor="middle" fontWeight="bold">TARGET HIT</text>
+                  <text x="0" y="3" fill="#10b981" fontSize="7" fontFamily="monospace" textAnchor="middle" fontWeight="bold">RESISTANCE LEVEL</text>
                 </g>
 
                 {/* Trend line */}
@@ -209,8 +208,8 @@ const Hero = () => {
                 <Activity size={16} />
               </div>
               <div className="text-left">
-                <div className="text-xs text-gray-400">Signal</div>
-                <div className="text-sm font-bold text-emerald-400">STRONG BUY</div>
+                <div className="text-xs text-gray-400">Mode</div>
+                <div className="text-sm font-bold text-emerald-400">CHART STUDY</div>
               </div>
             </motion.div>
 

@@ -46,22 +46,22 @@ const CurriculumAccordion = () => {
     },
     {
       module: '05',
-      title: 'Indicator Mastery',
+      title: 'Charting & Analysis Tools',
       lessons: [
-        'Installing the Proprietary Indicator',
-        'Interpreting Buy/Sell Signals',
-        'Filtering Out False Signals',
-        'The Re-entry Strategy'
+        'Setting Up Charting Helper Script',
+        'Interpreting Support & Resistance Zones',
+        'Identifying Valid Trend Confluences',
+        'Determining Risk Limits'
       ]
     },
     {
       module: '06',
-      title: 'Live Market Application',
+      title: 'Market Simulation Labs',
       lessons: [
-        'Pre-market Routine & Checklist',
-        'Live Trade Examples (Breakdowns)',
-        'Journaling Your Trades',
-        'Scaling Up Position Size'
+        'Pre-market Structure Analysis Routine',
+        'Simulated Case Study Breakdowns',
+        'Simulation Logging & Risk Rules',
+        'Simulation Verification Checklist'
       ]
     }
   ];

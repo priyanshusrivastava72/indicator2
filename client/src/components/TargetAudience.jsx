@@ -18,12 +18,12 @@ const audiences = [
     num: '01',
     tag: '18–24 YRS',
     title: 'Students & Youth',
-    headline: 'Build compounding wealth before your first salary.',
-    desc: 'Most students wait until they get a job to start investing. Early compounders build a solid edge while others are still looking for internships.',
+    headline: 'Learn risk-focused compounding principles early.',
+    desc: 'Most students wait until graduation to learn about capital. Understanding compound interest and risk rules early gives you a structured educational base.',
     points: [
       'Learn in just 1 hour per day alongside college',
-      'Start with small capital (₹5,000–₹10,000)',
-      'Build high-value market skills early',
+      'Understand rules with small hypothetical setups',
+      'Build theoretical financial skillsets early',
     ],
     stat: { value: '1 HR', label: 'DAILY COMMITMENT' },
   },
@@ -34,11 +34,11 @@ const audiences = [
     tag: '24–35 YRS',
     title: 'Working Professionals',
     headline: "Your salary has a limit. Your skills don't.",
-    desc: 'A job secures your present. Structured trading builds your future wealth. This framework requires only 45–60 minutes of chart analysis per day.',
+    desc: 'A job secures your present. Structured financial education builds your long-term understanding. This framework teaches you to interpret charts in 45–60 minutes per day.',
     points: [
-      'Pre-market setup in under 60 minutes',
-      'No constant chart watching required',
-      'Generate a secondary income engine',
+      'Pre-market analysis studies in under 60 minutes',
+      'No active screen dependency or monitoring',
+      'Build a structured secondary skill',
     ],
     stat: { value: '45 MIN', label: 'CHART WINDOW' },
   },
@@ -48,12 +48,12 @@ const audiences = [
     num: '03',
     tag: 'ACTIVE TRADERS',
     title: 'Existing Investors',
-    headline: 'Transition from passive to active compounding.',
-    desc: 'If you already hold mutual funds or long-term stocks, active pricing skill is your leverage. Know when to enter, scale, and exit with institutional rules.',
+    headline: 'Transition from passive to active charting analysis.',
+    desc: 'If you already hold mutual funds or long-term stocks, active pricing structure analysis is valuable. Learn to read support and resistance lines based on institutional theories.',
     points: [
       'Understand the pure price action behind charts',
-      'Accurate entry & exit system rules',
-      'Complement passive portfolios with active returns',
+      'Structured support & resistance theory',
+      'Complement portfolios with technical analysis skills',
     ],
     stat: { value: '2X+', label: 'COMPREHENSION' },
   },
@@ -64,11 +64,11 @@ const audiences = [
     tag: 'ZERO BASE',
     title: 'Absolute Beginners',
     headline: 'No prior finance experience required.',
-    desc: 'Trading is not a casino — it is a process. If you can follow a checklist, manage risk parameters, and remain disciplined, you can trade successfully.',
+    desc: 'Analyzing markets is not a casino — it is a process. If you can follow a checklist, manage risk parameters, and remain disciplined, you can study market structures successfully.',
     points: [
       'Starts from absolute zero market fundamentals',
       'Step-by-step TradingView setup checklist',
-      'Risk-free simulator trading before real capital',
+      'Risk-free simulation study logs',
     ],
     stat: { value: '0 → 1', label: 'CURRICULUM FLOW' },
   },
@@ -79,15 +79,15 @@ function MockupWidget({ id }) {
   if (id === 'students') {
     return (
       <div className="aud-mockup-panel h-full flex flex-col justify-between gap-4">
-        <div className="aud-mockup-title">18-24 Yrs Compounding Power</div>
+        <div className="aud-mockup-title">Compounding Education Theory</div>
         
         {/* Compounding Comparison Bar Chart */}
         <div className="space-y-4 my-auto">
           {/* Active Trading CAGR */}
           <div className="space-y-1">
             <div className="flex justify-between text-xs text-left">
-              <span className="text-emerald-400 font-semibold light:text-emerald-700">Active Compounder (24% CAGR)</span>
-              <span className="font-mono text-emerald-400 font-bold light:text-emerald-700">₹3.68L</span>
+              <span className="text-emerald-400 font-semibold light:text-emerald-700">Hypothetical Compounding (15% Hypo)</span>
+              <span className="font-mono text-emerald-400 font-bold light:text-emerald-700">3.1X Growth</span>
             </div>
             <div className="w-full h-2.5 rounded-full bg-white/5 border border-white/5 light:bg-black/5 light:border-black/5 overflow-hidden">
               <motion.div
@@ -102,13 +102,13 @@ function MockupWidget({ id }) {
           {/* Traditional FD */}
           <div className="space-y-1">
             <div className="flex justify-between text-xs text-gray-500 text-left">
-              <span>Traditional FD (6% CAGR)</span>
-              <span className="font-mono">₹1.90L</span>
+              <span>Baseline FD (6% rate)</span>
+              <span className="font-mono">1.8X Growth</span>
             </div>
             <div className="w-full h-2.5 rounded-full bg-white/5 border border-white/5 light:bg-black/5 light:border-black/5 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: '51%' }}
+                animate={{ width: '58%' }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="h-full bg-gray-500 rounded-full"
               />
@@ -117,8 +117,8 @@ function MockupWidget({ id }) {
         </div>
 
         <div className="border-t border-white/5 light:border-black/5 pt-3 mt-2 flex justify-between items-center text-[10px] font-mono text-gray-500">
-          <span>Capital: ₹5,000 / month</span>
-          <span className="text-emerald-400 light:text-emerald-700 font-bold">Edge: 1.9x Multiplier</span>
+          <span>Base: Hypothetical Contribution</span>
+          <span className="text-emerald-400 light:text-emerald-700 font-bold">Difference: 1.7x Ratio</span>
         </div>
       </div>
     );
@@ -127,31 +127,31 @@ function MockupWidget({ id }) {
   if (id === 'professionals') {
     return (
       <div className="aud-mockup-panel h-full flex flex-col justify-between gap-4">
-        <div className="aud-mockup-title">60-Min Daily Income Ledger</div>
+        <div className="aud-mockup-title">60-Min Daily Case Study Log</div>
         
         {/* Mock Daily Ledger Sheet */}
         <div className="space-y-2 text-[11px] my-auto">
           <div className="flex justify-between items-center py-1.5 border-b border-white/5 light:border-black/5 text-gray-400 light:text-gray-600">
-            <span className="font-mono text-left">MON: RELIANCE (Win)</span>
-            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">+₹2,000</span>
+            <span className="font-mono text-left">MON: RELIANCE (Support Confluence)</span>
+            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">Completed</span>
           </div>
           <div className="flex justify-between items-center py-1.5 border-b border-white/5 light:border-black/5 text-gray-400 light:text-gray-600">
-            <span className="font-mono text-left">TUE: TCS (Loss)</span>
-            <span className="text-red-400 light:text-red-600 font-mono font-bold">-₹1,000</span>
+            <span className="font-mono text-left">TUE: TCS (Failed Breakout Study)</span>
+            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">Completed</span>
           </div>
           <div className="flex justify-between items-center py-1.5 border-b border-white/5 light:border-black/5 text-gray-400 light:text-gray-600">
-            <span className="font-mono text-left">WED: INFY (Win)</span>
-            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">+₹2,000</span>
+            <span className="font-mono text-left">WED: INFY (Trend Channel Align)</span>
+            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">Completed</span>
           </div>
           <div className="flex justify-between items-center py-1.5 text-gray-400 light:text-gray-600 text-left">
-            <span className="font-mono">THU: SBIN (Break-even)</span>
-            <span className="text-gray-500 font-mono">₹0</span>
+            <span className="font-mono">THU: SBIN (Risk Limit Active)</span>
+            <span className="text-emerald-400 light:text-emerald-700 font-mono font-bold">Completed</span>
           </div>
         </div>
 
         <div className="border-t border-white/5 light:border-black/5 pt-3 mt-2 flex justify-between items-center text-[10px] font-mono">
-          <span className="text-gray-500">Risk Deployed: 2%</span>
-          <span className="text-emerald-400 light:text-emerald-700 font-bold">Weekly: +₹3,000</span>
+          <span className="text-gray-500">Risk Parameter: 1% Theory</span>
+          <span className="text-emerald-400 light:text-emerald-700 font-bold">Completed Studies: 4/Week</span>
         </div>
       </div>
     );
@@ -160,7 +160,7 @@ function MockupWidget({ id }) {
   if (id === 'investors') {
     return (
       <div className="aud-mockup-panel h-full flex flex-col justify-between gap-4">
-        <div className="aud-mockup-title">Core & Satellite Allocation</div>
+        <div className="aud-mockup-title">Core & Satellite Study Allocation</div>
         
         {/* Visual Allocation blocks */}
         <div className="space-y-3 my-auto">
@@ -173,7 +173,7 @@ function MockupWidget({ id }) {
                 <p className="text-[9px] text-gray-500">Mutual Funds & Blue-chips</p>
               </div>
             </div>
-            <span className="font-mono text-[10px] text-gray-400">12% CAGR</span>
+            <span className="font-mono text-[10px] text-gray-400">Historical Baseline</span>
           </div>
 
           {/* Satellite */}
@@ -182,16 +182,16 @@ function MockupWidget({ id }) {
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <div className="text-left">
                 <p className="font-semibold text-emerald-400 light:text-emerald-700 text-xs">Satellite Edge (20%)</p>
-                <p className="text-[9px] text-emerald-500/80 light:text-emerald-600/80">Active Pricing System</p>
+                <p className="text-[9px] text-emerald-500/80 light:text-emerald-600/80">Active Technical Analysis</p>
               </div>
             </div>
-            <span className="font-mono text-[10px] text-emerald-400 light:text-emerald-700 font-bold">25%+ CAGR</span>
+            <span className="font-mono text-[10px] text-emerald-400 light:text-emerald-700 font-bold">1:2+ R:R Setup</span>
           </div>
         </div>
 
         <div className="border-t border-white/5 light:border-black/5 pt-3 mt-2 flex justify-between items-center text-[10px] font-mono text-gray-500">
-          <span>Objective: Elevate CAGR</span>
-          <span className="text-emerald-400 light:text-emerald-700 font-bold">Optimal Alpha</span>
+          <span>Objective: Analytical Precision</span>
+          <span className="text-emerald-400 light:text-emerald-700 font-bold">Systematic Study</span>
         </div>
       </div>
     );
@@ -208,7 +208,7 @@ function MockupWidget({ id }) {
             <span className="w-5 h-5 rounded bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-mono font-bold flex items-center justify-center shrink-0 text-[10px] light:text-emerald-700">1</span>
             <div>
               <p className="font-semibold text-gray-300 light:text-gray-800 text-xs leading-none">Learn Market Structure</p>
-              <p className="text-[9px] text-gray-500 mt-1">Master price actions (No indicators clutter).</p>
+              <p className="text-[9px] text-gray-500 mt-1">Master price actions (No indicator clutter).</p>
             </div>
           </div>
           
@@ -223,15 +223,15 @@ function MockupWidget({ id }) {
           <div className="flex items-start gap-2.5 text-gray-400">
             <span className="w-5 h-5 rounded bg-white/5 border border-white/5 text-gray-500 font-mono font-bold flex items-center justify-center shrink-0 text-[10px] light:bg-black/5 light:border-black/5">3</span>
             <div>
-              <p className="font-semibold text-gray-300 light:text-gray-800 text-xs leading-none">Micro-Risk Live Account</p>
-              <p className="text-[9px] text-gray-500 mt-1">Trade single lots with ₹10,000 maximum capital.</p>
+              <p className="font-semibold text-gray-300 light:text-gray-800 text-xs leading-none">Micro-Risk Practice Account</p>
+              <p className="text-[9px] text-gray-500 mt-1">Practice layouts with small, strict risk boundaries.</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/5 light:border-black/5 pt-3 mt-2 flex justify-between items-center text-[10px] font-mono text-emerald-400 light:text-emerald-700">
           <span>Shielded Onboarding</span>
-          <span className="font-bold">Zero Danger</span>
+          <span className="font-bold">Safe Simulation</span>
         </div>
       </div>
     );

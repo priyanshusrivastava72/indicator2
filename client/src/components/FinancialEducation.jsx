@@ -26,8 +26,8 @@ const steps = [
     title: 'Investing',
     subtitle: 'The Shift',
     desc: 'Money works for you in equity, funds, or trading. Returns outpace inflation and create passive growth.',
-    stat: '12–30%+ p.a.',
-    statLabel: 'Potential Returns',
+    stat: '1:2+ Ratio',
+    statLabel: 'Hypothetical R:R',
     isHighlighted: true,
   },
   {
@@ -182,7 +182,7 @@ export default function FinancialEducation() {
 
                     {/* Stat box at bottom of card */}
                     <div
-                      className="flex items-center justify-between rounded-2xl px-4 py-2.5 mt-auto"
+                      className="flex flex-col gap-1 rounded-2xl px-4 py-3 mt-auto text-left"
                       style={{
                         background: highlighted
                           ? 'rgba(16,185,129,0.1)'
@@ -192,8 +192,11 @@ export default function FinancialEducation() {
                           : 'var(--color-stat-border, 1px solid rgba(255,255,255,0.05))',
                       }}
                     >
+                      <p className="text-[10px] text-gray-400 font-mono tracking-wider uppercase leading-none">
+                        {step.statLabel}
+                      </p>
                       <p
-                        className="font-display font-bold text-sm md:text-base"
+                        className="font-display font-bold text-base md:text-lg leading-tight"
                         style={{
                           color: highlighted
                             ? 'var(--color-accent-green, #10b981)'
@@ -201,9 +204,6 @@ export default function FinancialEducation() {
                         }}
                       >
                         {step.stat}
-                      </p>
-                      <p className="text-[10px] text-gray-400 font-mono tracking-wide uppercase">
-                        {step.statLabel}
                       </p>
                     </div>
                   </div>

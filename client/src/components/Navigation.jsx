@@ -55,8 +55,8 @@ const Navigation = () => {
         {/* Desktop Nav Actions */}
         <nav className="hidden md:flex items-center gap-8">
           <a href="#course" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Course</a>
-          <a href="#indicator" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Indicator</a>
-          <a href="#results" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Results</a>
+          <a href="#indicator" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Tools</a>
+          <a href="#social-proof" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Reviews</a>
           <a href="#pricing" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Pricing</a>
           
           {/* Theme switcher toggle button */}
@@ -123,8 +123,8 @@ const Navigation = () => {
           }}
         >
           <a href="#course" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
-          <a href="#indicator" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Indicator</a>
-          <a href="#results" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Results</a>
+          <a href="#indicator" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
+          <a href="#social-proof" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
           <a href="#pricing" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
           <button className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors">
             Member Login

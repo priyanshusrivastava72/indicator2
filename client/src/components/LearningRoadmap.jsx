@@ -7,12 +7,12 @@ function PhaseGraphic({ num, isHovered }) {
     return (
       <div className="w-full h-12 bg-white/2 rounded-lg border border-white/5 relative overflow-hidden flex items-center justify-around px-2 mb-3 mt-1 text-[8px] font-mono text-gray-500">
         <div className="flex flex-col gap-1 items-start">
-          <span className="text-[7px] text-gray-600">LIMIT ORDER</span>
-          <span className="text-emerald-400 font-bold">BUY NIFTY</span>
+          <span className="text-[7px] text-gray-600">ORDER TYPE</span>
+          <span className="text-emerald-400 font-bold">THEORY EX</span>
         </div>
         <div className="h-6 w-px bg-white/5" />
         <div className="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
-          SUBMIT
+          LEARN
         </div>
       </div>
     );
@@ -74,7 +74,7 @@ function PhaseGraphic({ num, isHovered }) {
     return (
       <div className="w-full h-12 bg-white/2 rounded-lg border border-white/5 relative overflow-hidden flex items-center justify-center mb-3 mt-1 font-mono">
         <div className="flex items-center gap-1.5 text-[8px] px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-bold">
-          <span>🔔 SIGNAL: BUY ALIGNMENT</span>
+          <span>🔔 TREND CONFLUENCE MAPPING</span>
         </div>
       </div>
     );
@@ -87,8 +87,8 @@ function PhaseGraphic({ num, isHovered }) {
           <span className="text-emerald-400 font-bold">LIVE FEED</span>
         </div>
         <div className="flex justify-between items-baseline mt-1">
-          <span className="text-gray-400">SESSION P&L</span>
-          <span className="text-emerald-400 font-bold text-xs">+₹2,450.00</span>
+          <span className="text-gray-400">ACCURACY RATE</span>
+          <span className="text-emerald-400 font-bold text-xs">94.2%</span>
         </div>
       </div>
     );
@@ -131,18 +131,18 @@ const phases = [
   },
   {
     num: '05',
-    title: 'Indicator Mastery',
+    title: 'Charting & Analysis Tools',
     subtitle: 'PHASE 05',
-    desc: 'Using the proprietary signal system.',
-    skills: ['Signal Confluence', 'Noise Filtering', 'Alert Setup'],
+    desc: 'Using technical analysis charting scripts.',
+    skills: ['Trend Confluence', 'Noise Filtering', 'Chart Layouts'],
     estTime: 'Week 5',
   },
   {
     num: '06',
-    title: 'Live Market App',
+    title: 'Market Simulation Labs',
     subtitle: 'PHASE 06',
-    desc: 'Executing the strategy in real-time.',
-    skills: ['Paper Trading', 'Performance Auditing', 'Discipline Rules'],
+    desc: 'Simulating chart reading in real-time.',
+    skills: ['Chart Case Studies', 'Simulation Auditing', 'Discipline Rules'],
     estTime: 'Week 6',
   },
 ];

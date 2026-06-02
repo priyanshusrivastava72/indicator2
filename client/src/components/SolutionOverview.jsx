@@ -4,9 +4,9 @@ import './SolutionOverview.css';
 const SolutionOverview = () => {
   const solutions = [
     { icon: '📚', title: 'Course', desc: 'Step-by-step video modules covering technical analysis from scratch.' },
-    { icon: '📈', title: 'Indicator', desc: 'Proprietary signals that remove the guesswork from entries.' },
+    { icon: '📈', title: 'Charting Helper', desc: 'Support/resistance and trend zones to guide theoretical studies.' },
     { icon: '🎯', title: 'Risk Framework', desc: 'Mathematical approach to capital protection and position sizing.' },
-    { icon: '👥', title: 'Community', desc: 'A network of serious traders executing the same system daily.' }
+    { icon: '👥', title: 'Community', desc: 'A network of serious students analyzing market structures together.' }
   ];
 
   return (

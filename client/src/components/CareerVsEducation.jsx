@@ -229,7 +229,7 @@ export default function CareerVsEducation() {
 
                     <g transform="translate(260, 20)">
                       <rect x="-42" y="-24" width="84" height="18" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
-                      <text x="0" y="-12" fill="#10b981" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">3.5X COMPLIANCE GAP</text>
+                      <text x="0" y="-12" fill="#10b981" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">3.5X GROWTH GAP</text>
                     </g>
                   </svg>
                 </div>
@@ -239,16 +239,16 @@ export default function CareerVsEducation() {
               <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-4 mt-2 font-mono text-[10px]">
                 <div>
                   <span className="text-gray-500 block">CAREER ONLY</span>
-                  <span className="text-gray-400 font-bold mt-0.5 block">₹12.0L</span>
+                  <span className="text-gray-400 font-bold mt-0.5 block">1X Base</span>
                 </div>
                 <div className="border-l border-white/5 pl-3">
-                  <span className="text-gray-500 block">CAREER + TRADE</span>
-                  <span className="text-emerald-400 font-bold mt-0.5 block">₹42.8L</span>
+                  <span className="text-gray-500 block">CAREER + FINANCE</span>
+                  <span className="text-emerald-400 font-bold mt-0.5 block">3.5X Target</span>
                 </div>
                 <div className="border-l border-white/5 pl-3">
-                  <span className="text-gray-500 block">SURPLUS GAIN</span>
+                  <span className="text-gray-500 block">GROWTH GAP</span>
                   <span className="text-emerald-400 font-bold mt-0.5 block flex items-center gap-0.5">
-                    <TrendingUp size={10} /> +256%
+                    <TrendingUp size={10} /> +250% Hypo
                   </span>
                 </div>
               </div>
