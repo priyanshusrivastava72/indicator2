@@ -5,7 +5,7 @@ import { TrendingUp, TrendingDown, Scale, Check, Shield } from 'lucide-react';
 const tradesData = [
   {
     id: 'TC-284',
-    type: 'BULLISH TREND CONFLUENCE',
+    type: 'TREND STRUCTURE EXAMPLE',
     ticker: 'NIFTY / INR',
     direction: 'STUDY: TREND THEORY',
     outcome: 'SUPPORT CONFIRMED',
@@ -18,7 +18,7 @@ const tradesData = [
   },
   {
     id: 'TC-285',
-    type: 'FAILED BREAKOUT STUDY',
+    type: 'MARKET BEHAVIOR EXAMPLE',
     ticker: 'NIFTY / INR',
     direction: 'STUDY: RISK THEORY',
     outcome: 'INVALID BREAKOUT',
@@ -31,7 +31,7 @@ const tradesData = [
   },
   {
     id: 'TC-286',
-    type: 'TRAILING STOP SIMULATION',
+    type: 'RISK MANAGEMENT EXAMPLE',
     ticker: 'NIFTY / INR',
     direction: 'STUDY: TRAILING THEORY',
     outcome: 'BREAK-EVEN EXIT',
@@ -90,7 +90,7 @@ export default function LiveTrades() {
           </h2>
           
           <p className="text-sm md:text-base text-gray-500 leading-relaxed mt-4 max-w-2xl">
-            We focus on structure, not alerts. Building a professional edge relies on understanding risk limits and studying multiple market scenarios.
+            We focus on structure, not alerts. Building a professional skill relies on understanding risk limits and studying multiple market scenarios.
           </p>
         </div>
 
@@ -107,12 +107,12 @@ export default function LiveTrades() {
                 <span className="text-emerald-400 font-bold text-sm mt-1 block">Level Aligned</span>
               </div>
               <div className="border-l border-white/5 pl-3">
-                <span className="text-gray-500 block">TARGET THEORY</span>
-                <span className="text-white font-bold text-sm mt-1 block">1:2 Minimum</span>
+                <span className="text-gray-500 block">SCENARIO ANALYSIS</span>
+                <span className="text-white font-bold text-sm mt-1 block">Educational Demonstration</span>
               </div>
               <div className="border-l border-white/5 pl-3">
                 <span className="text-gray-500 block">MAX RISK RULE</span>
-                <span className="text-red-400 font-bold text-sm mt-1 block">1.0% Peak</span>
+                <span className="text-red-400 font-bold text-sm mt-1 block">Study Scenario</span>
               </div>
             </div>
 

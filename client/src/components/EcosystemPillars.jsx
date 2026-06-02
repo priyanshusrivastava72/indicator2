@@ -15,8 +15,8 @@ const pillars = [
   {
     id: 'indicator',
     icon: Activity,
-    title: 'Smart Charting Tool',
-    desc: 'Proprietary TradingView charting helper to visualize structures.',
+    title: 'Educational Charting Tool',
+    desc: 'Educational charting tool designed to help students study market structure, support zones, resistance zones, and chart behavior.',
     details: 'Trend Analysis & Volume Profiles',
     badge: 'ANALYSIS',
     decor: 'signals',
@@ -25,7 +25,7 @@ const pillars = [
     id: 'risk',
     icon: ShieldCheck,
     title: 'Risk Framework',
-    desc: 'Mathematical capital preservation rules to keep you in the game.',
+    desc: 'Risk management concepts designed to help students understand capital preservation and responsible decision-making.',
     details: 'Max 1% Risk / Position Sizing Calculator',
     badge: 'PRESERVATION',
     decor: 'risk-gauge',
@@ -54,7 +54,7 @@ function CardDecor({ type, isHovered }) {
           <span className="text-emerald-500/80">100%</span>
         </div>
         <div className="flex justify-between items-center bg-white/2 px-2.5 py-1.5 rounded border border-white/5 opacity-50">
-          <span>PHASE 3: Execution Edge</span>
+          <span>PHASE 3: Advanced Study</span>
           <span>Pending</span>
         </div>
       </div>
@@ -81,8 +81,8 @@ function CardDecor({ type, isHovered }) {
     return (
       <div className="mt-6 w-full font-mono text-[10px] space-y-2 text-gray-500">
         <div className="flex items-center justify-between">
-          <span>MAX ACC-RISK / TRADE</span>
-          <span className="text-emerald-400 font-bold">1.00%</span>
+          <span>RISK AWARENESS LEVEL</span>
+          <span className="text-emerald-400 font-bold">Defined</span>
         </div>
         {/* Progress bar */}
         <div className="w-full h-1.5 bg-dark-300 rounded-full overflow-hidden border border-white/5">
@@ -94,8 +94,8 @@ function CardDecor({ type, isHovered }) {
           />
         </div>
         <div className="flex items-center justify-between text-[8px] text-gray-600">
-          <span>CONSERVATIVE</span>
-          <span>AGGRESSIVE</span>
+          <span>FOUNDATIONAL</span>
+          <span>ADVANCED</span>
         </div>
       </div>
     );
@@ -156,11 +156,11 @@ export default function EcosystemPillars() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-5 leading-tight">
-            Everything You Need To Succeed.{' '}
+            Everything You Need To Learn.{' '}
             <span className="text-gradient block mt-1">In One Unified Framework.</span>
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            We don't just provide a charting tool or a course. We provide a full, structured system where each piece leverages the next to secure your growth.
+            Each component is designed to build understanding through structured education.
           </p>
         </div>
 

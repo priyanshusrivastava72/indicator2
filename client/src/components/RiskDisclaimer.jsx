@@ -21,11 +21,7 @@ const RiskDisclaimer = () => {
             lineHeight: '1.5'
           }}
         >
-          Trading in financial markets involves substantial risk of loss 
-          and is not suitable for all investors. We are NOT SEBI-registered advisors, 
-          and the contents of this website, course, and charting tools are strictly for 
-          general educational purposes only. Past performance is not indicative of future 
-          results. No returns or profits are promised.
+          TradeCraft is an educational platform. All content is provided solely for general educational and informational purposes and should not be construed as investment advice, stock recommendations, research reports, portfolio management services, or solicitation to buy or sell any security. We are not a SEBI-registered investment adviser, research analyst, or portfolio manager. Past market behavior does not guarantee future results. Users should conduct their own research and consult licensed professionals before making financial decisions.
         </p>
       </div>
     </section>

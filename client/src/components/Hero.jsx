@@ -21,16 +21,16 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-6">
             <Activity size={16} />
-            <span>Structured Trading Education</span>
+            <span>Structured Chart-Reading Education</span>
           </div>
           
           <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-6">
             Your Degree Gets You A Job.<br />
-            <span className="text-gradient">Financial Skills Build Your Future.</span>
+            <span className="text-gradient">Learn How Markets Work. Build Financial Confidence.</span>
           </h1>
           
           <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl font-sans leading-relaxed">
-            Learn trading, market psychology, risk management, and financial intelligence through a structured system built for modern learners.
+            Learn market structure, financial literacy, chart-reading theory, risk management concepts, and decision-making frameworks through a structured educational curriculum.
           </p>
 
           {/* New Left-Column Metric HUD Grid */}
@@ -55,11 +55,11 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* HUD 3: Risk Rule */}
+{/* HUD 3: Risk Rule */}
             <div className="hero-hud-card">
-              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">Risk Guard</span>
-              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">1.00%</span>
-              <span className="text-[7px] font-mono text-gray-500 mt-2.5 leading-none">HYPO RISK / POS</span>
+              <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">Risk Framework</span>
+              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">Learning System</span>
+              <span className="text-[7px] font-mono text-gray-500 mt-2.5 leading-none">CORE PRINCIPLE</span>
             </div>
           </div>
           
@@ -198,7 +198,7 @@ const Hero = () => {
               </svg>
             </div>
 
-            {/* Floating Live Signal Badge */}
+            {/* Floating Study Mode Badge */}
             <motion.div 
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}

@@ -87,8 +87,8 @@ function PhaseGraphic({ num, isHovered }) {
           <span className="text-emerald-400 font-bold">LIVE FEED</span>
         </div>
         <div className="flex justify-between items-baseline mt-1">
-          <span className="text-gray-400">ACCURACY RATE</span>
-          <span className="text-emerald-400 font-bold text-xs">94.2%</span>
+          <span className="text-gray-400">STUDY PROGRESS</span>
+          <span className="text-emerald-400 font-bold text-xs">85.4%</span>
         </div>
       </div>
     );
@@ -139,7 +139,7 @@ const phases = [
   },
   {
     num: '06',
-    title: 'Market Simulation Labs',
+    title: 'Simulation Learning Labs',
     subtitle: 'PHASE 06',
     desc: 'Simulating chart reading in real-time.',
     skills: ['Chart Case Studies', 'Simulation Auditing', 'Discipline Rules'],
@@ -205,7 +205,7 @@ export default function LearningRoadmap() {
             A Structured Learning Path
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
-            No random YouTube search videos. Just a linear, logical progression from absolute zero to live execution.
+            No fragmented learning. Follow a structured path from fundamentals to advanced market analysis concepts.
           </p>
         </div>
 

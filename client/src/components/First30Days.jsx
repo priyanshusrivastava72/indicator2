@@ -21,7 +21,7 @@ const First30Days = () => {
     {
       week: 3,
       title: 'The System & Charting Script',
-      desc: 'Combine your structural knowledge with our proprietary charting helper script. Learn exactly when a confluence is valid and when it should be ignored.',
+      desc: 'Combine your structural knowledge with our educational charting tool. Understand when a confluence is valid and when it should be ignored.',
       tasks: ['Script Installation', 'Valid vs Invalid Confluences', 'The Verification Checklist']
     },
     {

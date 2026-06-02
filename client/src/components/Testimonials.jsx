@@ -25,19 +25,19 @@ const Testimonials = () => {
 
   const reviews = [
     {
-      text: "The risk management framework alone paid for the course in my first week. Finally, a system that focuses on capital protection instead of gambling.",
+      text: "The risk management lessons changed how I evaluate uncertainty.",
       initials: "AR",
       name: "Aryan R.",
       role: "Software Engineer"
     },
     {
-      text: "I've bought three other courses before this. They all felt like scams. This is the first time I've learned a repeatable process. The charting helper script is a game-changer.",
+      text: "I finally developed a repeatable learning process for analyzing charts.",
       initials: "SM",
       name: "Sneha M.",
       role: "College Student"
     },
     {
-      text: "No fluff, no flashy cars, just pure market mechanics. I went from drawing random trendlines to creating structured study logs and managing risk guidelines effectively.",
+      text: "The course helped me understand market structure much more clearly.",
       initials: "KP",
       name: "Karan P.",
       role: "Business Owner"

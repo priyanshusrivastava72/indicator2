@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Risk Disclaimer */}
         <div className="mb-16 p-6 rounded-xl border border-red-500/10 bg-red-500/5 text-center max-w-4xl mx-auto">
           <p className="text-gray-400 text-sm leading-relaxed">
-            <span className="text-red-400 font-bold">DISCLAIMER & COMPLIANCE:</span> We are NOT a SEBI-registered advisor or intermediary. TradeCraft does not provide stock recommendations, buy/sell signals, or investment advice. The contents of this website, course, and charting helper script are strictly for general educational purposes and theory demonstration only. Trading carries substantial risk of capital loss. Past performance is not indicative of future results. No profit guarantees or returns promises are made.
+            TradeCraft is an educational platform. All content is provided solely for general educational and informational purposes and should not be construed as investment advice, stock recommendations, research reports, portfolio management services, or solicitation to buy or sell any security. We are not a SEBI-registered investment adviser, research analyst, or portfolio manager. Past market behavior does not guarantee future results. Users should conduct their own research and consult licensed professionals before making financial decisions.
           </p>
         </div>
 

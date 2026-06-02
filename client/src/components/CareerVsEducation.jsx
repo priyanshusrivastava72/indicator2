@@ -4,34 +4,29 @@ import { X, Check, TrendingUp } from 'lucide-react';
 
 const rows = [
   {
-    topic: 'Income Growth',
-    traditional: 'Fixed annual increment of 8–12%',
-    growth: 'Multiple income streams, no ceiling',
+    topic: 'Financial Literacy',
+    traditional: 'Limited awareness of asset compounding principles',
+    growth: 'Structured understanding of global capital rules',
+  },
+  {
+    topic: 'Understanding Inflation',
+    traditional: 'Savings lose purchasing power in flat deposit accounts',
+    growth: 'Understanding inflation, purchasing power, and long-term financial planning',
+  },
+  {
+    topic: 'Risk Awareness',
+    traditional: 'Exposed to high-risk advisory schemes or panic exits',
+    growth: 'Mathematically defined capital protection boundaries',
   },
   {
     topic: 'Market Knowledge',
-    traditional: 'Zero — money sits in FD or savings',
-    growth: 'Understands markets, inflation, and assets',
+    traditional: 'Opinion-based trading or chasing retail media hype',
+    growth: 'Structured analysis of cycles, trends, and volumes',
   },
   {
-    topic: 'Financial Skill',
-    traditional: 'One professional skill (job role)',
-    growth: 'Career skill + financial skill',
-  },
-  {
-    topic: 'Life Decisions',
-    traditional: 'Wait for appraisal to make big purchases',
-    growth: 'Capital can be deployed at any time',
-  },
-  {
-    topic: 'Retirement Plan',
-    traditional: 'EPF + hope for the best',
-    growth: 'Active portfolio growing alongside career',
-  },
-  {
-    topic: 'Response to Market Crash',
-    traditional: 'Panic or do nothing',
-    growth: 'Sees opportunities others are afraid of',
+    topic: 'Financial Decisions',
+    traditional: 'Emotional allocation choices and debt traps',
+    growth: 'Logical checklists for allocation and saving plans',
   },
 ];
 
@@ -174,16 +169,16 @@ export default function CareerVsEducation() {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-[9px] font-mono tracking-widest text-emerald-400 font-bold uppercase">EQUITY SIMULATION</span>
-                    <h3 className="text-xl font-bold text-white mt-1">10-Year Trajectory Gap</h3>
+                    <span className="text-[9px] font-mono tracking-widest text-emerald-400 font-bold uppercase">EDUCATION PROGRESSION</span>
+                    <h3 className="text-xl font-bold text-white mt-1">Skill Trajectory</h3>
                   </div>
                   <span className="px-2 py-0.5 rounded-full text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    CAGR PROJECTION
+                    CONCEPTUAL
                   </span>
                 </div>
                 
                 <p className="text-gray-400 text-xs leading-relaxed mb-6">
-                  Traditional career income rises linearly, whereas adding structured trading compounding triggers exponential asset acceleration.
+                  Illustrative educational progression. This graphic is conceptual and intended only to demonstrate how structured learning can improve understanding over time.
                 </p>
 
                 {/* SVG Graph */}
@@ -227,9 +222,9 @@ export default function CareerVsEducation() {
                     <text x="150" y="140" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace" textAnchor="middle">Year 5</text>
                     <text x="290" y="140" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace" textAnchor="end">Year 10</text>
 
-                    <g transform="translate(260, 20)">
-                      <rect x="-42" y="-24" width="84" height="18" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
-                      <text x="0" y="-12" fill="#10b981" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">3.5X GROWTH GAP</text>
+                    <g transform="translate(255, 20)">
+                      <rect x="-47" y="-24" width="94" height="18" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.8" />
+                      <text x="0" y="-12" fill="#10b981" fontSize="7" fontFamily="monospace" textAnchor="middle" fontWeight="bold">PROGRESSION</text>
                     </g>
                   </svg>
                 </div>
@@ -239,16 +234,16 @@ export default function CareerVsEducation() {
               <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-4 mt-2 font-mono text-[10px]">
                 <div>
                   <span className="text-gray-500 block">CAREER ONLY</span>
-                  <span className="text-gray-400 font-bold mt-0.5 block">1X Base</span>
+                  <span className="text-gray-400 font-bold mt-0.5 block">Baseline</span>
                 </div>
                 <div className="border-l border-white/5 pl-3">
-                  <span className="text-gray-500 block">CAREER + FINANCE</span>
-                  <span className="text-emerald-400 font-bold mt-0.5 block">3.5X Target</span>
+                  <span className="text-gray-500 block">CAREER + EDUCATION</span>
+                  <span className="text-emerald-400 font-bold mt-0.5 block">Enhanced</span>
                 </div>
                 <div className="border-l border-white/5 pl-3">
-                  <span className="text-gray-500 block">GROWTH GAP</span>
+                  <span className="text-gray-500 block">KNOWLEDGE SHIFT</span>
                   <span className="text-emerald-400 font-bold mt-0.5 block flex items-center gap-0.5">
-                    <TrendingUp size={10} /> +250% Hypo
+                    <TrendingUp size={10} /> Progressive
                   </span>
                 </div>
               </div>

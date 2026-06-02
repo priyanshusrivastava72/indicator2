@@ -7,7 +7,7 @@ const steps = [
     id: 'apply',
     num: '01',
     icon: Activity,
-    title: 'Apply Chart Setup',
+    title: 'Study Chart Structure',
     label: 'INTEGRATE',
     desc: 'Configure standard TradingView charting tools with support, resistance, and volume profiles to organize your workspace.',
   },
@@ -15,7 +15,7 @@ const steps = [
     id: 'confirm',
     num: '02',
     icon: ShieldCheck,
-    title: 'Wait For Confluence',
+    title: 'Observe Market Context',
     label: 'CONFLUENCE',
     desc: 'Patience is key. Study multiple timeframes to wait for alignment between volume trends and market structure levels.',
   },
@@ -23,15 +23,15 @@ const steps = [
     id: 'risk',
     num: '03',
     icon: Crosshair,
-    title: 'Apply Risk Rules',
+    title: 'Learn Risk Concepts',
     label: 'PRESERVE',
     desc: 'Calculate position size based on strict risk rules. Determine appropriate stop-loss placement to keep potential downside under 1% of total hypothetical capital.',
   },
   {
-    id: 'execute',
+    id: 'practice',
     num: '04',
     icon: Play,
-    title: 'Simulate & Journal',
+    title: 'Practice & Journal',
     desc: 'Log your simulated charts and notes in your study spreadsheet. Audit the theoretical outcomes to build discipline and pattern recognition.',
   },
 ];
@@ -86,7 +86,7 @@ function TerminalVisual({ stepId }) {
           </div>
         </div>
 
-        {/* Flashing BUY signal mockup */}
+        {/* Confluence approval mockup */}
         <div className="my-2 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 flex flex-col items-center justify-center gap-1.5 shadow-lg shadow-emerald-950/20">
           <span className="text-[9px] text-emerald-500 font-bold tracking-widest uppercase">CONFLUENCE APPROVED</span>
           <span className="text-lg font-black text-white tracking-widest flex items-center gap-1 animate-pulse">
@@ -146,12 +146,12 @@ function TerminalVisual({ stepId }) {
     );
   }
 
-  if (stepId === 'execute') {
+  if (stepId === 'practice') {
     return (
       <div className="w-full h-full flex flex-col justify-between font-mono text-xs text-gray-400 p-6">
         <div>
           <div className="flex items-center justify-between text-[10px] text-gray-500 border-b border-white/5 pb-2">
-            <span>EXECUTION_LOGGER</span>
+            <span>SIMULATION_LOGGER</span>
             <span className="text-emerald-500">SUCCESS</span>
           </div>
           
@@ -233,10 +233,10 @@ export default function HowItWorks() {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            How The System Works
+            How The Learning Framework Works
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
-            A simple, mechanical 4-step execution process. No guesswork, no hesitation.
+            A simple, mechanical 4-step learning process. No guesswork, no hesitation.
           </p>
         </div>
 

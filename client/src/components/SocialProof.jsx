@@ -6,21 +6,21 @@ const testimonials = [
   {
     name: 'Aryan R.',
     role: 'Software Engineer',
-    quote: "The risk management framework alone paid for the course in my first week. Finally, a system that focuses on capital protection.",
+    quote: "The risk management lessons changed how I evaluate uncertainty.",
     type: 'video',
     badge: 'Risk Moat Applied'
   },
   {
     name: 'Sneha M.',
     role: 'College Student',
-    quote: "I've bought three other courses before this. They all felt like scams. This is the first time I've learned a repeatable process.",
+    quote: "I finally developed a repeatable learning process for analyzing charts.",
     type: 'text',
     badge: 'Verified Consistency'
   },
   {
     name: 'Karan P.',
     role: 'Business Owner',
-    quote: "No fluff, no flashy cars, just pure market mechanics. I went from placing random guesses to drawing logical support/resistance structures on my own.",
+    quote: "The course helped me understand market structure much more clearly.",
     type: 'text',
     badge: 'Consistent Study Habits'
   }

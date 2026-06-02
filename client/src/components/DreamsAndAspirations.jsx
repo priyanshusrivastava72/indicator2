@@ -1,71 +1,67 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Car, Home, Plane, Shield, Sparkles, TrendingUp, ArrowUpRight } from 'lucide-react';
+import { BookOpen, Home, Plane, Shield, Sparkles, TrendingUp, ArrowUpRight } from 'lucide-react';
 
 const dreams = [
-  {
-    id: 'car',
-    icon: Car,
-    title: 'Dream Car',
-    desc: 'Stop looking at price tags.',
-    longDesc: 'When your trading income matches your ambition, the showroom becomes a catalog — not a museum.',
-    badge: 'CAPEX_UPGRADE',
-    span: 'lg:col-span-1',
-    decor: 'speedometer',
-    image: '/assets/dream_car.png'
-  },
-  {
-    id: 'home',
-    icon: Home,
-    title: 'Own Home',
-    desc: 'Build equity on your terms.',
-    longDesc: 'Skip the 30-year debt trap. Build real equity faster through active compound returns and smart leverage.',
-    badge: 'ASSET_ACQUISITION',
-    span: 'lg:col-span-2',
-    decor: 'blueprint',
-    image: '/assets/luxury_villa.png'
-  },
-  {
-    id: 'travel',
-    icon: Plane,
-    title: 'Travel Freedom',
-    desc: 'Work from anywhere.',
-    longDesc: 'Trade from any timezone. Your only real constraint is a stable internet connection and chart time.',
-    badge: 'LOCATION_INDEPENDENCE',
-    span: 'lg:col-span-2',
-    decor: 'timezones',
-    image: '/assets/travel_freedom.png'
-  },
-  {
-    id: 'security',
-    icon: Shield,
-    title: 'Family Security',
-    desc: 'Protect what matters most.',
-    longDesc: 'Build a bulletproof financial moat. Protect your family from single-point-of-failure salaries.',
-    badge: 'RISK_MITIGATION',
-    span: 'lg:col-span-1',
-    decor: 'shield-rings',
-  },
-  {
-    id: 'lifestyle',
-    icon: Sparkles,
-    title: 'Better Lifestyle',
-    desc: 'Upgrade your daily standard.',
-    longDesc: 'No more compromising on quality. Buy back your time and elevate your daily choices.',
-    badge: 'MARGIN_EXPANSION',
-    span: 'lg:col-span-1',
-    decor: 'sparkles',
-  },
   {
     id: 'confidence',
     icon: TrendingUp,
     title: 'Financial Confidence',
-    desc: 'No more money anxiety.',
-    longDesc: 'Replace panic with a plan. Know exactly how to navigate any market condition with a statistical edge.',
-    badge: 'PSYCHOLOGICAL_EDGE',
-    span: 'lg:col-span-2',
+    desc: 'Replace panic with a plan.',
+    longDesc: 'Understand how market structures develop over time so you can construct long-term asset views with confidence.',
+    badge: 'PSYCHOLOGICAL_BASE',
+    span: 'lg:col-span-1',
     decor: 'mini-chart',
-    image: '/assets/trading_station.png'
+  },
+  {
+    id: 'risk',
+    icon: Shield,
+    title: 'Understanding Risk',
+    desc: 'Construct a bulletproof defense.',
+    longDesc: 'Learn the mathematical models professional capital allocators use to control exposure and manage risk parameters.',
+    badge: 'CAPITAL_PRESERVATION',
+    span: 'lg:col-span-2',
+    decor: 'shield-rings',
+  },
+  {
+    id: 'budgeting',
+    icon: Home,
+    title: 'Budgeting Awareness',
+    desc: 'Skip the high-debt traps.',
+    longDesc: 'Understand the difference between productive leverage and consumer debt to allocate resources efficiently.',
+    badge: 'RESOURCE_ALLOCATION',
+    span: 'lg:col-span-2',
+    decor: 'blueprint',
+  },
+  {
+    id: 'decisions',
+    icon: Sparkles,
+    title: 'Improved Decision-Making',
+    desc: 'Eliminate emotional bias.',
+    longDesc: 'Shift from impulsive guesses to objective checklists based on historical structural data.',
+    badge: 'COGNITIVE_ALIGNMENT',
+    span: 'lg:col-span-1',
+    decor: 'sparkles',
+  },
+  {
+    id: 'literacy',
+    icon: BookOpen,
+    title: 'Long-Term Literacy',
+    desc: 'Understand how inflation affects long-term finances.',
+    longDesc: 'Understand how monetary policies, inflation cycles, and structural trends interact to affect your assets.',
+    badge: 'ECONOMIC_FOUNDATION',
+    span: 'lg:col-span-1',
+    decor: 'blueprint',
+  },
+  {
+    id: 'comprehension',
+    icon: Plane,
+    title: 'Market Comprehension',
+    desc: 'Analyze global sessions.',
+    longDesc: 'Observe how institutional participant flows behavior overlaps across different global timezone market hours.',
+    badge: 'GLOBAL_FLOWS',
+    span: 'lg:col-span-2',
+    decor: 'timezones',
   },
 ];
 
@@ -280,7 +276,7 @@ export default function DreamsAndAspirations() {
           >
             <div className="w-5 h-px bg-emerald-500/50" />
             <p className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
-              The Real Target
+              The True Goal
             </p>
             <div className="w-5 h-px bg-emerald-500/50" />
           </motion.div>
@@ -293,9 +289,9 @@ export default function DreamsAndAspirations() {
             className="font-display font-bold text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)' }}
           >
-            What Are You Building{' '}
+            What Skills Are You{' '}
             <span className="relative inline-block">
-              <span className="text-gradient">Toward?</span>
+              <span className="text-gradient">Building?</span>
               <motion.span
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -313,7 +309,7 @@ export default function DreamsAndAspirations() {
             transition={{ delay: 0.16 }}
             className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            Trading isn't about complex charts and flashing indicators. It's about buying back your time and funding the life you actually want to live.
+            Financial literacy isn't about complex charts and overnight success promises. It's about building risk awareness and making smarter economic choices.
           </motion.p>
         </div>
 
@@ -413,7 +409,7 @@ export default function DreamsAndAspirations() {
           className="mt-16 text-center"
         >
           <p className="text-gray-600 text-xs font-mono">
-            // STATUS: SYSTEM READY &middot; COMPOUND ENGINE ONLINE
+            // STATUS: CURRICULUM READY &middot; EDUCATION MOAT SECURE
           </p>
         </motion.div>
       </div>

@@ -8,7 +8,7 @@ const FAQ = () => {
   const faqs = [
     {
       q: 'Is this course beginner-friendly?',
-      a: 'Absolutely. We start from the absolute basics, including how to set up your charts and understand market terminology, before moving into the advanced strategies.'
+      a: 'Absolutely. We start from the absolute basics, including how to set up your charts and understand market terminology, before moving into the advanced analysis concepts.'
     },
     {
       q: 'How much time do I need per day?',
@@ -23,12 +23,12 @@ const FAQ = () => {
       a: 'You get lifetime access to the course materials, including all future updates and additions to the curriculum.'
     },
     {
-      q: 'Will I get charting script updates?',
-      a: 'Yes. Any future optimizations or updates to the charting script logic are provided to all Pro and Elite students at no additional cost.'
+      q: 'Will I get educational charting tool updates?',
+      a: 'Yes. Any future optimizations or updates to the educational charting tool are provided to all Pro and Elite students at no additional cost.'
     },
     {
       q: 'What is the refund policy?',
-      a: 'We offer a 30-day action-based money-back guarantee. If you complete the course, log the simulated case studies, and do not find value, we will refund your investment.'
+      a: 'We offer a 30-day action-based money-back guarantee. If you complete the course, log the simulated case studies, and do not find value, we will issue a full refund.'
     }
   ];
 

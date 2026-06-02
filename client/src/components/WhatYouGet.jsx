@@ -4,7 +4,7 @@ import './WhatYouGet.css';
 const WhatYouGet = () => {
   const items = [
     { title: 'Full Course (6 Modules)', desc: 'From basics to advanced technical analysis.' },
-    { title: 'Smart Charting Helper', desc: 'Support/resistance and trend theory companion.' },
+    { title: 'Educational Charting Tool', desc: 'Support/resistance and trend theory companion.' },
     { title: 'Private Community Access', desc: 'Network with serious students and mentors.' },
     { title: 'Lifetime Content Updates', desc: 'Get all future module additions for free.' },
     { title: 'Student Support', desc: 'Answers to your study and market theory questions.' },

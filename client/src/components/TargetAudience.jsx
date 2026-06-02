@@ -33,7 +33,7 @@ const audiences = [
     num: '02',
     tag: '24–35 YRS',
     title: 'Working Professionals',
-    headline: "Your salary has a limit. Your skills don't.",
+    headline: 'Strong financial skills help you make informed decisions.',
     desc: 'A job secures your present. Structured financial education builds your long-term understanding. This framework teaches you to interpret charts in 45–60 minutes per day.',
     points: [
       'Pre-market analysis studies in under 60 minutes',
@@ -46,14 +46,14 @@ const audiences = [
     id: 'investors',
     icon: LineChart,
     num: '03',
-    tag: 'ACTIVE TRADERS',
-    title: 'Existing Investors',
-    headline: 'Transition from passive to active charting analysis.',
-    desc: 'If you already hold mutual funds or long-term stocks, active pricing structure analysis is valuable. Learn to read support and resistance lines based on institutional theories.',
+    tag: 'SELF-LEARNERS',
+    title: 'Financial Enthusiasts',
+    headline: 'Deepen your understanding of market structure.',
+    desc: 'If you already follow markets or hold mutual funds, structured chart analysis education adds depth. Learn to read support and resistance lines based on institutional theories.',
     points: [
       'Understand the pure price action behind charts',
       'Structured support & resistance theory',
-      'Complement portfolios with technical analysis skills',
+      'Complement existing knowledge with technical analysis skills',
     ],
     stat: { value: '2X+', label: 'COMPREHENSION' },
   },
@@ -64,11 +64,11 @@ const audiences = [
     tag: 'ZERO BASE',
     title: 'Absolute Beginners',
     headline: 'No prior finance experience required.',
-    desc: 'Analyzing markets is not a casino — it is a process. If you can follow a checklist, manage risk parameters, and remain disciplined, you can study market structures successfully.',
+    desc: 'Analyzing markets is not a casino — it is a process. If you can follow a checklist, manage risk parameters, and remain disciplined, you can analyze markets using a structured educational framework.',
     points: [
       'Starts from absolute zero market fundamentals',
-      'Step-by-step TradingView setup checklist',
-      'Risk-free simulation study logs',
+      'Charting platform setup guide',
+      'Simulation-based learning exercises',
     ],
     stat: { value: '0 → 1', label: 'CURRICULUM FLOW' },
   },
@@ -181,11 +181,11 @@ function MockupWidget({ id }) {
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <div className="text-left">
-                <p className="font-semibold text-emerald-400 light:text-emerald-700 text-xs">Satellite Edge (20%)</p>
+                <p className="font-semibold text-emerald-400 light:text-emerald-700 text-xs">Satellite Study (20%)</p>
                 <p className="text-[9px] text-emerald-500/80 light:text-emerald-600/80">Active Technical Analysis</p>
               </div>
             </div>
-            <span className="font-mono text-[10px] text-emerald-400 light:text-emerald-700 font-bold">1:2+ R:R Setup</span>
+            <span className="font-mono text-[10px] text-emerald-400 light:text-emerald-700 font-bold">Risk Study</span>
           </div>
         </div>
 
@@ -223,8 +223,8 @@ function MockupWidget({ id }) {
           <div className="flex items-start gap-2.5 text-gray-400">
             <span className="w-5 h-5 rounded bg-white/5 border border-white/5 text-gray-500 font-mono font-bold flex items-center justify-center shrink-0 text-[10px] light:bg-black/5 light:border-black/5">3</span>
             <div>
-              <p className="font-semibold text-gray-300 light:text-gray-800 text-xs leading-none">Micro-Risk Practice Account</p>
-              <p className="text-[9px] text-gray-500 mt-1">Practice layouts with small, strict risk boundaries.</p>
+              <p className="font-semibold text-gray-300 light:text-gray-800 text-xs leading-none">Simulation-based learning exercises</p>
+              <p className="text-[9px] text-gray-500 mt-1">Practice layouts with simulated data and strict risk boundaries.</p>
             </div>
           </div>
         </div>

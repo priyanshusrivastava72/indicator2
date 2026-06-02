@@ -7,21 +7,21 @@ const problems = [
     icon: Target,
     num: '01',
     title: 'No System',
-    shortDesc: 'Trading based on gut feeling.',
+    shortDesc: 'Analyzing markets based on gut feeling.',
     fullDesc:
-      'Without a tested, repeatable framework, every trade is just a guess. Professionals trade systems — amateurs trade opinions. You need rules, not hunches.',
-    stat: '90%',
-    statLabel: 'beginners have no written trading plan',
+      'Without a tested, repeatable framework, chart analysis is just a guess. To study market structures successfully, you need defined rules, not hunches.',
+    stat: 'Common Pattern',
+    statLabel: 'No written educational plan',
   },
   {
     icon: Brain,
     num: '02',
     title: 'Emotional Decisions',
-    shortDesc: 'Revenge trading after a loss.',
+    shortDesc: 'Revenge analysis after a wrong assumption.',
     fullDesc:
-      'Fear causes premature exits. Greed causes overtrading. Revenge trading destroys accounts. You need mechanical, pre-defined rules that run on autopilot.',
-    stat: '3×',
-    statLabel: 'more losses due to emotional bias',
+      'Fear causes premature exits from simulation parameters. Greed causes over-analysis. You need systematic rules to study markets objectively.',
+    stat: 'Common Trap',
+    statLabel: 'Emotional bias in analysis',
   },
   {
     icon: Dices,
@@ -30,18 +30,18 @@ const problems = [
     shortDesc: 'Chasing every green candle.',
     fullDesc:
       'Entering because price is moving up is a common retail trap. You need objective, structural confluence conditions before formulating a market bias.',
-    stat: '0',
-    statLabel: 'edge without a defined entry criteria',
+    stat: 'High Risk',
+    statLabel: 'Undefined study criteria',
   },
   {
     icon: ShieldAlert,
     num: '04',
     title: 'Poor Risk Management',
-    shortDesc: 'Risking 10% on a single trade.',
+    shortDesc: 'Risking too much on a single simulation.',
     fullDesc:
-      'One bad trade shouldn\'t erase a week of profits. Capital preservation is the single most important skill in trading. Most beginners never learn it.',
-    stat: '1 trade',
-    statLabel: 'can blow an entire account without a plan',
+      'Capital preservation is the single most important concept in financial education. Most beginners approach the markets without defining mathematical rules.',
+    stat: 'Critical Point',
+    statLabel: 'Exposure without structured rules',
   },
 ];
 
@@ -58,7 +58,7 @@ function DangerGauge({ num, isHovered }) {
     statusText = 'EMOTION BIAS';
   } else if (num === '03') {
     percentage = '100%';
-    statusText = 'ZERO EDGE';
+    statusText = 'NO METHOD';
   } else if (num === '04') {
     percentage = '95%';
     statusText = 'CAPITAL AT RISK';
@@ -136,7 +136,7 @@ export default function ProblemSection() {
             className="text-gray-500 max-w-sm text-base leading-relaxed text-left"
           >
             It's not about being smart. It's about having a structured,
-            emotion-free process. These are the four mistakes that kill 90% of accounts.
+            emotion-free process. These are common mistakes many beginners make when approaching financial markets.
           </motion.p>
         </div>
 

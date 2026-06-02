@@ -28,10 +28,10 @@ const WhyWeBuiltIt = () => {
             </h2>
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
               <p>
-                When we started analyzing markets, we fell into the same traps everyone else does. We bought courses that promised easy returns and delivered nothing but basic, generic indicators.
+                When we started studying markets, we fell into the same traps everyone else does. We bought courses that promised easy shortcuts and delivered nothing but basic, generic indicators.
               </p>
               <p>
-                We realized the industry wasn't designed to build your skills. It was designed to keep you dependent on alert groups and signal services.
+                We realized the industry wasn't designed to build your skills. It was designed to keep you dependent on alert groups and tip-based shortcuts.
               </p>
               <p className="text-white font-medium border-l-2 border-emerald-500 pl-6 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent">
                 We built this tool to strip away the noise. To give you objective, structural data instead of emotional opinions.

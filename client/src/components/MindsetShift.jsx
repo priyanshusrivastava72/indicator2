@@ -32,10 +32,10 @@ const skills = [
   },
   {
     icon: TrendingUp,
-    name: 'Trading',
-    time: '3–6 months to consistency',
+    name: 'Market Analysis',
+    time: '3–6 months of focused study',
     percent: 45,
-    what: 'You master risk management, market structure, and disciplined execution — exactly like any other skill worth having.',
+    what: 'You master risk management concepts, market structure theory, and disciplined analysis — exactly like any other skill worth having.',
     color: '#10b981',
     glow: 'rgba(16,185,129,0.06)',
     highlight: true,
@@ -44,9 +44,9 @@ const skills = [
 
 const timelineItems = [
   { icon: BookOpen, label: 'Learn the theory', sub: 'Weeks 1–4' },
-  { icon: Users, label: 'Paper trade the system', sub: 'Weeks 5–8' },
-  { icon: Clock, label: 'Build consistency', sub: 'Months 3–6' },
-  { icon: Zap, label: 'Scale with confidence', sub: 'Month 6+' },
+  { icon: Users, label: 'Understand market behavior', sub: 'Weeks 5–8' },
+  { icon: Clock, label: 'Practice in simulation environments', sub: 'Months 3–6' },
+  { icon: Zap, label: 'Build structured analytical skills', sub: 'Month 6+' },
 ];
 
 export default function MindsetShift() {
@@ -85,9 +85,9 @@ export default function MindsetShift() {
             transition={{ delay: 0.08 }}
             className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6"
           >
-            Trading is a skill.
+            Market Analysis Is A Skill.
             <br />
-            <span className="text-gray-500">Not a shortcut.</span>
+            <span className="text-gray-500">Not A Shortcut.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -96,9 +96,7 @@ export default function MindsetShift() {
             transition={{ delay: 0.16 }}
             className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl"
           >
-            Nobody expects to code a startup after a weekend tutorial. Trading demands
-            the same professional respect — structured learning, deliberate practice,
-            and a proper system.
+            Understanding markets requires structured learning, deliberate practice, and disciplined thinking.
           </motion.p>
         </div>
 
@@ -232,7 +230,7 @@ export default function MindsetShift() {
                 Your Learning Path
               </p>
               <h3 className="text-2xl font-display font-bold text-white mb-10 leading-tight">
-                From zero to executing<br />your first real trade.
+                From beginner to understanding<br />market structure.
               </h3>
 
               <div className="space-y-0">
@@ -292,8 +290,7 @@ export default function MindsetShift() {
                   color: 'var(--color-callout-text, #9ca3af)',
                 }}
               >
-                <span className="font-semibold text-white light:text-gray-900">The honest truth:</span> Consistent profitability
-                takes 3–6 months of focused practice. Anyone promising overnight results is lying.
+                <span className="font-semibold text-white light:text-gray-900">The honest truth:</span> Developing analytical skills requires structured study, practice, and patience.
               </div>
             </div>
           </motion.div>

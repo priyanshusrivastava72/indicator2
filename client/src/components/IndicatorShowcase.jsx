@@ -50,16 +50,16 @@ export default function IndicatorShowcase() {
           >
             <div className="w-5 h-px bg-emerald-500/50" />
             <p className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
-              Proprietary Technology
+              Educational Technology
             </p>
             <div className="w-5 h-px bg-emerald-500/50" />
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Trend & Volume Charting Helper
+            Market Structure Visualizer
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
-            Visualize market structure. The tool highlights key zones, trend directions, and volume profiles for study and theory.
+            This educational visualization tool helps students study market structure, trend development, support zones, resistance zones, and volume behavior.
           </p>
         </div>
 

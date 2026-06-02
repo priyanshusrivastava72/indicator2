@@ -9,8 +9,8 @@ const SkillReframeSection = () => {
       <div className="container text-center fade-up">
         <span className="eyebrow">THE MINDSET SHIFT</span>
         <h2 className="skill-reframe-title">
-          Trading is a skill.<br />
-          Not a shortcut.
+          Market Analysis Is A Skill.<br />
+          Not A Shortcut.
         </h2>
         
         <div className="skill-pills">
@@ -22,8 +22,7 @@ const SkillReframeSection = () => {
         </div>
 
         <p className="skill-reframe-desc fade-up" style={{ transitionDelay: '400ms' }}>
-          Every professional skill requires learning, practice, and time. 
-          Trading is no different — it rewards those who treat it seriously.
+          Understanding markets requires structured learning, deliberate practice, and disciplined thinking.
         </p>
       </div>
     </section>

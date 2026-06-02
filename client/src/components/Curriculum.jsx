@@ -21,10 +21,10 @@ const modules = [
   },
   {
     title: 'Charting & Analysis Tools',
-    lessons: ['Setting Up Charting Helper Script', 'Interpreting Support & Resistance Zones', 'Identifying Valid Trend Confluences', 'Determining Risk Limits']
+    lessons: ['Setting Up Educational Charting Tool', 'Interpreting Support & Resistance Zones', 'Identifying Valid Trend Confluences', 'Determining Risk Limits']
   },
   {
-    title: 'Market Simulation Labs',
+    title: 'Simulation Learning Labs',
     lessons: ['Pre-market Structure Analysis Routine', 'Simulated Case Study breakdown 1', 'Simulated Case Study breakdown 2', 'Simulation Logging & Risk Verification']
   }
 ];

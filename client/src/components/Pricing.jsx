@@ -69,14 +69,14 @@ const Pricing = () => {
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold text-emerald-400 mb-2 mt-2">The Complete System</h3>
+              <h3 className="text-2xl font-bold text-emerald-400 mb-2 mt-2">Complete Learning Program</h3>
               <div className="flex items-baseline gap-2 mb-0.5">
                 <span className="text-gray-500 line-through text-base">₹19,999</span>
               </div>
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-5xl font-bold text-white">₹9,999</span>
               </div>
-              <p className="text-gray-400 text-xs mb-6">Everything you need to study market dynamics.</p>
+              <p className="text-gray-400 text-xs mb-6">Everything included in a structured financial education curriculum.</p>
 
               {/* Graphical Inclusion Meter */}
               <div className="pricing-value-gauge">
@@ -95,7 +95,7 @@ const Pricing = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3 text-gray-200 text-xs font-semibold"><Check size={18} className="text-emerald-500 shrink-0" /> Everything in Basic</li>
-                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Smart Charting Helper Tool</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Educational Charting Tool</li>
                 <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Private Community Access</li>
                 <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Lifetime Content Updates</li>
               </ul>

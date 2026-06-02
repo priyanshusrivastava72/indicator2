@@ -48,7 +48,7 @@ const CurriculumAccordion = () => {
       module: '05',
       title: 'Charting & Analysis Tools',
       lessons: [
-        'Setting Up Charting Helper Script',
+        'Setting Up Educational Charting Tool',
         'Interpreting Support & Resistance Zones',
         'Identifying Valid Trend Confluences',
         'Determining Risk Limits'
@@ -56,7 +56,7 @@ const CurriculumAccordion = () => {
     },
     {
       module: '06',
-      title: 'Market Simulation Labs',
+      title: 'Simulation Learning Labs',
       lessons: [
         'Pre-market Structure Analysis Routine',
         'Simulated Case Study Breakdowns',

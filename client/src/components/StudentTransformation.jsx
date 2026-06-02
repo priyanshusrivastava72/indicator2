@@ -5,16 +5,16 @@ import { XCircle, CheckCircle2, ArrowRight } from 'lucide-react';
 const StudentTransformation = () => {
   const before = [
     'Jumping between different strategies daily',
-    'Panicking when a trade goes slightly red',
-    'Taking profits too early, letting losers run',
+    'Panicking when a position moves against you in simulation',
+    'No framework for when to hold or exit a study scenario',
     'Staring at 1-minute charts for 8 hours a day'
   ];
 
   const after = [
-    'Executing one proven framework consistently',
-    'Accepting pre-defined risk before entering',
-    'Letting winners hit targets mathematically',
-    'Analyzing for 60 mins, letting alerts do the work'
+    'Following one structured framework consistently',
+    'Defining risk parameters before any study scenario',
+    'Understanding risk-to-reward ratios mathematically',
+    'Analyzing for 60 mins with a clear study checklist'
   ];
 
   return (
@@ -62,7 +62,7 @@ const StudentTransformation = () => {
             {/* Subtle glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px]" />
             
-            <h3 className="text-2xl font-bold text-emerald-400 mb-8 border-b border-emerald-500/20 pb-4 relative z-10">The Structured Trader</h3>
+            <h3 className="text-2xl font-bold text-emerald-400 mb-8 border-b border-emerald-500/20 pb-4 relative z-10">The Structured Learner</h3>
             <ul className="space-y-6 relative z-10">
               {after.map((item, i) => (
                 <li key={i} className="flex gap-4 items-start text-gray-200">

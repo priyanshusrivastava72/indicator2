@@ -29,8 +29,8 @@ const FinalCTA = () => {
           </svg>
         </div>
         <div className="text-left font-mono">
-          <p className="text-[8px] text-gray-500 uppercase tracking-widest leading-none">GUARANTEE</p>
-          <p className="text-[11px] font-bold text-gray-300 light:text-gray-700 mt-1">30-Day Check</p>
+          <p className="text-[8px] text-gray-500 uppercase tracking-widest leading-none">REFUND POLICY</p>
+          <p className="text-[11px] font-bold text-gray-300 light:text-gray-700 mt-1">30-Day Refund</p>
         </div>
       </div>
 
@@ -47,19 +47,19 @@ const FinalCTA = () => {
 
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
-              Five Years From Now You'll Wish You <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Started Today.</span>
+              Build Financial <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Knowledge That Lasts.</span>
             </h2>
             
             <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-              The best investment is in skills that stay with you for life. Stop guessing and start executing with precision.
+              Financial education is a lifelong skill that supports informed decision-making. Start learning through a structured educational framework.
             </p>
             
             <button className="h-14 px-10 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-bold text-lg transition-colors flex items-center gap-2 mx-auto shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transform hover:-translate-y-1 duration-300 cursor-pointer">
-              Join The Program <ArrowRight size={20} />
+              Start Learning <ArrowRight size={20} />
             </button>
             
             <p className="mt-6 text-sm text-gray-500 font-mono">
-              Backed by our 30-day action-based guarantee.
+              Backed by our 30-day refund policy.
             </p>
           </div>
         </motion.div>
