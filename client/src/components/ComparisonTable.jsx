@@ -3,11 +3,11 @@ import './ComparisonTable.css';
 
 const ComparisonTable = () => {
   const rows = [
-    { left: 'Salary-focused growth', right: 'Multiple growth avenues' },
+    { left: 'Single income focus', right: 'Diverse financial awareness' },
     { left: 'Limited market exposure', right: 'Broader market awareness' },
     { left: 'Single professional skill', right: 'Added financial skillset' },
     { left: 'Linear career progression', right: 'Career + financial literacy' },
-    { left: 'Conventional wealth path', right: 'More informed decisions' }
+    { left: 'Conventional saving path', right: 'More informed decisions' }
   ];
 
   return (
@@ -34,8 +34,7 @@ const ComparisonTable = () => {
         </div>
 
         <blockquote className="comparison-quote fade-up">
-          &#10076; A strong career matters. Financial education makes 
-          every rupee you earn work harder. &#10077;
+          &#10076; A strong career matters. Financial education helps you navigate decisions and plan responsibly. &#10077;
         </blockquote>
       </div>
     </section>

@@ -18,7 +18,7 @@ const audiences = [
     num: '01',
     tag: '18–24 YRS',
     title: 'Students & Youth',
-    headline: 'Learn risk-focused compounding principles early.',
+    headline: 'Learn financial planning and compounding concepts early.',
     desc: 'Most students wait until graduation to learn about capital. Understanding compound interest and risk rules early gives you a structured educational base.',
     points: [
       'Learn in just 1 hour per day alongside college',
@@ -86,8 +86,8 @@ function MockupWidget({ id }) {
           {/* Active Trading CAGR */}
           <div className="space-y-1">
             <div className="flex justify-between text-xs text-left">
-              <span className="text-emerald-400 font-semibold light:text-emerald-700">Hypothetical Compounding (15% Hypo)</span>
-              <span className="font-mono text-emerald-400 font-bold light:text-emerald-700">3.1X Growth</span>
+              <span className="text-emerald-400 font-semibold light:text-emerald-700">Illustrative Learning Example</span>
+              <span className="font-mono text-emerald-400 font-bold light:text-emerald-700">Educational Illustration</span>
             </div>
             <div className="w-full h-2.5 rounded-full bg-white/5 border border-white/5 light:bg-black/5 light:border-black/5 overflow-hidden">
               <motion.div
@@ -102,8 +102,8 @@ function MockupWidget({ id }) {
           {/* Traditional FD */}
           <div className="space-y-1">
             <div className="flex justify-between text-xs text-gray-500 text-left">
-              <span>Baseline FD (6% rate)</span>
-              <span className="font-mono">1.8X Growth</span>
+              <span>Conceptual Baseline</span>
+              <span className="font-mono text-gray-500">Conceptual Example</span>
             </div>
             <div className="w-full h-2.5 rounded-full bg-white/5 border border-white/5 light:bg-black/5 light:border-black/5 overflow-hidden">
               <motion.div
@@ -117,8 +117,8 @@ function MockupWidget({ id }) {
         </div>
 
         <div className="border-t border-white/5 light:border-black/5 pt-3 mt-2 flex justify-between items-center text-[10px] font-mono text-gray-500">
-          <span>Base: Hypothetical Contribution</span>
-          <span className="text-emerald-400 light:text-emerald-700 font-bold">Difference: 1.7x Ratio</span>
+          <span>Base: Educational Reference</span>
+          <span className="text-emerald-400 light:text-emerald-700 font-bold">Difference: Study Visualizer</span>
         </div>
       </div>
     );

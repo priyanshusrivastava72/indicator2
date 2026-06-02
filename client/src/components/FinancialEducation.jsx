@@ -45,7 +45,7 @@ export default function FinancialEducation() {
   return (
     <section
       id="financial-education"
-      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 lg:py-0 relative overflow-hidden border-t border-white/5 bg-dark lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
     >
       {/* Ambient top glow */}
       <div
@@ -56,15 +56,15 @@ export default function FinancialEducation() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full animate-fade-in">
 
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-12 lg:mb-8">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-5 text-emerald-500 font-bold"
+            className="font-mono text-xs tracking-widest uppercase mb-3 text-emerald-500 font-bold"
           >
             Why Financial Education Matters
           </motion.p>
@@ -73,7 +73,7 @@ export default function FinancialEducation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6"
+            className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-display font-bold text-white leading-tight mb-4 lg:mb-3"
           >
             Most people learn how to earn.
             <br />
@@ -86,7 +86,7 @@ export default function FinancialEducation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"
+            className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed"
           >
             Schools teach you to earn. Nobody teaches you what to do after.
             The four stages below show exactly where most people get stuck — and where financial education changes the game.
@@ -94,7 +94,7 @@ export default function FinancialEducation() {
         </div>
 
         {/* Steps — Linked Stage Progression Timeline */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-4 xl:gap-6 relative">
           {steps.map((step, i) => {
             const Icon = step.icon;
             const highlighted = step.isHighlighted;
@@ -107,7 +107,7 @@ export default function FinancialEducation() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
-                  className={`relative rounded-[2rem] p-6 md:p-7 group overflow-hidden flex-1 flex flex-col justify-between ${
+                  className={`relative rounded-[1.5rem] p-6 lg:p-5 xl:p-6 group overflow-hidden flex-1 flex flex-col justify-between ${
                     highlighted ? 'highlighted-education-card' : ''
                   }`}
                   style={{
@@ -131,7 +131,7 @@ export default function FinancialEducation() {
 
                   {/* Step number watermark */}
                   <div
-                    className="absolute top-6 right-6 font-display font-black text-6xl select-none pointer-events-none leading-none z-0"
+                    className="absolute top-4 right-4 font-display font-black text-5xl lg:text-4xl select-none pointer-events-none leading-none z-0"
                     style={{
                       color: highlighted
                         ? 'var(--color-watermark-active, rgba(16,185,129,0.08))'
@@ -143,9 +143,9 @@ export default function FinancialEducation() {
 
                   <div className="relative z-10 flex-1 flex flex-col justify-between">
                     {/* Icon + Tag */}
-                    <div className="flex items-start gap-4 mb-6">
+                    <div className="flex items-start gap-4 mb-4 lg:mb-3">
                       <div
-                        className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 z-10"
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 z-10"
                         style={{
                           background: highlighted
                             ? 'rgba(16,185,129,0.15)'
@@ -156,11 +156,11 @@ export default function FinancialEducation() {
                             : 'var(--color-icon-border, 1px solid rgba(255,255,255,0.08))',
                         }}
                       >
-                        <Icon size={20} />
+                        <Icon size={18} />
                       </div>
                       <div>
                         <p
-                          className="text-[10px] font-mono uppercase tracking-widest mb-0.5"
+                          className="text-[9px] font-mono uppercase tracking-widest mb-0.5"
                           style={{
                             color: highlighted
                               ? 'var(--color-accent-green, #10b981)'
@@ -169,20 +169,20 @@ export default function FinancialEducation() {
                         >
                           {step.subtitle}
                         </p>
-                        <h3 className="text-xl font-display font-bold text-white">
+                        <h3 className="text-lg lg:text-base xl:text-lg font-display font-bold text-white leading-tight">
                           {step.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-300 text-xs lg:text-[11px] xl:text-xs leading-relaxed mb-4 lg:mb-3">
                       {step.desc}
                     </p>
 
                     {/* Stat box at bottom of card */}
                     <div
-                      className="flex flex-col gap-1 rounded-2xl px-4 py-3 mt-auto text-left"
+                      className="flex flex-col gap-1 rounded-xl px-3.5 py-2.5 mt-auto text-left"
                       style={{
                         background: highlighted
                           ? 'rgba(16,185,129,0.1)'
@@ -192,11 +192,11 @@ export default function FinancialEducation() {
                           : 'var(--color-stat-border, 1px solid rgba(255,255,255,0.05))',
                       }}
                     >
-                      <p className="text-[10px] text-gray-400 font-mono tracking-wider uppercase leading-none">
+                      <p className="text-[9px] text-gray-400 font-mono tracking-wider uppercase leading-none">
                         {step.statLabel}
                       </p>
                       <p
-                        className="font-display font-bold text-base md:text-lg leading-tight"
+                        className="font-display font-bold text-sm lg:text-xs xl:text-sm leading-tight"
                         style={{
                           color: highlighted
                             ? 'var(--color-accent-green, #10b981)'
@@ -229,9 +229,9 @@ export default function FinancialEducation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-16"
+          className="text-center mt-10 lg:mt-6"
         >
-          <p className="text-gray-500 text-sm md:text-base">
+          <p className="text-gray-500 text-xs md:text-sm">
             Most people stop at Stage 2.{' '}
             <span style={{ color: 'var(--color-accent-green, #10b981)' }} className="font-semibold">
               TradeCraft helps you reach Stage 3 and 4.

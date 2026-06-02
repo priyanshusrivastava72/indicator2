@@ -24,7 +24,7 @@ const skills = [
   {
     icon: Dumbbell,
     name: 'Getting Fit at the Gym',
-    time: '3–6 months to see real results',
+    time: '3–6 months of consistent effort',
     percent: 45,
     what: 'You showed up even when you didn\'t feel like it. Progress was slow at first, then it compounded. Skipping days set you back. Consistency was everything.',
     color: '#fb923c',
@@ -55,7 +55,7 @@ export default function MindsetShift() {
   return (
     <section
       id="mindset-shift"
-      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 lg:py-0 relative overflow-hidden border-t border-white/5 bg-dark lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
     >
       {/* Subtle center glow */}
       <div
@@ -66,15 +66,15 @@ export default function MindsetShift() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
 
         {/* Header */}
-        <div className="max-w-3xl mb-20 text-left">
+        <div className="max-w-3xl mb-12 lg:mb-6 text-left">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-4 text-emerald-500 font-bold"
+            className="font-mono text-xs tracking-widest uppercase mb-3 text-emerald-500 font-bold"
           >
             The Mindset Shift
           </motion.p>
@@ -83,7 +83,7 @@ export default function MindsetShift() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6"
+            className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-display font-bold text-white leading-tight mb-4 lg:mb-3"
           >
             Market Analysis Is A Skill.
             <br />
@@ -94,7 +94,7 @@ export default function MindsetShift() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl"
+            className="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl"
           >
             Understanding markets requires structured learning, deliberate practice, and disciplined thinking.
           </motion.p>
@@ -104,7 +104,7 @@ export default function MindsetShift() {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
 
           {/* Left: Skill Cards with commitment progress bars */}
-          <div className="space-y-3">
+          <div className="space-y-3 lg:space-y-2">
             {skills.map((skill, i) => {
               const Icon = skill.icon;
               const isActive = active === i;
@@ -119,7 +119,7 @@ export default function MindsetShift() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   onMouseEnter={() => setActive(i)}
                   onMouseLeave={() => setActive(null)}
-                  className="relative overflow-hidden rounded-2xl cursor-default text-left"
+                  className="relative overflow-hidden rounded-2xl cursor-default text-left p-5 lg:p-4 xl:p-5"
                   style={{
                     background: isActive
                       ? skill.glow
@@ -132,7 +132,6 @@ export default function MindsetShift() {
                       ? '1px solid rgba(16,185,129,0.2)'
                       : '1px solid rgba(255,255,255,0.05)',
                     transition: 'all 0.3s ease',
-                    padding: '22px 26px',
                   }}
                 >
                   {/* Left color bar */}

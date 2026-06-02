@@ -5,8 +5,8 @@ const FinancialEducationStrip = () => {
   const steps = [
     { num: 'I', title: 'Income', desc: 'The foundation of cash flow' },
     { num: 'II', title: 'Savings', desc: 'Preserving what you earn' },
-    { num: 'III', title: 'Investing', desc: 'Making money work for you' },
-    { num: 'IV', title: 'Wealth', desc: 'Freedom and abundance' }
+    { num: 'III', title: 'Planning', desc: 'Asset allocation concepts' },
+    { num: 'IV', title: 'Security', desc: 'Long-term financial peace' }
   ];
 
   return (

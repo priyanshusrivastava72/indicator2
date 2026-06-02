@@ -32,7 +32,7 @@ const SocialProof = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono font-bold uppercase mb-4">
-            Real Results
+            Learner Reviews
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
             Don't Just Take Our Word For It

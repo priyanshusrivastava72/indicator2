@@ -4,14 +4,14 @@ import { TrendingUp, Activity, ShieldCheck, ChevronRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-dark">
+    <section className="relative min-h-screen lg:h-screen lg:min-h-0 flex items-center justify-center py-20 lg:py-0 lg:pt-16 bg-dark overflow-hidden">
       {/* Background Gradients & Particles */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/4 -left-64 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-8 xl:gap-12 items-center w-full">
         {/* Left Content Column */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -19,22 +19,22 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-4 lg:mb-3">
             <Activity size={16} />
             <span>Structured Chart-Reading Education</span>
           </div>
           
-          <h1 className="text-5xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-[1.15] mb-4 lg:mb-3">
             Your Degree Gets You A Job.<br />
             <span className="text-gradient">Learn How Markets Work. Build Financial Confidence.</span>
           </h1>
           
-          <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl font-sans leading-relaxed">
+          <p className="text-sm md:text-base text-gray-400 mb-4 lg:mb-3 max-w-xl font-sans leading-relaxed">
             Learn market structure, financial literacy, chart-reading theory, risk management concepts, and decision-making frameworks through a structured educational curriculum.
           </p>
 
           {/* New Left-Column Metric HUD Grid */}
-          <div className="grid grid-cols-3 gap-3.5 my-8 max-w-lg">
+          <div className="grid grid-cols-3 gap-3 my-4 lg:my-3 max-w-lg">
             {/* HUD 1: Study hours */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">STUDY HOURS</span>
@@ -55,7 +55,7 @@ const Hero = () => {
               </div>
             </div>
 
-{/* HUD 3: Risk Rule */}
+            {/* HUD 3: Risk Rule */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">Risk Framework</span>
               <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">Learning System</span>
@@ -63,16 +63,16 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="flex flex-wrap items-center gap-4">
-            <button className="h-12 px-8 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg font-medium transition-colors flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20">
+          <div className="flex flex-wrap items-center gap-4 lg:gap-3">
+            <button className="h-12 lg:h-11 px-8 lg:px-6 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg font-medium transition-colors flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20">
               Start Learning Now <ChevronRight size={18} />
             </button>
-            <button className="h-12 px-8 border border-white/10 hover:bg-white/5 text-white rounded-lg font-medium transition-colors cursor-pointer">
+            <button className="h-12 lg:h-11 px-8 lg:px-6 border border-white/10 hover:bg-white/5 text-white rounded-lg font-medium transition-colors cursor-pointer">
               View Curriculum
             </button>
           </div>
 
-          <div className="mt-12 flex items-center gap-6 text-sm text-gray-500 font-medium">
+          <div className="mt-8 lg:mt-5 flex items-center gap-6 text-sm text-gray-500 font-medium">
             <div className="flex items-center gap-2"><TrendingUp size={16} className="text-emerald-500"/> 2,000+ Students</div>
             <div className="w-1 h-1 rounded-full bg-gray-700" />
             <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-emerald-500"/> Risk-First Approach</div>
@@ -84,13 +84,13 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative px-4"
+          className="relative px-4 lg:pt-4"
         >
           {/* Floating Risk:Reward Badge */}
           <motion.div 
             animate={{ y: [4, -4, 4] }}
             transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-            className="absolute -left-4 lg:-left-10 top-10 bg-dark-100 border border-white/10 rounded-lg p-2.5 shadow-xl flex items-center gap-2.5 z-20 light:bg-white light:border-black/5"
+            className="absolute -left-2 lg:-left-6 top-6 bg-dark-100 border border-white/10 rounded-lg p-2.5 shadow-xl flex items-center gap-2.5 z-20 light:bg-white light:border-black/5"
           >
             <div className="w-5 h-5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-[9px] font-bold">R:R</div>
             <div className="text-left">
@@ -103,7 +103,7 @@ const Hero = () => {
           <motion.div 
             animate={{ y: [-3, 3, -3] }}
             transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-            className="absolute -right-2 -bottom-6 bg-dark-100 border border-white/10 rounded-lg p-2.5 shadow-xl flex items-center gap-2 z-20 light:bg-white light:border-black/5"
+            className="absolute -right-2 -bottom-3 lg:-bottom-2 bg-dark-100 border border-white/10 rounded-lg p-2.5 shadow-xl flex items-center gap-2 z-20 light:bg-white light:border-black/5"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -114,9 +114,9 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <div className="glass-card rounded-2xl p-6 relative shadow-2xl shadow-emerald-900/20">
+          <div className="glass-card rounded-2xl p-6 lg:p-4 relative shadow-2xl shadow-emerald-900/20">
             {/* Mockup Header with Live Ticker */}
-            <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+            <div className="flex items-center justify-between mb-4 lg:mb-3 border-b border-white/5 pb-4 lg:pb-2.5">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -129,7 +129,7 @@ const Hero = () => {
             </div>
 
             {/* SVG Chart with BUY/SELL flags and Volume Profile */}
-            <div className="h-64 w-full relative">
+            <div className="h-64 lg:h-44 xl:h-52 w-full relative">
               <svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="none">
                 {/* Grid */}
                 <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.05)" />
@@ -202,7 +202,7 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -right-6 top-20 bg-dark-100 border border-white/10 rounded-lg p-3 shadow-xl flex items-center gap-3 light:bg-white light:border-black/5"
+              className="absolute -right-3 lg:-right-4 top-14 bg-dark-100 border border-white/10 rounded-lg p-3 shadow-xl flex items-center gap-3 light:bg-white light:border-black/5"
             >
               <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
                 <Activity size={16} />

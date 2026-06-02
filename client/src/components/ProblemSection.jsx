@@ -90,7 +90,7 @@ export default function ProblemSection() {
   return (
     <section
       id="problem-section"
-      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 lg:py-0 relative overflow-hidden border-t border-white/5 bg-dark lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
     >
       {/* Top-right red ambient glow */}
       <div
@@ -103,16 +103,16 @@ export default function ProblemSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
 
         {/* Header — Left-aligned, editorial */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 lg:mb-6">
           <div className="text-left">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-sm tracking-widest uppercase mb-4 text-red-500 font-bold"
+              className="font-mono text-xs tracking-widest uppercase mb-3 text-red-500 font-bold"
             >
               The Reality
             </motion.p>
@@ -121,7 +121,7 @@ export default function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-display font-bold text-white leading-tight max-w-xl"
+              className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-display font-bold text-white leading-tight max-w-xl"
             >
               Why most
               <br />
@@ -133,7 +133,7 @@ export default function ProblemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-500 max-w-sm text-base leading-relaxed text-left"
+            className="text-gray-500 max-w-sm text-sm leading-relaxed text-left"
           >
             It's not about being smart. It's about having a structured,
             emotion-free process. These are common mistakes many beginners make when approaching financial markets.
@@ -141,7 +141,7 @@ export default function ProblemSection() {
         </div>
 
         {/* Problem Cards — Stacked rows with diagnostic gauges */}
-        <div className="space-y-4">
+        <div className="space-y-3 lg:space-y-2">
           {problems.map((p, i) => {
             const Icon = p.icon;
             const isHovered = hovered === i;
@@ -177,11 +177,11 @@ export default function ProblemSection() {
                   }}
                 />
 
-                <div className="flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-7 pl-8 md:pl-10">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 p-5 lg:p-4 xl:p-5 pl-8 md:pl-10">
 
                   {/* Number */}
                   <div
-                    className="font-display font-bold text-4xl md:text-5xl select-none leading-none shrink-0 transition-colors duration-300 w-12 text-left"
+                    className="font-display font-bold text-3xl md:text-4xl select-none leading-none shrink-0 transition-colors duration-300 w-10 text-left"
                     style={{
                       color: isHovered
                         ? 'var(--color-problem-num-active, rgba(239,68,68,0.5))'
@@ -193,7 +193,7 @@ export default function ProblemSection() {
 
                   {/* Icon */}
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
                     style={{
                       background: isHovered
                         ? 'rgba(239,68,68,0.15)'
@@ -204,16 +204,16 @@ export default function ProblemSection() {
                         : 'var(--color-problem-icon-border, 1px solid rgba(255,255,255,0.07))',
                     }}
                   >
-                    <Icon size={20} />
+                    <Icon size={18} />
                   </div>
 
                   {/* Title + desc */}
                   <div className="flex-1 min-w-0 text-left">
-                    <h3 className="text-lg md:text-xl font-display font-bold text-white mb-0.5">
+                    <h3 className="text-base md:text-lg font-display font-bold text-white mb-0.5 leading-tight">
                       {p.title}
                     </h3>
                     <p
-                      className="text-xs md:text-sm leading-relaxed transition-colors duration-300"
+                      className="text-xs lg:text-[11px] xl:text-xs leading-relaxed transition-colors duration-300"
                       style={{
                         color: isHovered
                           ? 'var(--color-problem-desc-active, #f3f4f6)'
@@ -230,16 +230,16 @@ export default function ProblemSection() {
                   {/* Stat — always visible but shifts color */}
                   <div
                     className="shrink-0 text-right hidden md:block"
-                    style={{ minWidth: '140px' }}
+                    style={{ minWidth: '120px' }}
                   >
                     <div
-                      className="font-display font-bold text-2xl md:text-3xl transition-colors duration-300"
+                      className="font-display font-bold text-xl md:text-2xl transition-colors duration-300"
                       style={{ color: isHovered ? '#ef4444' : '#6b7280' }}
                     >
                       {p.stat}
                     </div>
                     <div
-                      className="text-[10px] font-mono leading-tight mt-1 max-w-[130px] ml-auto uppercase tracking-wide"
+                      className="text-[9px] font-mono leading-tight mt-1 max-w-[120px] ml-auto uppercase tracking-wide"
                       style={{
                         color: isHovered
                           ? 'var(--color-problem-stat-active, #d1d5db)'
@@ -258,7 +258,7 @@ export default function ProblemSection() {
                       color: isHovered ? '#ef4444' : 'transparent',
                     }}
                   >
-                    <AlertTriangle size={15} />
+                    <AlertTriangle size={14} />
                   </div>
                 </div>
               </motion.div>
@@ -272,10 +272,10 @@ export default function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-14 flex items-center gap-4 text-center md:text-left flex-col md:flex-row"
+          className="mt-10 lg:mt-5 flex items-center gap-4 text-center md:text-left flex-col md:flex-row"
         >
           <div
-            className="px-5 py-3 rounded-xl text-sm font-mono font-bold"
+            className="px-4 py-2 rounded-xl text-xs font-mono font-bold shrink-0"
             style={{
               background: 'rgba(239,68,68,0.08)',
               border: '1px solid rgba(239,68,68,0.2)',
@@ -284,7 +284,7 @@ export default function ProblemSection() {
           >
             The good news?
           </div>
-          <p className="text-gray-400 text-sm md:text-base">
+          <p className="text-gray-400 text-xs md:text-sm">
             Every single one of these mistakes is{' '}
             <span className="text-white font-semibold">teachable and fixable</span> with the right system.
           </p>
