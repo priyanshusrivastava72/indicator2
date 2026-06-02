@@ -6,26 +6,26 @@ const WhoIsThisFor = () => {
     { 
       icon: '🎓', 
       title: 'Students', 
-      desc: 'Looking to build a secondary income stream while completing their education.',
-      benefit: 'A skill that pays before graduation.'
+      desc: 'Looking to build financial literacy and market analysis skills while completing their education.',
+      benefit: 'A foundational financial skillset.'
     },
     { 
       icon: '💼', 
       title: 'Professionals', 
-      desc: 'Stuck in a 9-to-5 loop, wanting to grow their wealth without quitting their day job.',
-      benefit: 'A system that requires only 1 hour a day.'
+      desc: 'Wanting to understand market structure and risk management concepts without quitting their day job.',
+      benefit: 'A curriculum designed for study of 1 hour a day.'
     },
     { 
       icon: '📈', 
       title: 'Investors', 
-      desc: 'Already investing in mutual funds but want active control over a portion of their portfolio.',
-      benefit: 'Tools to time market entries perfectly.'
+      desc: 'Already investing in mutual funds but want to understand market structure and chart theory.',
+      benefit: 'Conceptual framework to study market behavior.'
     },
     { 
       icon: '🚀', 
       title: 'Complete Beginners', 
       desc: 'Overwhelmed by YouTube tutorials and looking for a structured, step-by-step path.',
-      benefit: 'Zero to mastery without the noise.'
+      benefit: 'Structured understanding without the noise.'
     }
   ];
 

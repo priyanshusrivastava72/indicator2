@@ -15,8 +15,8 @@ const FAQ = () => {
       a: 'The curriculum is designed for people with jobs or studies. You only need about 45-60 minutes a day to analyze the charts and practice the theoretical concepts.'
     },
     {
-      q: 'Do I need a paid TradingView account?',
-      a: 'No, our helper charting script is built specifically for TradingView. A free TradingView account is completely sufficient to use all our tools.'
+      q: 'Do I need a premium charting platform subscription?',
+      a: 'No. The educational curriculum can be followed using free charting tools. Optional premium features may provide additional functionality, but they are not required for learning the concepts taught in the program.'
     },
     {
       q: 'How long is my access valid?',

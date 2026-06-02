@@ -18,7 +18,7 @@ const dreams = [
     icon: Shield,
     title: 'Understanding Risk',
     desc: 'Construct a bulletproof defense.',
-    longDesc: 'Learn the mathematical models professional capital allocators use to control exposure and manage risk parameters.',
+    longDesc: 'Learn risk management concepts and frameworks designed to help control exposure and manage risk parameters.',
     badge: 'CAPITAL_PRESERVATION',
     span: 'lg:col-span-2',
     decor: 'shield-rings',

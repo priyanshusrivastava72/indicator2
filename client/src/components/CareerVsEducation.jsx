@@ -16,7 +16,7 @@ const rows = [
   {
     topic: 'Risk Awareness',
     traditional: 'Exposed to high-risk advisory schemes or panic exits',
-    growth: 'Mathematically defined capital protection boundaries',
+    growth: 'Structured risk management principles',
   },
   {
     topic: 'Market Knowledge',
@@ -109,7 +109,7 @@ export default function CareerVsEducation() {
                 </div>
                 <div className="comp-header-cell comp-header-cell-growth">
                   <span className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 light:bg-emerald-500/10 light:text-emerald-700 light:border-emerald-500/15 mb-2">
-                    Accelerated Growth
+                    Literacy Path
                   </span>
                   <span className="flex items-center gap-1.5 font-bold">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>

@@ -39,7 +39,7 @@ const problems = [
     title: 'Poor Risk Management',
     shortDesc: 'Risking too much on a single simulation.',
     fullDesc:
-      'Capital preservation is the single most important concept in financial education. Most beginners approach the markets without defining mathematical rules.',
+      'Capital preservation is the single most important concept in financial education. Most beginners approach the markets without defining structured risk rules.',
     stat: 'Critical Point',
     statLabel: 'Exposure without structured rules',
   },

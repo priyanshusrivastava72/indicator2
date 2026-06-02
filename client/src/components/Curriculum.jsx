@@ -4,8 +4,8 @@ import { Plus, Minus } from 'lucide-react';
 
 const modules = [
   {
-    title: 'Trading Foundations',
-    lessons: ['Market Terminology & Basics', 'How Brokers & Exchanges Work', 'Types of Orders', 'Setting Up TradingView']
+    title: 'Market Foundations',
+    lessons: ['Market Terminology & Basics', 'How Brokers & Exchanges Work', 'Order Types & Market Mechanics', 'Setting Up TradingView']
   },
   {
     title: 'Reading Market Structure',
@@ -17,7 +17,7 @@ const modules = [
   },
   {
     title: 'Risk & Money Management',
-    lessons: ['The 1% Capital Protection Rule', 'Calculating Position Size', 'Risk-to-Reward Ratios', 'Handling Drawdowns mathematically']
+    lessons: ['The 1% Risk Management Concept', 'Calculating Position Size', 'Risk-to-Reward Ratios', 'Handling Drawdowns Systematically']
   },
   {
     title: 'Charting & Analysis Tools',

@@ -5,10 +5,10 @@ import { Check, Shield, Zap, RefreshCw, Layers, Users, Sparkles, Cpu } from 'luc
 const EnrollmentBenefits = () => {
   const benefits = [
     { icon: <Layers size={20} />, title: 'Full 6-Phase Course', desc: 'From basics to advanced technical analysis in a structured format.' },
-    { icon: <Zap size={20} />, title: 'Educational Charting Tool', desc: 'TradingView companion tool to map support, resistance, and trend theory.' },
+    { icon: <Zap size={20} />, title: 'Educational Charting Tool', desc: 'Educational charting tool designed to help students study support zones, resistance zones, trend development, and market structure concepts.' },
     { icon: <Users size={20} />, title: 'Private Community Access', desc: 'Network with serious students and get your chart studies reviewed.' },
-    { icon: <RefreshCw size={20} />, title: 'Lifetime Content Updates', desc: 'Get all future module additions and charting helper updates for free.' },
-    { icon: <Shield size={20} />, title: 'Risk Management Framework', desc: 'The exact mathematical models used to ensure capital preservation.' },
+    { icon: <RefreshCw size={20} />, title: 'Lifetime Content Updates', desc: 'Get all future module additions and educational tool updates for free.' },
+    { icon: <Shield size={20} />, title: 'Risk Management Framework', desc: 'Risk management concepts designed to help students understand capital preservation and responsible decision-making.' },
     { icon: <Check size={20} />, title: 'Completion Certificate', desc: 'Official proof of your new financial skillset upon finishing the modules.' }
   ];
 

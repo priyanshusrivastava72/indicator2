@@ -119,7 +119,8 @@ const Pricing = () => {
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-4xl font-bold text-white">₹24,999</span>
               </div>
-              <p className="text-gray-400 text-xs mb-6">Personalized guidance to accelerate your journey.</p>
+              <p className="text-gray-400 text-xs mb-4">Personalized educational support and curriculum guidance.</p>
+              <p className="text-gray-500 text-[11px] mb-6 leading-relaxed">Receive structured feedback, learning support, and help navigating the educational curriculum.</p>
 
               {/* Graphical Inclusion Meter */}
               <div className="pricing-value-gauge">

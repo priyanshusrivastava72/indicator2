@@ -9,20 +9,20 @@ const First30Days = () => {
     {
       week: 1,
       title: 'Foundation & Setup',
-      desc: 'Set up your charting software, understand basic market mechanics, and grasp the core risk management mathematical formulas.',
-      tasks: ['Broker & TradingView Setup', 'Understanding Order Types', 'The 1% Risk Rule']
+      desc: 'Understand how different order types function within financial markets, how exchanges process transactions, and grasp core risk management principles.',
+      tasks: ['Broker & TradingView Setup', 'Order Types & Market Mechanics', 'The 1% Risk Rule']
     },
     {
       week: 2,
       title: 'Market Structure',
-      desc: 'Learn to read raw price action. Identify true support/resistance, market trends, and high-probability zones without any indicators.',
+      desc: 'Learn to read raw price action. Identify true support/resistance, market trends, and historical areas of interest without any indicators.',
       tasks: ['Trend Identification', 'Supply & Demand Zones', 'Multi-Timeframe Alignment']
     },
     {
       week: 3,
-      title: 'The System & Charting Script',
+      title: 'The System & Charting Tool',
       desc: 'Combine your structural knowledge with our educational charting tool. Understand when a confluence is valid and when it should be ignored.',
-      tasks: ['Script Installation', 'Valid vs Invalid Confluences', 'The Verification Checklist']
+      tasks: ['Tool Setup & Integration', 'Valid vs Invalid Confluences', 'The Verification Checklist']
     },
     {
       week: 4,

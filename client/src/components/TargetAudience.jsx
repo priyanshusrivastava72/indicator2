@@ -160,7 +160,7 @@ function MockupWidget({ id }) {
   if (id === 'investors') {
     return (
       <div className="aud-mockup-panel h-full flex flex-col justify-between gap-4">
-        <div className="aud-mockup-title">Core & Satellite Study Allocation</div>
+        <div className="aud-mockup-title">Study Focus Allocation</div>
         
         {/* Visual Allocation blocks */}
         <div className="space-y-3 my-auto">
@@ -169,8 +169,8 @@ function MockupWidget({ id }) {
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
               <div className="text-left">
-                <p className="font-semibold text-gray-300 light:text-gray-800 text-xs">Core Portfolio (80%)</p>
-                <p className="text-[9px] text-gray-500">Mutual Funds & Blue-chips</p>
+                <p className="font-semibold text-gray-300 light:text-gray-800 text-xs">Core Learning (80%)</p>
+                <p className="text-[9px] text-gray-500">Historical concepts, market structure, and risk awareness.</p>
               </div>
             </div>
             <span className="font-mono text-[10px] text-gray-400">Historical Baseline</span>
@@ -181,8 +181,8 @@ function MockupWidget({ id }) {
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <div className="text-left">
-                <p className="font-semibold text-emerald-400 light:text-emerald-700 text-xs">Satellite Study (20%)</p>
-                <p className="text-[9px] text-emerald-500/80 light:text-emerald-600/80">Active Technical Analysis</p>
+                <p className="font-semibold text-emerald-400 light:text-emerald-700 text-xs">Advanced Study (20%)</p>
+                <p className="text-[9px] text-emerald-500/80 light:text-emerald-600/80">Case studies, simulations, and chart analysis exercises.</p>
               </div>
             </div>
             <span className="font-mono text-[10px] text-emerald-400 light:text-emerald-700 font-bold">Risk Study</span>

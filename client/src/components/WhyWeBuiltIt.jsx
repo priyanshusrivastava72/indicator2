@@ -24,7 +24,7 @@ const WhyWeBuiltIt = () => {
           >
             <span className="eyebrow">The Origin</span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Why We Developed This Script
+              Why We Developed This Educational Tool
             </h2>
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
               <p>

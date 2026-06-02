@@ -99,10 +99,10 @@ function PhaseGraphic({ num, isHovered }) {
 const phases = [
   {
     num: '01',
-    title: 'Trading Foundations',
+    title: 'Market Foundations',
     subtitle: 'PHASE 01',
-    desc: 'Brokers, platforms, and basic mechanics.',
-    skills: ['Terminal Setup', 'Order Types', 'Chart Basics'],
+    desc: 'Introduction to financial markets, brokers, exchanges, and market mechanics.',
+    skills: ['Terminal Setup', 'Order Types & Market Mechanics', 'Chart Basics'],
     estTime: 'Week 1',
   },
   {
@@ -126,14 +126,14 @@ const phases = [
     title: 'Risk Management',
     subtitle: 'PHASE 04',
     desc: 'Capital preservation and position sizing.',
-    skills: ['Position Sizing', 'R:R Ratios', 'Drawdown Moat'],
+    skills: ['Position Sizing', 'R:R Ratios', 'Drawdown Management'],
     estTime: 'Week 4',
   },
   {
     num: '05',
     title: 'Charting & Analysis Tools',
     subtitle: 'PHASE 05',
-    desc: 'Using technical analysis charting scripts.',
+    desc: 'Using educational charting tools.',
     skills: ['Trend Confluence', 'Noise Filtering', 'Chart Layouts'],
     estTime: 'Week 5',
   },

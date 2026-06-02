@@ -7,11 +7,11 @@ const CurriculumAccordion = () => {
   const curriculum = [
     {
       module: '01',
-      title: 'Trading Foundations',
+      title: 'Market Foundations',
       lessons: [
         'Market Terminology & Basics',
         'How Brokers & Exchanges Work',
-        'Types of Orders (Limit, Market, Stop)',
+        'Order Types & Market Mechanics',
         'Setting Up TradingView correctly'
       ]
     },
@@ -38,7 +38,7 @@ const CurriculumAccordion = () => {
       module: '04',
       title: 'Risk & Money Management',
       lessons: [
-        'The 1% Rule of Capital Protection',
+        'The 1% Risk Management Concept',
         'Calculating Position Size',
         'Risk-to-Reward Ratios in Practice',
         'Handling Drawdowns'
