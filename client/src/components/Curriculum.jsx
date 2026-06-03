@@ -107,7 +107,7 @@ const Curriculum = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="curriculum-section" className="py-24 bg-dark relative">
+    <section id="curriculum-section" className="py-20 md:py-24 lg:py-28 bg-dark relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">The Curriculum</span>

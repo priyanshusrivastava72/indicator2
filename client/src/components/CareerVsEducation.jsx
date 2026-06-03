@@ -34,7 +34,7 @@ export default function CareerVsEducation() {
   return (
     <section
       id="career-vs-education"
-      className="py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient glow */}
       <div
@@ -47,15 +47,15 @@ export default function CareerVsEducation() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full animate-fade-in">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 lg:mb-6">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-sm tracking-widest uppercase mb-4 text-emerald-500"
+            className="font-mono text-xs tracking-widest uppercase mb-3 text-emerald-500"
           >
             Why Financial Skills Matter
           </motion.p>
@@ -64,7 +64,7 @@ export default function CareerVsEducation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-display font-bold text-white leading-tight"
+            className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-display font-bold text-white leading-tight"
           >
             Career Only vs.{' '}
             <span className="text-emerald-500">Career + Financial Education</span>
@@ -74,7 +74,7 @@ export default function CareerVsEducation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg mt-5 max-w-2xl mx-auto"
+            className="text-gray-400 text-sm md:text-base mt-4 lg:mt-2.5 max-w-2xl mx-auto"
           >
             A strong career remains essential. Financial education simply helps you
             make smarter decisions alongside it.
@@ -82,7 +82,7 @@ export default function CareerVsEducation() {
         </div>
 
         {/* Comparison Grid (2-column layout on large screens) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-stretch max-w-6xl mx-auto">
           
           {/* Left Column: Comparison Table */}
           <motion.div
@@ -182,7 +182,7 @@ export default function CareerVsEducation() {
                 </p>
 
                 {/* SVG Graph */}
-                <div className="h-44 w-full relative mb-6">
+                <div className="h-44 lg:h-32 xl:h-40 w-full relative mb-4 lg:mb-3">
                   <svg className="w-full h-full overflow-visible" viewBox="0 0 300 150" fill="none">
                     {/* Grid lines */}
                     <line x1="0" y1="30" x2="300" y2="30" stroke="rgba(255,255,255,0.03)" />
@@ -231,7 +231,7 @@ export default function CareerVsEducation() {
               </div>
 
               {/* Lower HUD Metrics */}
-              <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-4 mt-2 font-mono text-[10px]">
+              <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-3 lg:pt-2.5 mt-1 font-mono text-[9px]">
                 <div>
                   <span className="text-gray-500 block">CAREER ONLY</span>
                   <span className="text-gray-400 font-bold mt-0.5 block">Baseline</span>
@@ -258,9 +258,9 @@ export default function CareerVsEducation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-12 text-center max-w-2xl mx-auto"
+          className="mt-8 lg:mt-4 text-center max-w-2xl mx-auto"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-white/5 border border-white/5 text-gray-400 light:bg-black/5 light:border-black/5 light:text-gray-600">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/5 text-gray-400 light:bg-black/5 light:border-black/5 light:text-gray-600">
             💡 A strong career remains essential. Financial education helps you make better decisions alongside it.
           </span>
         </motion.div>

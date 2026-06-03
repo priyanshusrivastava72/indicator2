@@ -50,7 +50,7 @@ export default function LiveTrades() {
   return (
     <section
       id="live-trades"
-      className="py-24 md:py-32 relative overflow-hidden border-t bg-dark border-white/5"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t bg-dark border-white/5"
     >
       {/* Background orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -101,16 +101,16 @@ export default function LiveTrades() {
           <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
             
             {/* Account Stats HUD */}
-            <div className="grid grid-cols-3 gap-3 border bg-dark-100 border-white/5 p-4 rounded-2xl font-mono text-[10px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border bg-dark-100 border-white/5 p-4 rounded-2xl font-mono text-[10px]">
               <div>
                 <span className="text-gray-500 block">CONFLUENCE</span>
                 <span className="text-emerald-400 font-bold text-sm mt-1 block">Level Aligned</span>
               </div>
-              <div className="border-l border-white/5 pl-3">
+              <div className="border-t sm:border-t-0 sm:border-l border-white/5 pt-3 sm:pt-0 sm:pl-3">
                 <span className="text-gray-500 block">SCENARIO ANALYSIS</span>
                 <span className="text-white font-bold text-sm mt-1 block">Educational Demonstration</span>
               </div>
-              <div className="border-l border-white/5 pl-3">
+              <div className="border-t sm:border-t-0 sm:border-l border-white/5 pt-3 sm:pt-0 sm:pl-3">
                 <span className="text-gray-500 block">MAX RISK RULE</span>
                 <span className="text-red-400 font-bold text-sm mt-1 block">Study Scenario</span>
               </div>
@@ -187,7 +187,7 @@ export default function LiveTrades() {
           </div>
 
           {/* Right Side: Interactive Detail Log Card */}
-          <div className="lg:col-span-5 h-[340px] lg:h-auto min-h-[350px]">
+          <div className="lg:col-span-5 h-auto lg:h-auto min-h-[320px] lg:min-h-[350px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedTrade.id}

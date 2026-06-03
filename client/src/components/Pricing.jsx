@@ -4,7 +4,7 @@ import { Check, X } from 'lucide-react';
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 bg-dark relative border-t border-white/5">
+    <section id="pricing" className="py-20 md:py-24 lg:py-28 bg-dark relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">Transparent Pricing</span>
@@ -13,49 +13,7 @@ const Pricing = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-          {/* Basic Tier */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8 rounded-3xl h-full flex flex-col justify-between text-left"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">Course Only</h3>
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-bold text-white">₹4,999</span>
-              </div>
-              <p className="text-gray-400 text-xs mb-6">Perfect for those who just want to learn the framework.</p>
-              
-              {/* Graphical Inclusion Meter */}
-              <div className="pricing-value-gauge">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '35%' }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="h-full bg-gray-500 rounded-full"
-                />
-              </div>
-              <div className="flex justify-between text-[9px] font-mono text-gray-500 mb-6 uppercase tracking-wide">
-                <span>System Inclusions</span>
-                <span>35% Score</span>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Full 6-Phase Course</li>
-                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Risk Management Framework</li>
-                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Charting Tool Access</li>
-                <li className="flex items-center gap-3 text-gray-500 text-xs"><X size={16} className="shrink-0" /> No Private Community</li>
-              </ul>
-            </div>
-            
-            <button className="w-full h-12 rounded-lg border border-white/10 text-white font-bold hover:bg-white/5 transition-colors cursor-pointer mt-auto">
-              Get Started
-            </button>
-          </motion.div>
-
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           {/* Pro Tier (Featured) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -94,10 +52,10 @@ const Pricing = () => {
               </div>
 
               <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-gray-200 text-xs font-semibold"><Check size={18} className="text-emerald-500 shrink-0" /> Everything in Basic</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Full 6-Phase Course</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Risk Management Framework</li>
                 <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Educational Charting Tool</li>
-                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Private Community Access</li>
-                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Lifetime Content Updates</li>
+                <li className="flex items-center gap-3 text-white text-xs font-bold"><Check size={18} className="text-emerald-500 shrink-0" /> Private Community Access & Updates</li>
               </ul>
             </div>
             
@@ -138,7 +96,7 @@ const Pricing = () => {
               </div>
 
               <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Everything in Pro</li>
+                <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Everything in Complete Program</li>
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> 4x 1-on-1 Mentorship Calls</li>
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Personal Study Reviews</li>
                 <li className="flex items-center gap-3 text-gray-300 text-xs"><Check size={16} className="text-emerald-500 shrink-0" /> Direct Chat Q&A Support</li>

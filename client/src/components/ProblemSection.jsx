@@ -90,7 +90,7 @@ export default function ProblemSection() {
   return (
     <section
       id="problem-section"
-      className="py-20 lg:py-0 relative overflow-hidden border-t border-white/5 bg-dark lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Top-right red ambient glow */}
       <div

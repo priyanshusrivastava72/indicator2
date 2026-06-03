@@ -18,7 +18,6 @@
   color: var(--text-secondary);
   padding: 8px 0;
   border-bottom: 2px solid transparent;
-  cursor: none;
   transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 

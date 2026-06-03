@@ -10,6 +10,7 @@ import {
   Sparkles,
   ChevronRight,
 } from 'lucide-react';
+import AudienceFormModal from './AudienceFormModal';
 
 const audiences = [
   {
@@ -285,7 +286,7 @@ function TabButton({ aud, isActive, onClick, index }) {
 }
 
 /* ─── Detail Panel ─── */
-function DetailPanel({ aud }) {
+function DetailPanel({ aud, onCtaClick }) {
   const Icon = aud.icon;
 
   return (
@@ -389,6 +390,7 @@ function DetailPanel({ aud }) {
         {/* CTA Action at the bottom */}
         <div className="border-t border-white/5 light:border-black/5 pt-6 mt-2">
           <button
+            onClick={onCtaClick}
             className="flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white rounded-2xl font-bold text-sm tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20 cursor-pointer"
           >
             <Sparkles size={14} />
@@ -405,6 +407,7 @@ function DetailPanel({ aud }) {
 export default function TargetAudience() {
   const [active, setActive] = useState('students');
   const [autoplay, setAutoplay] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const current = audiences.find((a) => a.id === active);
 
   // Auto-rotate through tabs every 6s unless paused
@@ -428,7 +431,7 @@ export default function TargetAudience() {
   return (
     <section
       id="target-audience"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background soft ambient radial glow */}
       <div
@@ -515,7 +518,14 @@ export default function TargetAudience() {
           {/* Right Detail Panel */}
           <div className="lg:col-span-8 min-h-[460px] lg:min-h-[500px]">
             <AnimatePresence mode="wait">
-              <DetailPanel key={active} aud={current} />
+              <DetailPanel
+                key={active}
+                aud={current}
+                onCtaClick={() => {
+                  setAutoplay(false);
+                  setIsModalOpen(true);
+                }}
+              />
             </AnimatePresence>
           </div>
         </div>
@@ -535,6 +545,18 @@ export default function TargetAudience() {
           ))}
         </div>
       </div>
+
+      <AudienceFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        audience={current}
+        onSubmitSuccess={() => {
+          const pricingSection = document.getElementById('pricing');
+          if (pricingSection) {
+            pricingSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+      />
     </section>
   );
 }

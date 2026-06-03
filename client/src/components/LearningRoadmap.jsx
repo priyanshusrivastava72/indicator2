@@ -161,7 +161,7 @@ export default function LearningRoadmap() {
     <section
       id="roadmap-section"
       ref={containerRef}
-      className="py-28 md:py-36 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none">
@@ -184,15 +184,15 @@ export default function LearningRoadmap() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-6">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2.5 justify-center mb-5"
+            className="flex items-center gap-2.5 justify-center mb-4 lg:mb-2.5"
           >
             <div className="w-5 h-px bg-emerald-500/50" />
             <p className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
@@ -201,16 +201,16 @@ export default function LearningRoadmap() {
             <div className="w-5 h-px bg-emerald-500/50" />
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 lg:mb-3">
             A Structured Learning Path
           </h2>
-          <p className="text-gray-500 text-base md:text-lg">
+          <p className="text-gray-500 text-sm md:text-base">
             No fragmented learning. Follow a structured path from fundamentals to advanced market analysis concepts.
           </p>
         </div>
 
         {/* Roadmap timeline component */}
-        <div className="relative mt-20">
+        <div className="relative mt-12 lg:mt-6">
           
           {/* Background trace line (desktop only) */}
           <div className="absolute top-[28px] left-0 w-full h-[2px] bg-white/5 hidden lg:block" />
@@ -225,7 +225,7 @@ export default function LearningRoadmap() {
           />
 
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-3 xl:gap-4 relative z-20">
             {phases.map((phase, index) => {
               const isHovered = hoveredIndex === index;
 
@@ -277,7 +277,7 @@ export default function LearningRoadmap() {
                       borderColor: isHovered ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.03)',
                     }}
                     transition={{ duration: 0.3 }}
-                    className="w-full rounded-2xl border p-5 flex flex-col justify-between h-full bg-dark-100/50 backdrop-blur-md relative"
+                    className="w-full rounded-2xl border p-4 flex flex-col justify-between h-full bg-dark-100/50 backdrop-blur-md relative"
                     style={{
                       backgroundColor: 'rgba(10,10,10,0.5)',
                       boxShadow: isHovered
@@ -295,7 +295,7 @@ export default function LearningRoadmap() {
 
                     <div>
                       {/* Sub-header Metadata */}
-                      <div className="flex items-center justify-between mb-3 text-[9px] font-mono text-gray-600">
+                      <div className="flex items-center justify-between mb-2 text-[9px] font-mono text-gray-600">
                         <span>{phase.subtitle}</span>
                         <span className="flex items-center gap-1 text-emerald-500/70 font-semibold uppercase">
                           <Calendar size={8} />
@@ -305,13 +305,13 @@ export default function LearningRoadmap() {
 
                       {/* Title */}
                       <h3
-                        className="text-sm font-bold text-white mb-2 transition-colors duration-300 group-hover:text-emerald-400"
+                        className="text-xs font-bold text-white mb-1.5 transition-colors duration-300 group-hover:text-emerald-400 leading-tight"
                       >
                         {phase.title}
                       </h3>
 
                       {/* Short Description */}
-                      <p className="text-[11px] text-gray-500 leading-relaxed mb-4">
+                      <p className="text-[10px] text-gray-500 leading-relaxed mb-3">
                         {phase.desc}
                       </p>
 
@@ -320,7 +320,7 @@ export default function LearningRoadmap() {
                     </div>
 
                     {/* Skill points details inside cards */}
-                    <div className="border-t border-white/5 pt-3.5 space-y-2 mt-auto">
+                    <div className="border-t border-white/5 pt-2.5 space-y-1.5 mt-auto">
                       {phase.skills.map((skill) => (
                         <div key={skill} className="flex items-center gap-1.5 text-[9px] font-mono text-gray-400">
                           <CheckCircle2 size={10} className="text-emerald-500/70 shrink-0" />
@@ -341,9 +341,9 @@ export default function LearningRoadmap() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-20 text-center"
+          className="mt-12 lg:mt-5 text-center"
         >
-          <p className="text-gray-600 text-xs font-mono">
+          <p className="text-gray-600 text-[10px] font-mono">
             // TOTAL ESTIMATED PATH TIME: 6 WEEKS &middot; AUDITED FOR CONSISTENCY
           </p>
         </motion.div>

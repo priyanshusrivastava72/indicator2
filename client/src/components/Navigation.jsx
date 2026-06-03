@@ -45,7 +45,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <div className="text-xl font-display font-bold flex items-center gap-2 transition-colors duration-300" style={{ color: isDark ? '#fff' : '#111827' }}>
+        <div 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-xl font-display font-bold flex items-center gap-2 transition-colors duration-300 cursor-pointer" 
+          style={{ color: isDark ? '#fff' : '#111827' }}
+        >
           <div className="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center text-dark font-black">
             TC
           </div>
@@ -122,11 +126,11 @@ const Navigation = () => {
             borderColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)',
           }}
         >
-          <a href="#course" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
-          <a href="#indicator" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
-          <a href="#social-proof" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
-          <a href="#pricing" className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
-          <button className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors">
+          <a href="#course" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
+          <a href="#indicator" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
+          <a href="#social-proof" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
+          <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
+          <button onClick={() => setIsMobileMenuOpen(false)} className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors">
             Member Login
           </button>
         </motion.div>

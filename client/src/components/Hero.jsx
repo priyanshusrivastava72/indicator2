@@ -4,7 +4,7 @@ import { TrendingUp, Activity, ShieldCheck, ChevronRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen lg:h-screen lg:min-h-0 flex items-center justify-center py-20 lg:py-0 lg:pt-16 bg-dark overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-36 md:pb-24 lg:pt-40 lg:pb-32 bg-dark overflow-hidden">
       {/* Background Gradients & Particles */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/4 -left-64 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
@@ -24,17 +24,21 @@ const Hero = () => {
             <span>Structured Chart-Reading Education</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-[1.15] mb-4 lg:mb-3">
-            Your Degree Gets You A Job.<br />
-            <span className="text-gradient">Learn How Markets Work. Build Financial Confidence.</span>
+          <h1 className="font-display font-bold leading-[1.15] mb-4 lg:mb-3">
+            <span className="block text-lg sm:text-xl lg:text-xl xl:text-2xl text-gray-400 font-bold mb-2">
+              Your Degree Gets You A Job
+            </span>
+            <span className="text-gradient text-3xl sm:text-4xl lg:text-4xl xl:text-5xl block">
+              Learn How Markets Work Build Financial Confidence
+            </span>
           </h1>
           
           <p className="text-sm md:text-base text-gray-400 mb-4 lg:mb-3 max-w-xl font-sans leading-relaxed">
-            Learn market structure, financial literacy, chart-reading theory, risk management concepts, and decision-making frameworks through a structured educational curriculum.
+            Market analysis might look intimidating with all the numbers and lines, but it is actually simple. We break down chart reading, risk concepts, and market structure into easy, step-by-step visual logic. If you can read a basic map, you can master these concepts—no financial background required.
           </p>
 
           {/* New Left-Column Metric HUD Grid */}
-          <div className="grid grid-cols-3 gap-3 my-4 lg:my-3 max-w-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4 lg:my-3 max-w-lg">
             {/* HUD 1: Study hours */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">STUDY HOURS</span>
@@ -72,9 +76,9 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="mt-8 lg:mt-5 flex items-center gap-6 text-sm text-gray-500 font-medium">
+          <div className="mt-8 lg:mt-5 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-500 font-medium">
             <div className="flex items-center gap-2"><TrendingUp size={16} className="text-emerald-500"/> 2,000+ Students</div>
-            <div className="w-1 h-1 rounded-full bg-gray-700" />
+            <div className="hidden sm:block w-1 h-1 rounded-full bg-gray-700" />
             <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-emerald-500"/> Risk-First Approach</div>
           </div>
         </motion.div>

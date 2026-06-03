@@ -15,7 +15,7 @@ export default function IndicatorShowcase() {
   return (
     <section
       id="indicator"
-      className="py-24 md:py-32 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -38,15 +38,15 @@ export default function IndicatorShowcase() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2.5 justify-center mb-5"
+            className="flex items-center gap-2.5 justify-center mb-4 lg:mb-2.5"
           >
             <div className="w-5 h-px bg-emerald-500/50" />
             <p className="font-mono text-xs tracking-widest uppercase font-bold text-emerald-400">
@@ -55,16 +55,16 @@ export default function IndicatorShowcase() {
             <div className="w-5 h-px bg-emerald-500/50" />
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-display font-bold text-white mb-4 lg:mb-3">
             Market Structure Visualizer
           </h2>
-          <p className="text-gray-500 text-base md:text-lg">
+          <p className="text-gray-500 text-sm md:text-base">
             This educational visualization tool helps students study market structure, trend development, support zones, resistance zones, and volume behavior.
           </p>
         </div>
 
         {/* Dashboard Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 max-w-6xl mx-auto items-stretch">
           
           {/* Left panel: Info & Tabs selection */}
           <div className="lg:col-span-4 flex flex-col justify-between">
@@ -181,18 +181,18 @@ export default function IndicatorShowcase() {
                     className="w-full flex-1 flex flex-col justify-between relative z-10"
                   >
                     {/* Simulated Candlestick Chart */}
-                    <div className="h-[220px] w-full relative flex items-end">
+                    <div className="h-[220px] lg:h-[150px] xl:h-[180px] w-full relative flex items-end">
                       <ChartMockup type={activeTab} />
                     </div>
 
                     {/* Explanatory description below the chart */}
-                    <div className="mt-8 border-t border-white/5 pt-6">
+                    <div className="mt-6 lg:mt-4 border-t border-white/5 pt-5 lg:pt-3">
                       {activeTab === 'buy' && (
                         <div>
-                          <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
+                          <span className="text-[9px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
                             SUPPORT ZONE MAPPING
                           </span>
-                          <h4 className="text-lg font-bold text-white mt-1">
+                          <h4 className="text-base font-bold text-white mt-1">
                             Support Level Identification
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
@@ -203,10 +203,10 @@ export default function IndicatorShowcase() {
 
                       {activeTab === 'sell' && (
                         <div>
-                          <span className="text-[10px] font-mono text-red-400 font-bold tracking-widest uppercase">
+                          <span className="text-[9px] font-mono text-red-400 font-bold tracking-widest uppercase">
                             RESISTANCE ZONE MAPPING
                           </span>
-                          <h4 className="text-lg font-bold text-white mt-1">
+                          <h4 className="text-base font-bold text-white mt-1">
                             Resistance Level Identification
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
@@ -217,10 +217,10 @@ export default function IndicatorShowcase() {
 
                       {activeTab === 'trend' && (
                         <div>
-                          <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
+                          <span className="text-[9px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
                             TREND CHANNEL ANALYSIS
                           </span>
-                          <h4 className="text-lg font-bold text-white mt-1">
+                          <h4 className="text-base font-bold text-white mt-1">
                             Trend Channel Mapping
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
@@ -231,10 +231,10 @@ export default function IndicatorShowcase() {
 
                       {activeTab === 'mtf' && (
                         <div>
-                          <span className="text-[10px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
+                          <span className="text-[9px] font-mono text-emerald-400 font-bold tracking-widest uppercase">
                             MULTI-TIMEFRAME STRUCTURE
                           </span>
-                          <h4 className="text-lg font-bold text-white mt-1">
+                          <h4 className="text-base font-bold text-white mt-1">
                             Multi-Timeframe Theory
                           </h4>
                           <p className="text-gray-500 text-xs leading-relaxed mt-1">
@@ -273,7 +273,7 @@ function ChartMockup({ type }) {
   ];
 
   return (
-    <div className="relative w-full h-[220px] flex items-end">
+    <div className="relative w-full h-[220px] lg:h-[150px] xl:h-[180px] flex items-end">
       
       {/* Background Ribbon zone for Trend visualization */}
       {type === 'trend' && (

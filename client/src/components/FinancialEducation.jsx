@@ -45,7 +45,7 @@ export default function FinancialEducation() {
   return (
     <section
       id="financial-education"
-      className="py-20 lg:py-0 relative overflow-hidden border-t border-white/5 bg-dark lg:min-h-screen lg:flex lg:flex-col lg:justify-center"
+      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient top glow */}
       <div
@@ -117,6 +117,8 @@ export default function FinancialEducation() {
                     border: highlighted
                       ? '1px solid rgba(16,185,129,0.25)'
                       : '1px solid var(--color-card-border, rgba(255,255,255,0.06))',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
                   }}
                 >
                   {/* Glow on highlighted cards */}

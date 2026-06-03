@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const FinalCTA = () => {
   return (
-    <section className="py-32 relative overflow-hidden bg-dark">
+    <section className="py-20 md:py-24 lg:py-28 relative overflow-hidden bg-dark border-t border-white/5">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full max-h-[400px] bg-emerald-500/10 blur-[150px] pointer-events-none" />
       

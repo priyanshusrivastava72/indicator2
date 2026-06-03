@@ -32,7 +32,6 @@
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
-  cursor: none;
 }
 
 .footer-links a:hover {
@@ -50,7 +49,6 @@
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
-  cursor: none;
 }
 
 .social-link:hover {
