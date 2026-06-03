@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Brain, Dices, ShieldAlert, AlertTriangle } from 'lucide-react';
 
@@ -86,6 +86,55 @@ function DangerGauge({ num, isHovered }) {
 
 export default function ProblemSection() {
   const [hovered, setHovered] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    // Detect touch device
+    const checkTouch = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      );
+    };
+    checkTouch();
+  }, []);
+
+  useEffect(() => {
+    if (!isTouchDevice) return;
+
+    const handleScroll = () => {
+      const cardElements = document.querySelectorAll('.problem-card-item');
+      if (cardElements.length === 0) return;
+
+      let closestIndex = null;
+      let closestDist = Infinity;
+      const centerY = window.innerHeight / 2;
+
+      cardElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(cardCenter - centerY);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIndex = index;
+        }
+      });
+
+      if (closestIndex !== null) {
+        setHovered(closestIndex);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Run initially with a tiny delay to allow page height layouts to compute
+    const timer = setTimeout(handleScroll, 150);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
+  }, [isTouchDevice]);
 
   return (
     <section
@@ -153,9 +202,9 @@ export default function ProblemSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                className={`relative overflow-hidden rounded-2xl cursor-default group border transition-all duration-300 ${
+                onMouseEnter={() => !isTouchDevice && setHovered(i)}
+                onMouseLeave={() => !isTouchDevice && setHovered(null)}
+                className={`relative overflow-hidden rounded-2xl cursor-default group border transition-all duration-300 problem-card-item ${
                   isHovered ? 'system-warning-hud shadow-lg shadow-red-900/5' : ''
                 }`}
                 style={{
@@ -167,17 +216,100 @@ export default function ProblemSection() {
                     : 'rgba(255,255,255,0.05)',
                 }}
               >
-                {/* Subtle left accent bar */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl transition-all duration-300"
-                  style={{
-                    background: isHovered
-                      ? 'linear-gradient(to bottom, #ef4444, #b91c1c)'
-                      : 'transparent',
-                  }}
-                />
+                {/* Mobile Layout (Visible only on mobile/tablet) */}
+                <div className="md:hidden p-5 flex flex-col gap-3.5 text-left relative">
+                  <div
+                    className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl transition-all duration-300"
+                    style={{
+                      background: isHovered
+                        ? 'linear-gradient(to bottom, #ef4444, #b91c1c)'
+                        : 'transparent',
+                    }}
+                  />
 
-                <div className="flex flex-col md:flex-row md:items-center gap-6 p-5 lg:p-4 xl:p-5 pl-8 md:pl-10">
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
+                        style={{
+                          background: isHovered
+                            ? 'rgba(239,68,68,0.15)'
+                            : 'var(--color-problem-icon-bg, rgba(255,255,255,0.04))',
+                          color: isHovered ? '#ef4444' : '#6b7280',
+                          border: isHovered
+                            ? '1px solid rgba(239,68,68,0.3)'
+                            : 'var(--color-problem-icon-border, 1px solid rgba(255,255,255,0.07))',
+                        }}
+                      >
+                        <Icon size={18} />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-display font-bold text-white leading-tight">
+                          {p.title}
+                        </h3>
+                        <span
+                          className="text-[9px] font-mono uppercase tracking-wider font-semibold transition-colors mt-0.5 block"
+                          style={{ color: isHovered ? '#ef4444' : '#6b7280' }}
+                        >
+                          {p.stat}
+                        </span>
+                      </div>
+                    </div>
+
+                    <span
+                      className="font-mono text-xl font-bold select-none leading-none transition-colors duration-300"
+                      style={{
+                        color: isHovered
+                          ? 'var(--color-problem-num-active, rgba(239,68,68,0.6))'
+                          : 'var(--color-problem-num-inactive, rgba(255,255,255,0.1))',
+                      }}
+                    >
+                      {p.num}
+                    </span>
+                  </div>
+
+                  <div className="w-full">
+                    <p
+                      className="text-xs leading-relaxed transition-colors duration-300"
+                      style={{
+                        color: isHovered
+                          ? 'var(--color-problem-desc-active, #f3f4f6)'
+                          : 'var(--color-problem-desc-inactive, #9ca3af)',
+                      }}
+                    >
+                      {isHovered ? p.fullDesc : p.shortDesc}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between border-t border-white/5 pt-3 mt-1 text-[8px] font-mono uppercase tracking-wider text-gray-500">
+                    <div className="flex items-center gap-1.5">
+                      <span>Diagnostic:</span>
+                      <span className={isHovered ? "text-red-400 font-bold" : "text-gray-600"}>
+                        {p.statLabel}
+                      </span>
+                    </div>
+                    
+                    <div
+                      className="w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300"
+                      style={{
+                        color: isHovered ? '#ef4444' : 'transparent',
+                      }}
+                    >
+                      <AlertTriangle size={12} className={isHovered ? "animate-pulse" : ""} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop Layout (Visible only on desktop/tablet) */}
+                <div className="hidden md:flex md:items-center gap-6 p-5 lg:p-4 xl:p-5 pl-8 md:pl-10">
+                  <div
+                    className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl transition-all duration-300"
+                    style={{
+                      background: isHovered
+                        ? 'linear-gradient(to bottom, #ef4444, #b91c1c)'
+                        : 'transparent',
+                    }}
+                  />
 
                   {/* Number */}
                   <div
@@ -229,7 +361,7 @@ export default function ProblemSection() {
 
                   {/* Stat — always visible but shifts color */}
                   <div
-                    className="shrink-0 text-right hidden md:block"
+                    className="shrink-0 text-right"
                     style={{ minWidth: '120px' }}
                   >
                     <div

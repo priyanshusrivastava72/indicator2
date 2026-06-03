@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Car, Dumbbell, GraduationCap, TrendingUp, Clock, BookOpen, Users, Zap } from 'lucide-react';
 
@@ -51,6 +51,54 @@ const timelineItems = [
 
 export default function MindsetShift() {
   const [active, setActive] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    // Detect touch device
+    const checkTouch = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      );
+    };
+    checkTouch();
+  }, []);
+
+  useEffect(() => {
+    if (!isTouchDevice) return;
+
+    const handleScroll = () => {
+      const cardElements = document.querySelectorAll('.mindset-card-item');
+      if (cardElements.length === 0) return;
+
+      let closestIndex = null;
+      let closestDist = Infinity;
+      const centerY = window.innerHeight / 2;
+
+      cardElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(cardCenter - centerY);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIndex = index;
+        }
+      });
+
+      if (closestIndex !== null) {
+        setActive(closestIndex);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    const timer = setTimeout(handleScroll, 150);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
+  }, [isTouchDevice]);
 
   return (
     <section
@@ -117,9 +165,9 @@ export default function MindsetShift() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  onMouseEnter={() => setActive(i)}
-                  onMouseLeave={() => setActive(null)}
-                  className="relative overflow-hidden rounded-2xl cursor-default text-left p-5 lg:p-4 xl:p-5"
+                  onMouseEnter={() => !isTouchDevice && setActive(i)}
+                  onMouseLeave={() => !isTouchDevice && setActive(null)}
+                  className="relative overflow-hidden rounded-2xl cursor-default text-left p-5 lg:p-4 xl:p-5 mindset-card-item"
                   style={{
                     background: isActive
                       ? skill.glow
