@@ -16,7 +16,6 @@ import SocialProof from './components/SocialProof';
 import Curriculum from './components/Curriculum';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
-import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
 import './index.css';
@@ -84,8 +83,6 @@ function App() {
           <Pricing />
           {/* 17. FAQ */}
           <FAQ />
-          {/* 19. Final CTA (Risk Disclaimer is 18, embedded in Footer) */}
-          <FinalCTA />
         </main>
         <Footer />
       </div>

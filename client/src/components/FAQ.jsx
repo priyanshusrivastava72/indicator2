@@ -12,7 +12,7 @@ const FAQ = () => {
     },
     {
       q: 'How much time do I need per day?',
-      a: 'The curriculum is designed for people with jobs or studies. You only need about 45-60 minutes a day to analyze the charts and practice the theoretical concepts.'
+      a: 'The curriculum is designed for people with jobs or studies. You only need about 3 hours a day and 60 minutes after completion to analyze the charts and practice the theoretical concepts.'
     },
     {
       q: 'Do I need a premium charting platform subscription?',
@@ -20,7 +20,7 @@ const FAQ = () => {
     },
     {
       q: 'How long is my access valid?',
-      a: 'You get lifetime access to the course materials, including all future updates and additions to the curriculum.'
+      a: 'You get 1 year access to the course materials, including all future updates and additions to the curriculum.'
     },
     {
       q: 'Will I get educational charting tool updates?',
@@ -28,7 +28,7 @@ const FAQ = () => {
     },
     {
       q: 'What is the refund policy?',
-      a: 'We offer a 30-day action-based money-back guarantee. If you complete the course, log the simulated case studies, and do not find value, we will issue a full refund.'
+      a: 'No refund policy'
     }
   ];
 

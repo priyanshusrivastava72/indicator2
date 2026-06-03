@@ -81,7 +81,7 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
     return () => clearTimeout(timer);
   }, [isSubmitted, redirectCountdown, onClose, onSubmitSuccess]);
 
-  if (!isOpen || !audience) return null;
+  if (!audience) return null;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -492,15 +492,21 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
 
   return (
     <AnimatePresence>
-      <div className="modal-overlay" onClick={onClose}>
-        <motion.div
-          initial={{ scale: 0.96, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.96, opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
-          className="modal-content-card"
-          onClick={(e) => e.stopPropagation()}
+      {isOpen && (
+        <div 
+          className="modal-overlay cursor-pointer" 
+          onClick={onClose}
+          onTouchEnd={onClose}
         >
+          <motion.div
+            initial={{ scale: 0.96, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.96, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
+            className="modal-content-card cursor-default"
+            onClick={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
+          >
           {/* Close button X */}
           <button
             onClick={onClose}
@@ -669,6 +675,7 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
           </div>
         </motion.div>
       </div>
+      )}
     </AnimatePresence>
   );
 }

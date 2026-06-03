@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import MemberLoginEnquiryModal from './MemberLoginEnquiryModal';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
@@ -58,9 +60,9 @@ const Navigation = () => {
 
         {/* Desktop Nav Actions */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#course" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Course</a>
           <a href="#indicator" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Tools</a>
           <a href="#social-proof" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Reviews</a>
+          <a href="#curriculum-section" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Course</a>
           <a href="#pricing" className="text-sm font-medium transition-colors duration-300" style={{ color: isDark ? '#a3a3a3' : '#4b5563' }}>Pricing</a>
           
           {/* Theme switcher toggle button */}
@@ -78,14 +80,15 @@ const Navigation = () => {
           </button>
 
           <button
-            className="h-10 px-6 rounded-lg text-sm font-medium transition-colors border"
+            onClick={() => setIsEnquiryModalOpen(true)}
+            className="h-10 px-6 rounded-lg text-sm font-medium transition-colors border cursor-pointer hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-500 hover:border-emerald-500 dark:hover:border-emerald-500 duration-300"
             style={{
               backgroundColor: isDark ? 'rgba(255,255,255,0.03)' : '#ffffff',
               borderColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)',
               color: isDark ? '#fff' : '#111827',
             }}
           >
-            Member Login
+            Enquiry
           </button>
         </nav>
 
@@ -126,15 +129,22 @@ const Navigation = () => {
             borderColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)',
           }}
         >
-          <a href="#course" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
           <a href="#indicator" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
           <a href="#social-proof" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
+          <a href="#curriculum-section" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
           <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
-          <button onClick={() => setIsMobileMenuOpen(false)} className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors">
-            Member Login
+          <button 
+            onClick={() => { 
+              setIsMobileMenuOpen(false); 
+              setIsEnquiryModalOpen(true); 
+            }} 
+            className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors cursor-pointer"
+          >
+            Enquiry
           </button>
         </motion.div>
       )}
+      <MemberLoginEnquiryModal isOpen={isEnquiryModalOpen} onClose={() => setIsEnquiryModalOpen(false)} />
     </header>
   );
 };

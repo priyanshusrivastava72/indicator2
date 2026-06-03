@@ -1152,9 +1152,21 @@ html {
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Ensure native options are readable in dark mode */
+.modal-input-field option {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 .light .modal-input-field {
   background: rgba(0, 0, 0, 0.02) !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #111827 !important;
+}
+
+/* Ensure native options are readable in light mode */
+.light .modal-input-field option {
+  background-color: #ffffff !important;
   color: #111827 !important;
 }
 
