@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Sparkles, Loader2 } from 'lucide-react';
+import axios from 'axios';
 
 export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitSuccess }) {
   const [formData, setFormData] = useState({});
@@ -9,7 +10,7 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [redirectCountdown, setRedirectCountdown] = useState(3);
 
-  // Reset form state when modal opens or audience changes
+  // Reset form state when modal opens/closes or audience changes
   useEffect(() => {
     if (isOpen && audience) {
       setFormData({
@@ -48,6 +49,11 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
         }),
       });
       setErrors({});
+      setIsSubmitted(false);
+      setIsSubmitting(false);
+      setRedirectCountdown(3);
+    } else if (!isOpen) {
+      // Reset submission state when modal closes to prevent background re-trigger of callbacks
       setIsSubmitted(false);
       setIsSubmitting(false);
       setRedirectCountdown(3);
@@ -117,13 +123,16 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
       }
     }
 
-    // Phone Validations
+    // Phone Validations (Strictly 10 digits mobile number validation)
     if (!formData.phone) {
       newErrors.phone = 'Phone Number is required';
     } else {
-      const phoneRegex = /^\+?[\d\s\-]{10,15}$/;
-      if (!phoneRegex.test(formData.phone.replace(/\s+/g, ''))) {
-        newErrors.phone = 'Please enter a valid phone number (10-15 digits)';
+      let cleanPhone = formData.phone.replace(/\D/g, ''); // Extract only digits
+      if (cleanPhone.length === 12 && cleanPhone.startsWith('91')) {
+        cleanPhone = cleanPhone.slice(2); // Strip 91 country code
+      }
+      if (cleanPhone.length !== 10) {
+        newErrors.phone = 'Phone number must be exactly 10 digits';
       }
     }
 
@@ -136,17 +145,36 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setErrors((prev) => ({ ...prev, submit: '' }));
 
-    // Simulate premium backend network request delay
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/leads`, {
+        ...formData,
+        audienceType: audience.id,
+      });
+
+      if (response.data.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          submit: response.data.message || 'Submission failed. Please try again.',
+        }));
+      }
+    } catch (error) {
+      console.error('Error submitting lead form:', error);
+      setErrors((prev) => ({
+        ...prev,
+        submit: error.response?.data?.message || 'Server error. Please check your network connection and try again.',
+      }));
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   // Render Audience Specific Form Fields
@@ -496,7 +524,6 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
         <div 
           className="modal-overlay cursor-pointer" 
           onClick={onClose}
-          onTouchEnd={onClose}
         >
           <motion.div
             initial={{ scale: 0.96, opacity: 0 }}
@@ -505,7 +532,6 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
             transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
             className="modal-content-card cursor-default"
             onClick={(e) => e.stopPropagation()}
-            onTouchEnd={(e) => e.stopPropagation()}
           >
           {/* Close button X */}
           <button
@@ -603,6 +629,12 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
                       </div>
                       {errors.consent && <span className="modal-error-message block mt-1">{errors.consent}</span>}
                     </div>
+
+                    {errors.submit && (
+                      <div className="text-red-400 text-xs font-mono text-center bg-red-500/10 border border-red-500/20 p-2.5 rounded-lg mb-4">
+                        {errors.submit}
+                      </div>
+                    )}
 
                     {/* Action Footer */}
                     <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/5 dark:border-white/5 light:border-black/5 mt-6">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Sparkles, Loader2, MessageSquare } from 'lucide-react';
+import axios from 'axios';
 
 export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [countdown, setCountdown] = useState(3);
 
-  // Reset form when modal opens
+  // Reset form when modal opens or closes
   useEffect(() => {
     if (isOpen) {
       setFormData({
@@ -30,6 +31,11 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
         consent: false
       });
       setErrors({});
+      setIsSubmitted(false);
+      setIsSubmitting(false);
+      setCountdown(3);
+    } else {
+      // Reset submission state when modal closes
       setIsSubmitted(false);
       setIsSubmitting(false);
       setCountdown(3);
@@ -95,9 +101,12 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone Number is required';
     } else {
-      const phoneRegex = /^\+?[\d\s\-]{10,15}$/;
-      if (!phoneRegex.test(formData.phone.replace(/\s+/g, ''))) {
-        newErrors.phone = 'Please enter a valid phone number (10-15 digits)';
+      let cleanPhone = formData.phone.replace(/\D/g, ''); // Extract only digits
+      if (cleanPhone.length === 12 && cleanPhone.startsWith('91')) {
+        cleanPhone = cleanPhone.slice(2); // Strip 91 country code
+      }
+      if (cleanPhone.length !== 10) {
+        newErrors.phone = 'Phone number must be exactly 10 digits';
       }
     }
 
@@ -117,17 +126,36 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setErrors((prev) => ({ ...prev, submit: '' }));
 
-    // Simulate database write / network delay
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/leads`, {
+        ...formData,
+        audienceType: 'member_enquiry',
+      });
+
+      if (response.data.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          submit: response.data.message || 'Submission failed. Please try again.',
+        }));
+      }
+    } catch (error) {
+      console.error('Error submitting enquiry:', error);
+      setErrors((prev) => ({
+        ...prev,
+        submit: error.response?.data?.message || 'Server error. Please check your network connection and try again.',
+      }));
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -136,7 +164,6 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
         <div 
           className="modal-overlay cursor-pointer" 
           onClick={onClose}
-          onTouchEnd={onClose}
         >
           <motion.div
             initial={{ scale: 0.96, opacity: 0 }}
@@ -145,7 +172,6 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
             transition={{ duration: 0.35, ease: [0.19, 1, 0.22, 1] }}
             className="modal-content-card cursor-default"
             onClick={(e) => e.stopPropagation()}
-            onTouchEnd={(e) => e.stopPropagation()}
           >
           {/* Close Button X */}
           <button
@@ -288,6 +314,11 @@ export default function MemberLoginEnquiryModal({ isOpen, onClose }) {
                         </label>
                       </div>
                       {errors.consent && <span className="modal-error-message text-xs text-red-400 mt-1 block">{errors.consent}</span>}
+                      {errors.submit && (
+                        <div className="text-red-400 text-xs font-mono text-center bg-red-500/10 border border-red-500/20 p-2.5 rounded-lg mt-3">
+                          {errors.submit}
+                        </div>
+                      )}
                     </div>
 
                     {/* Action Buttons */}
