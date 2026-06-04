@@ -161,7 +161,7 @@ export default function LearningRoadmap() {
     <section
       id="roadmap-section"
       ref={containerRef}
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none">

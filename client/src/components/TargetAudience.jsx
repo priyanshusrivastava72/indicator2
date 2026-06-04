@@ -314,7 +314,7 @@ function DetailPanel({ aud, onCtaClick }) {
         className="absolute right-8 bottom-4 font-display font-black select-none pointer-events-none leading-none text-emerald-500"
         style={{
           fontSize: 'clamp(100px, 14vw, 160px)',
-          opacity: 0.03,
+          opacity: 0.08,
         }}
       >
         {aud.num}
@@ -431,7 +431,7 @@ export default function TargetAudience() {
   return (
     <section
       id="target-audience"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background soft ambient radial glow */}
       <div

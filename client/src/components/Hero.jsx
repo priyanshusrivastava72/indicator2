@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Activity, ShieldCheck, ChevronRight } from 'lucide-react';
+import { TrendingUp, Activity, ShieldCheck, ChevronRight, Clock } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-36 md:pb-24 lg:pt-40 lg:pb-32 bg-dark overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-12 md:pt-36 md:pb-24 lg:pt-40 lg:pb-32 bg-dark overflow-hidden">
       {/* Background Gradients & Particles */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-1/4 -left-64 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
@@ -42,17 +42,29 @@ const Hero = () => {
             {/* HUD 1: Study hours */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">STUDY HOURS</span>
-              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">120+ Hrs</span>
-              {/* Miniature sparkline SVG */}
-              <svg className="w-full h-4 mt-2 text-emerald-500" viewBox="0 0 50 15" fill="none" stroke="currentColor" strokeWidth="1">
-                <path d="M0,12 Q10,12 15,7 T30,10 T40,2 T50,5" />
-              </svg>
+              <span className="font-display font-black text-sm text-emerald-400 light:text-emerald-700 leading-none mt-1">30+ Hrs</span>
+              {/* Weekly study streak tracker */}
+              <div className="flex items-center justify-between mt-3 w-full">
+                <div className="flex items-center gap-1">
+                  <Clock size={10} className="text-emerald-400/80" />
+                  <span className="text-[8px] font-mono text-gray-400 uppercase tracking-wider leading-none">Streak</span>
+                </div>
+                <div className="flex gap-0.5">
+                  {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`w-1.5 h-2 rounded-[2px] ${idx < 5 ? 'bg-emerald-500' : 'bg-emerald-500/20'}`} 
+                      title={day}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* HUD 2: Lectures */}
             <div className="hero-hud-card">
               <span className="text-[9px] font-mono text-gray-500 uppercase tracking-wider leading-none">LECTURES</span>
-              <span className="font-display font-black text-sm text-white light:text-gray-900 leading-none mt-1">45+ Lessons</span>
+              <span className="font-display font-black text-sm text-white light:text-gray-900 leading-none mt-1">30+ Lessons</span>
               {/* Mini progress bar */}
               <div className="w-full h-1 bg-white/10 rounded-full mt-3 overflow-hidden">
                 <div className="h-full bg-emerald-500 w-[80%]" />

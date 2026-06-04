@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import MemberLoginEnquiryModal from './MemberLoginEnquiryModal';
 
@@ -26,11 +26,11 @@ const Navigation = () => {
     if (document.documentElement.classList.contains('light')) {
       document.documentElement.classList.remove('light');
       setTheme('dark');
-      localStorage.setItem('theme', 'dark');
+      sessionStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.add('light');
       setTheme('light');
-      localStorage.setItem('theme', 'light');
+      sessionStorage.setItem('theme', 'light');
     }
   };
 
@@ -118,32 +118,47 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Accordion Menu */}
-      {isMobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full border-b p-6 flex flex-col gap-4 shadow-2xl transition-colors duration-500"
-          style={{
-            backgroundColor: isDark ? '#0a0a0a' : '#ffffff',
-            borderColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)',
-          }}
-        >
-          <a href="#indicator" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
-          <a href="#social-proof" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
-          <a href="#curriculum-section" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
-          <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
-          <button 
-            onClick={() => { 
-              setIsMobileMenuOpen(false); 
-              setIsEnquiryModalOpen(true); 
-            }} 
-            className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors cursor-pointer"
-          >
-            Enquiry
-          </button>
-        </motion.div>
-      )}
+      {/* Mobile Menu Backdrop and Drawer Accordion */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-xs z-30 md:hidden cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              onTouchEnd={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="md:hidden absolute top-full left-0 w-full border-b p-6 flex flex-col gap-4 shadow-2xl transition-colors duration-500 z-40"
+              style={{
+                backgroundColor: isDark ? '#0a0a0a' : '#ffffff',
+                borderColor: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)',
+              }}
+            >
+              <a href="#indicator" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Tools</a>
+              <a href="#social-proof" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Reviews</a>
+              <a href="#curriculum-section" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Course</a>
+              <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="font-medium py-2 transition-colors" style={{ color: isDark ? '#d1d5db' : '#374151' }}>Pricing</a>
+              <button 
+                onClick={() => { 
+                  setIsMobileMenuOpen(false); 
+                  setIsEnquiryModalOpen(true); 
+                }} 
+                className="h-12 w-full bg-emerald-500 rounded-lg text-white font-bold mt-4 hover:bg-emerald-450 transition-colors cursor-pointer"
+              >
+                Enquiry
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
       <MemberLoginEnquiryModal isOpen={isEnquiryModalOpen} onClose={() => setIsEnquiryModalOpen(false)} />
     </header>
   );

@@ -494,8 +494,8 @@ html {
   --color-tab-text-inactive: #4b5563;
   
   /* Financial Education specific variables */
-  --color-watermark-inactive: rgba(0, 0, 0, 0.04);
-  --color-watermark-active: rgba(16, 185, 129, 0.1);
+  --color-watermark-inactive: rgba(0, 0, 0, 0.08);
+  --color-watermark-active: rgba(16, 185, 129, 0.18);
   --color-icon-bg: rgba(0, 0, 0, 0.02);
   --color-icon-border: rgba(0, 0, 0, 0.05);
   --color-stat-bg: rgba(0, 0, 0, 0.015);

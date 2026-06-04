@@ -45,7 +45,7 @@ export default function FinancialEducation() {
   return (
     <section
       id="financial-education"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient top glow */}
       <div
@@ -136,8 +136,8 @@ export default function FinancialEducation() {
                     className="absolute top-4 right-4 font-display font-black text-5xl lg:text-4xl select-none pointer-events-none leading-none z-0"
                     style={{
                       color: highlighted
-                        ? 'var(--color-watermark-active, rgba(16,185,129,0.08))'
-                        : 'var(--color-watermark-inactive, rgba(255,255,255,0.03))',
+                        ? 'var(--color-watermark-active, rgba(16,185,129,0.18))'
+                        : 'var(--color-watermark-inactive, rgba(255,255,255,0.08))',
                     }}
                   >
                     0{i + 1}

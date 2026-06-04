@@ -15,7 +15,7 @@ export default function IndicatorShowcase() {
   return (
     <section
       id="indicator"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">

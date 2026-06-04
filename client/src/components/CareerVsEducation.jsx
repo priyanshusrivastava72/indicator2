@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { X, Check, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -31,10 +31,48 @@ const rows = [
 ];
 
 export default function CareerVsEducation() {
+  const tableScrollRef = useRef(null);
+  const [peeked, setPeeked] = useState(false);
+
+  useEffect(() => {
+    const element = tableScrollRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !peeked) {
+            // Check if element has horizontal overflow (which means it's on mobile/tablet viewport)
+            if (element.scrollWidth > element.clientWidth) {
+              setPeeked(true);
+              
+              // Perform a smooth peek scroll after a short delay
+              setTimeout(() => {
+                // Scroll to the right to reveal the "Career + Finance" column
+                element.scrollTo({ left: 140, behavior: 'smooth' });
+                
+                // Pause and scroll back to the start
+                setTimeout(() => {
+                  element.scrollTo({ left: 0, behavior: 'smooth' });
+                }, 1200);
+              }, 600);
+            }
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the table is visible
+    );
+
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+    };
+  }, [peeked]);
+
   return (
     <section
       id="career-vs-education"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Ambient glow */}
       <div
@@ -92,7 +130,7 @@ export default function CareerVsEducation() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 flex flex-col justify-between"
           >
-            <div className="overflow-x-auto pb-4 scrollbar-thin w-full">
+            <div ref={tableScrollRef} className="overflow-x-auto pb-4 scrollbar-thin w-full">
               <div className="comp-table-wrapper rounded-3xl overflow-hidden min-w-[650px] lg:min-w-0">
                 {/* Table Header */}
                 <div className="grid grid-cols-3 comp-table-header">

@@ -50,7 +50,7 @@ export default function LiveTrades() {
   return (
     <section
       id="live-trades"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t bg-dark border-white/5"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t bg-dark border-white/5"
     >
       {/* Background orbs */}
       <div className="absolute inset-0 pointer-events-none">

@@ -4,7 +4,7 @@ import { Check, X } from 'lucide-react';
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 md:py-24 lg:py-28 bg-dark relative border-t border-white/5">
+    <section id="pricing" className="py-12 md:py-24 lg:py-28 bg-dark relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">Transparent Pricing</span>

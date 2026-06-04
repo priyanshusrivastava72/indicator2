@@ -103,7 +103,7 @@ export default function MindsetShift() {
   return (
     <section
       id="mindset-shift"
-      className="py-20 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
+      className="py-12 md:py-24 lg:py-28 relative overflow-hidden border-t border-white/5 bg-dark"
     >
       {/* Subtle center glow */}
       <div
