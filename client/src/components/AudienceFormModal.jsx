@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, Sparkles, Loader2 } from 'lucide-react';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitSuccess }) {
   const [formData, setFormData] = useState({});
@@ -153,9 +154,11 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
     setErrors((prev) => ({ ...prev, submit: '' }));
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/leads`, {
+      const response = await axios.post(`${API_URL}/api/leads`, {
         ...formData,
         audienceType: audience.id,
+      }, {
+        timeout: 12000, // 12 seconds timeout
       });
 
       if (response.data.success) {
@@ -168,9 +171,19 @@ export default function AudienceFormModal({ isOpen, onClose, audience, onSubmitS
       }
     } catch (error) {
       console.error('Error submitting lead form:', error);
+      let errMsg = 'An unexpected error occurred. Please try again.';
+      
+      if (error.code === 'ECONNABORTED') {
+        errMsg = 'Request timed out. The server took too long to respond. Please try again.';
+      } else if (error.message === 'Network Error' || !error.response) {
+        errMsg = 'Network error. Please check your internet connection or try again later.';
+      } else if (error.response?.data?.message) {
+        errMsg = error.response.data.message;
+      }
+      
       setErrors((prev) => ({
         ...prev,
-        submit: error.response?.data?.message || 'Server error. Please check your network connection and try again.',
+        submit: errMsg,
       }));
     } finally {
       setIsSubmitting(false);
